@@ -27,6 +27,8 @@ let NEXT_ESP = null;
 let HERO = null;           // partido destacado del hero (España si juega, si no el próximo del torneo)
 let MY_GROUP = null;
 let countdownTimer = null;
+let openComboKind = null;  // 'team' | 'date' | null — selector de filtro abierto
+let teamQuery = '';        // texto del buscador de selección
 
 // --- Utilidades --------------------------------------------------------------
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -158,6 +160,7 @@ function liveBannerHTML() {
     <div style="max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;">${pills}</div></div>`;
 }
 async function refreshLive() {
+  if (openComboKind) return; // no interrumpir mientras se usa un selector de filtro
   const l = await loadJSON('./data/live.json');
   if (!l) return;
   if (JSON.stringify(l.live) === JSON.stringify(LIVE.live)) return; // sin cambios
@@ -395,6 +398,76 @@ function screenBracket() {
     <div style="overflow-x:auto;padding:6px 2px 18px;"><div style="display:flex;gap:clamp(16px,3vw,40px);min-width:max-content;align-items:stretch;">${cols}</div></div></section>`;
 }
 
+// --- Selectores personalizados de filtro (banderas + buscador) ---------------
+const normTxt = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+function resultTeamOpts() {
+  const done = MATCHES.filter(m => m.status === 'finished');
+  const set = new Set();
+  done.forEach(m => { set.add(m.home); set.add(m.away); });
+  return [...set].map(n => ({ val: n, label: metaFor(n).es, flag: FLAGS.get(n) })).sort((a, b) => a.label.localeCompare(b.label, 'es'));
+}
+function comboOpt(kind, val, flag, label, selected) {
+  const icon = flag
+    ? `<img src="${flag}" width="26" height="18" style="border-radius:3px;object-fit:cover;flex:none;box-shadow:0 0 0 1px rgba(11,27,43,.12);">`
+    : '';
+  return `<div data-combo-pick="${kind}" data-val="${esc(val)}" class="combo-opt" style="display:flex;align-items:center;gap:10px;padding:9px 11px;cursor:pointer;border-radius:10px;${selected ? 'background:#FFF1F5;' : ''}">
+    ${icon}<span style="font-size:14px;font-weight:${selected ? 700 : 500};color:#0B1B2B;flex:1;">${esc(label)}</span>${selected ? '<span style="color:#C8102E;font-weight:800;">✓</span>' : ''}</div>`;
+}
+function teamOptionsHTML() {
+  const q = normTxt(teamQuery);
+  const opts = resultTeamOpts().filter(o => !q || normTxt(o.label).includes(q));
+  const all = !q ? comboOpt('team', 'all', null, 'Todas las selecciones', state.resTeam === 'all') : '';
+  const rows = opts.map(o => comboOpt('team', o.val, o.flag, o.label, state.resTeam === o.val)).join('');
+  return all + (rows || '<div style="padding:10px 12px;color:#A6B2C0;font-size:13px;">Sin coincidencias</div>');
+}
+const panelStyle = w => `position:absolute;z-index:50;top:calc(100% + 6px);left:0;width:${w};max-width:86vw;background:#fff;border:1px solid #E6EBF0;border-radius:14px;box-shadow:0 20px 50px -20px rgba(11,27,43,.4);padding:8px;`;
+function teamPanelHTML() {
+  return `<div style="${panelStyle('280px')}">
+    <input data-combo-input type="text" value="${esc(teamQuery)}" placeholder="Buscar selección…" autocomplete="off" style="width:100%;padding:9px 11px;border:1.5px solid #E6EBF0;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:6px;box-sizing:border-box;" />
+    <div data-combo-list style="max-height:280px;overflow-y:auto;">${teamOptionsHTML()}</div></div>`;
+}
+function datePanelHTML() {
+  const opts = [...new Set(MATCHES.filter(m => m.status === 'finished').map(m => m.date).filter(Boolean))].sort((a, b) => b.localeCompare(a));
+  const list = comboOpt('date', 'all', null, 'Todas las fechas', state.resDate === 'all')
+    + opts.map(d => comboOpt('date', d, null, capFirst(fmt(d + 'T12:00:00Z').full), state.resDate === d)).join('');
+  return `<div style="${panelStyle('260px')}"><div style="max-height:300px;overflow-y:auto;">${list}</div></div>`;
+}
+function comboHead(kind) {
+  const open = openComboKind === kind;
+  let icon, label, selected;
+  if (kind === 'team') {
+    selected = state.resTeam !== 'all';
+    const f = selected ? FLAGS.get(state.resTeam) : null;
+    icon = f ? `<img src="${f}" width="24" height="16" style="border-radius:3px;object-fit:cover;flex:none;box-shadow:0 0 0 1px rgba(11,27,43,.12);">` : '<span style="font-size:15px;">🌍</span>';
+    label = selected ? metaFor(state.resTeam).es : 'Todas las selecciones';
+  } else {
+    selected = state.resDate !== 'all';
+    icon = '<span style="font-size:15px;">📅</span>';
+    label = selected ? capFirst(fmt(state.resDate + 'T12:00:00Z').full) : 'Todas las fechas';
+  }
+  return `<div data-combo-open="${kind}" style="display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:11px;border:1.5px solid ${open ? '#7C4DFF' : '#E6EBF0'};background:#fff;cursor:pointer;min-width:200px;max-width:280px;font-weight:600;font-size:14px;">
+    ${icon}<span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:${selected ? '#0B1B2B' : '#5B6B7B'};">${esc(label)}</span><span style="color:#8A98A8;font-size:11px;">▾</span></div>`;
+}
+function combo(kind) {
+  return `<div data-combo data-combo-kind="${kind}" style="position:relative;">${comboHead(kind)}<div data-combo-panel>${openComboKind === kind ? (kind === 'team' ? teamPanelHTML() : datePanelHTML()) : ''}</div></div>`;
+}
+function openCombo(kind) {
+  closeCombo();
+  openComboKind = kind;
+  const cont = document.querySelector(`[data-combo-kind="${kind}"] [data-combo-panel]`);
+  const head = document.querySelector(`[data-combo-kind="${kind}"] [data-combo-open]`);
+  if (head) head.style.borderColor = '#7C4DFF';
+  if (cont) {
+    cont.innerHTML = kind === 'team' ? teamPanelHTML() : datePanelHTML();
+    if (kind === 'team') requestAnimationFrame(() => { cont.querySelector('[data-combo-input]')?.focus(); });
+  }
+}
+function closeCombo() {
+  openComboKind = null;
+  document.querySelectorAll('[data-combo-panel]').forEach(p => { p.innerHTML = ''; });
+  document.querySelectorAll('[data-combo-open]').forEach(h => { h.style.borderColor = '#E6EBF0'; });
+}
+
 // --- Pantalla: Resultados ----------------------------------------------------
 function resultCard(m) {
   const [sa, sb] = m.score.ft; const aw = sa > sb, bw = sb > sa;
@@ -412,28 +485,19 @@ function resultCard(m) {
 }
 function screenResultados() {
   const done = MATCHES.filter(m => m.status === 'finished');
-  // Opciones de filtro
-  const teamSet = new Set();
-  done.forEach(m => { teamSet.add(m.home); teamSet.add(m.away); });
-  const teamOpts = [...teamSet].map(n => ({ n, es: metaFor(n).es })).sort((a, b) => a.es.localeCompare(b.es, 'es'));
-  const dateOpts = [...new Set(done.map(m => m.date).filter(Boolean))].sort((a, b) => b.localeCompare(a));
-
-  // Aplicar filtros
+  // Aplicar filtros (las opciones las construyen los selectores combo)
   let list = done.slice().sort((a, b) => (b.kickoff || '').localeCompare(a.kickoff || ''));
   if (state.resTeam !== 'all') list = list.filter(m => m.home === state.resTeam || m.away === state.resTeam);
   if (state.resDate !== 'all') list = list.filter(m => m.date === state.resDate);
 
-  const selStyle = 'padding:9px 13px;border-radius:11px;border:1.5px solid #E6EBF0;background:#fff;color:#0B1B2B;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer;max-width:100%;';
-  const teamSel = `<select data-filter="resTeam" style="${selStyle}"><option value="all">Todas las selecciones</option>${teamOpts.map(o => `<option value="${esc(o.n)}"${state.resTeam === o.n ? ' selected' : ''}>${esc(o.es)}</option>`).join('')}</select>`;
-  const dateSel = `<select data-filter="resDate" style="${selStyle}"><option value="all">Todas las fechas</option>${dateOpts.map(d => `<option value="${d}"${state.resDate === d ? ' selected' : ''}>${esc(fmt(d + 'T12:00:00Z').full)}</option>`).join('')}</select>`;
   const filtered = state.resTeam !== 'all' || state.resDate !== 'all';
-  const clearBtn = filtered ? `<button data-action="clearResFilters" style="padding:9px 14px;border-radius:11px;border:1.5px solid #FFD2DF;background:#FFF1F5;color:#C8102E;font-weight:700;font-size:14px;cursor:pointer;">✕ Limpiar</button>` : '';
+  const clearBtn = filtered ? `<button data-action="clearResFilters" style="padding:10px 14px;border-radius:11px;border:1.5px solid #FFD2DF;background:#FFF1F5;color:#C8102E;font-weight:700;font-size:14px;cursor:pointer;">✕ Limpiar</button>` : '';
 
   return `<section data-screen style="padding-top:30px;">
     <div data-anim style="margin-bottom:18px;"><h2 style="margin:0;font-family:'Archivo';font-weight:900;font-size:clamp(30px,5vw,46px);letter-spacing:-1.5px;">Resultados</h2>
       <p style="margin:6px 0 0;color:#5B6B7B;font-weight:500;">${list.length} de ${done.length} partidos · marcadores finales</p></div>
-    <div data-anim style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px;">
-      ${teamSel}${dateSel}${clearBtn}
+    <div data-anim style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px;position:relative;z-index:5;">
+      ${combo('team')}${combo('date')}${clearBtn}
     </div>
     ${list.length
       ? `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;">${list.map(resultCard).join('')}</div>`
@@ -441,9 +505,28 @@ function screenResultados() {
 }
 
 // --- Modal de partido --------------------------------------------------------
-function scorerLines(list, align) {
-  if (!list.length) return '';
-  return list.map(g => `<div style="font-size:12px;color:#5B6B7B;text-align:${align};">⚽ ${esc(g.name)} ${g.minute ? g.minute + "'" : ''}${g.penalty ? ' (p)' : ''}${g.owngoal ? ' (pp)' : ''}</div>`).join('');
+// Barra comparativa entre los dos equipos (estilo del diseño original).
+function statBar(name, lv, rv, lcolor, rcolor) {
+  const total = (lv + rv) || 1;
+  const lw = Math.round(lv / total * 100);
+  return `<div style="margin-bottom:13px;">
+    <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:5px;">
+      <span>${lv}</span><span style="color:#8A98A8;">${name}</span><span>${rv}</span></div>
+    <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;background:#E6EBF0;">
+      <div style="width:${lw}%;background:${lcolor};"></div><div style="width:${100 - lw}%;background:${rcolor};"></div></div></div>`;
+}
+const goalMin = g => { const n = parseInt(g.minute, 10); return Number.isFinite(n) ? n : 0; };
+// Cronología de goles (local a la izquierda, visitante a la derecha).
+function goalsTimeline(home, away) {
+  const all = [...home.map(g => ({ ...g, side: 'home' })), ...away.map(g => ({ ...g, side: 'away' }))]
+    .sort((a, b) => goalMin(a) - goalMin(b));
+  if (!all.length) return '<div style="text-align:center;color:#A6B2C0;font-size:13px;padding:4px 0;">Partido sin goles</div>';
+  return all.map(g => {
+    const right = g.side === 'away';
+    const mark = (g.penalty ? ' (pen)' : '') + (g.owngoal ? ' (p.p.)' : '');
+    const txt = `⚽ ${esc(g.name || '')} ${g.minute || ''}'${mark}`;
+    return `<div style="display:flex;justify-content:${right ? 'flex-end' : 'flex-start'};font-size:12px;color:#3A4A5C;padding:4px 0;border-bottom:1px solid #EDF1F6;">${txt}</div>`;
+  }).join('');
 }
 // Escudo grande para el modal (compartido por la ficha normal y la de en vivo).
 function modalTeam(meta) {
@@ -495,11 +578,18 @@ function modalHTML() {
     : `<div style="font-family:'Archivo';font-weight:900;font-size:15px;color:#7C4DFF;white-space:nowrap;">PRÓXIMAMENTE</div>`;
   let panel;
   if (finished) {
-    const hasGoals = m.scorers.home.length || m.scorers.away.length;
-    panel = `<div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#8A98A8;margin-bottom:12px;text-align:center;">${hasGoals ? 'GOLEADORES' : 'RESULTADO FINAL'}</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        <div>${scorerLines(m.scorers.home, 'left') || '<div style="font-size:12px;color:#A6B2C0;">—</div>'}</div>
-        <div>${scorerLines(m.scorers.away, 'right') || '<div style="font-size:12px;color:#A6B2C0;text-align:right;">—</div>'}</div></div>`;
+    const [fh, fa] = m.score.ft;
+    const [hh, ha] = m.score.ht || [null, null];
+    const c1 = m.a.color, c2 = m.b.color;
+    const penH = m.scorers.home.filter(g => g.penalty).length;
+    const penA = m.scorers.away.filter(g => g.penalty).length;
+    const bars = [statBar('Goles', fh, fa, c1, c2)];
+    if (m.score.ht) bars.push(statBar('Goles 1ª parte', hh, ha, c1, c2), statBar('Goles 2ª parte', fh - hh, fa - ha, c1, c2));
+    if (penH + penA) bars.push(statBar('Penaltis', penH, penA, c1, c2));
+    panel = `<div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#8A98A8;margin-bottom:12px;text-align:center;">ESTADÍSTICAS</div>
+      ${bars.join('')}
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#8A98A8;margin:18px 0 8px;text-align:center;">CRONOLOGÍA DE GOLES</div>
+      ${goalsTimeline(m.scorers.home, m.scorers.away)}`;
   } else {
     panel = `<div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#8A98A8;margin-bottom:10px;text-align:center;">INFORMACIÓN</div>
       <div style="font-size:13px;color:#5B6B7B;text-align:center;line-height:1.7;">${esc(m.f.full)} · ${esc(m.f.time)}<br>${esc(m.venue || 'Sede por confirmar')}</div>`;
@@ -523,6 +613,7 @@ function screenHTML() {
   }
 }
 function renderApp() {
+  openComboKind = null; // el DOM se reconstruye: cualquier selector queda cerrado
   document.getElementById('app').innerHTML =
     header() + liveBannerHTML() +
     `<main style="max-width:1200px;margin:0 auto;padding:0 20px 80px;">${screenHTML()}</main>` +
@@ -559,12 +650,27 @@ function startCountdown() {
 }
 
 document.addEventListener('click', e => {
+  // Selectores de filtro (combobox personalizado)
+  const pick = e.target.closest('[data-combo-pick]');
+  if (pick) {
+    const kind = pick.getAttribute('data-combo-pick'), val = pick.getAttribute('data-val');
+    if (kind === 'team') state.resTeam = val; else state.resDate = val;
+    teamQuery = ''; closeCombo(); return renderApp();
+  }
+  const opener = e.target.closest('[data-combo-open]');
+  if (opener) {
+    const kind = opener.getAttribute('data-combo-open');
+    if (openComboKind === kind) closeCombo(); else { teamQuery = ''; openCombo(kind); }
+    return;
+  }
+  if (openComboKind && !e.target.closest('[data-combo]')) { closeCombo(); return; }
+
   const t = e.target.closest('[data-action]');
   if (!t) return;
   const action = t.getAttribute('data-action');
   if (action === 'go') return go(t.getAttribute('data-screen'));
   if (action === 'toggleEsp') { state.onlyEsp = !state.onlyEsp; return renderApp(); }
-  if (action === 'clearResFilters') { state.resTeam = 'all'; state.resDate = 'all'; return renderApp(); }
+  if (action === 'clearResFilters') { state.resTeam = 'all'; state.resDate = 'all'; teamQuery = ''; return renderApp(); }
   if (action === 'open-live') {
     const it = LIVE_BY_FID.get(Number(t.getAttribute('data-fid')));
     if (it) { state.open = openLive(it); renderApp(); }
@@ -583,12 +689,13 @@ document.addEventListener('click', e => {
   }
 });
 
-// Filtros de Resultados (selects nativos).
-document.addEventListener('change', e => {
-  const sel = e.target.closest('[data-filter]');
-  if (!sel) return;
-  state[sel.getAttribute('data-filter')] = sel.value;
-  renderApp();
+// Buscador del selector de selección: filtra la lista sin re-renderizar (mantiene foco).
+document.addEventListener('input', e => {
+  const inp = e.target.closest('[data-combo-input]');
+  if (!inp) return;
+  teamQuery = inp.value;
+  const list = document.querySelector('[data-combo-kind="team"] [data-combo-list]');
+  if (list) list.innerHTML = teamOptionsHTML();
 });
 
 init();
