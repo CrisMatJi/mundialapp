@@ -3,6 +3,7 @@
 import { META, GROUP_HEADS, metaFor } from './teams-meta.js';
 
 const MY = 'Spain';                 // "Mi selección" (cámbialo aquí si quieres otra)
+const OWNER = 'Cristian Mateos Jiménez'; // dueño de la web (aparece en el footer)
 const ROUND_ES = {
   'Round of 32': 'Dieciseisavos de final', 'Round of 16': 'Octavos de final',
   'Quarter-final': 'Cuartos de final', 'Semi-final': 'Semifinal',
@@ -130,7 +131,7 @@ function header() {
     .map(([k, l]) => navBtn(k, l)).join('');
   return `
   <header style="position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(255,255,255,.74);border-bottom:1px solid #E6EBF0;">
-    <div style="max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;">
+    <div class="header-inner">
       <div data-action="go" data-screen="inicio" style="display:flex;align-items:center;gap:11px;cursor:pointer;flex:none;">
         <div style="width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#FF2D7E,#7C4DFF 55%,#1D6FF2);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px rgba(124,77,255,.7);">
           <span style="font-family:'Archivo';font-weight:900;font-size:17px;color:#fff;letter-spacing:-1px;">26</span>
@@ -140,13 +141,27 @@ function header() {
           <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;color:#8A98A8;margin-top:2px;">USA·CAN·MEX</div>
         </div>
       </div>
-      <nav style="display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;padding:2px;">${nav}</nav>
-      <button data-action="go" data-screen="grupos" style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 13px;border-radius:11px;border:1.5px solid #FFD2DF;background:#FFF1F5;cursor:pointer;">
+      <nav id="main-nav" class="main-nav">${nav}</nav>
+      <button data-action="go" data-screen="grupos" class="mi-seleccion" style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 13px;border-radius:11px;border:1.5px solid #FFD2DF;background:#FFF1F5;cursor:pointer;">
         ${badge(metaFor(MY), { w: 30, h: 21, fs: 10, r: 5 })}
         <span style="font-size:13px;font-weight:700;color:#C8102E;">Mi selección</span>
       </button>
+      <button data-action="toggleMenu" class="nav-toggle" aria-label="Abrir menú" style="font-size:19px;">☰</button>
     </div>
   </header>`;
+}
+
+// --- Pie de página (atribución) ----------------------------------------------
+function footer() {
+  const year = new Date().getFullYear();
+  return `<footer style="border-top:1px solid #E6EBF0;background:rgba(255,255,255,.55);">
+    <div style="max-width:1200px;margin:0 auto;padding:22px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:#8A98A8;font-size:13px;">
+      <div style="display:flex;align-items:center;gap:9px;">
+        <div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#FF2D7E,#7C4DFF 55%,#1D6FF2);display:flex;align-items:center;justify-content:center;flex:none;"><span style="font-family:'Archivo';font-weight:900;font-size:11px;color:#fff;">26</span></div>
+        <span>Mundial 26 · Una web de <strong style="color:#5B6B7B;">${esc(OWNER)}</strong> · © ${year}</span>
+      </div>
+      <div style="font-size:12px;">Datos: openfootball &amp; API-Football</div>
+    </div></footer>`;
 }
 
 // --- Banner en vivo ----------------------------------------------------------
@@ -616,7 +631,8 @@ function renderApp() {
   openComboKind = null; // el DOM se reconstruye: cualquier selector queda cerrado
   document.getElementById('app').innerHTML =
     header() + liveBannerHTML() +
-    `<main style="max-width:1200px;margin:0 auto;padding:0 20px 80px;">${screenHTML()}</main>` +
+    `<main style="max-width:1200px;margin:0 auto;padding:0 20px 60px;">${screenHTML()}</main>` +
+    footer() +
     modalHTML();
   runIntro();
 }
@@ -650,6 +666,10 @@ function startCountdown() {
 }
 
 document.addEventListener('click', e => {
+  // Menú móvil: cerrar si se hace clic fuera de la cabecera
+  const navEl = document.getElementById('main-nav');
+  if (navEl && navEl.classList.contains('open') && !e.target.closest('header')) navEl.classList.remove('open');
+
   // Selectores de filtro (combobox personalizado)
   const pick = e.target.closest('[data-combo-pick]');
   if (pick) {
@@ -668,6 +688,7 @@ document.addEventListener('click', e => {
   const t = e.target.closest('[data-action]');
   if (!t) return;
   const action = t.getAttribute('data-action');
+  if (action === 'toggleMenu') { document.getElementById('main-nav')?.classList.toggle('open'); return; }
   if (action === 'go') return go(t.getAttribute('data-screen'));
   if (action === 'toggleEsp') { state.onlyEsp = !state.onlyEsp; return renderApp(); }
   if (action === 'clearResFilters') { state.resTeam = 'all'; state.resDate = 'all'; teamQuery = ''; return renderApp(); }
