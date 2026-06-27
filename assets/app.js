@@ -111,6 +111,60 @@ function openLive(item) {
   return { ...item, __live: true, a: metaFor(item.home), b: metaFor(item.away) };
 }
 
+// --- Avisos: toasts in-app + notificación del navegador ----------------------
+function alertsOn() { try { return localStorage.getItem('wc26-alerts') !== 'off'; } catch { return true; } }
+function bellButton() {
+  const on = alertsOn();
+  return `<button data-action="toggleAlerts" title="${on ? 'Avisos activados' : 'Avisos silenciados'}" aria-label="Avisos" style="flex:none;width:42px;height:42px;border-radius:11px;border:1.5px solid ${on ? '#FFD2DF' : '#E6EBF0'};background:${on ? '#FFF1F5' : '#fff'};cursor:pointer;font-size:17px;line-height:1;">${on ? '🔔' : '🔕'}</button>`;
+}
+function showToast(title, body, m) {
+  let host = document.getElementById('toast-host');
+  if (!host) {
+    host = document.createElement('div');
+    host.id = 'toast-host';
+    host.style.cssText = 'position:fixed;z-index:80;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;max-width:340px;width:calc(100vw - 32px);pointer-events:none;';
+    document.body.appendChild(host);
+  }
+  const el = document.createElement('div');
+  el.style.cssText = 'pointer-events:auto;background:#fff;border:1px solid #EDF1F6;border-left:4px solid #FF2D7E;border-radius:14px;padding:13px 15px;box-shadow:0 18px 40px -18px rgba(11,27,43,.5);cursor:pointer;transform:translateX(120%);transition:transform .35s cubic-bezier(.2,.8,.2,1);';
+  el.innerHTML = `<div style="font-family:'Archivo';font-weight:800;font-size:14px;${body ? 'margin-bottom:3px;' : ''}">${esc(title)}</div>${body ? `<div style="font-size:13px;color:#5B6B7B;">${esc(body)}</div>` : ''}`;
+  el.addEventListener('click', () => {
+    if (m && LIVE_BY_FID.has(m.id)) { state.open = openLive(LIVE_BY_FID.get(m.id)); renderApp(); }
+    el.remove();
+  });
+  host.appendChild(el);
+  requestAnimationFrame(() => { el.style.transform = 'translateX(0)'; });
+  setTimeout(() => { el.style.transform = 'translateX(120%)'; setTimeout(() => el.remove(), 380); }, 6500);
+}
+function notify(title, body, m) {
+  if (!alertsOn()) return;
+  showToast(title, body, m);
+  if ('Notification' in window && Notification.permission === 'granted') {
+    try { new Notification(title, { body, tag: m ? 'wc-' + m.id : undefined }); } catch {}
+  }
+}
+// Goles e inicios de partido: compara el live anterior con el nuevo.
+function detectAndNotify(oldList, newList) {
+  if (!alertsOn()) return;
+  const oldById = new Map((oldList || []).map(x => [x.id, x]));
+  for (const m of (newList || [])) {
+    const o = oldById.get(m.id);
+    if (!o) {
+      if ((m.homeScore || 0) + (m.awayScore || 0) === 0)
+        notify('🟢 Empieza el partido', `${metaFor(m.home).es} vs ${metaFor(m.away).es}`, m);
+      continue;
+    }
+    if ((m.homeScore || 0) + (m.awayScore || 0) > (o.homeScore || 0) + (o.awayScore || 0)) {
+      const scoredHome = (m.homeScore || 0) > (o.homeScore || 0);
+      const team = scoredHome ? metaFor(m.home) : metaFor(m.away);
+      const goals = (m.events || []).filter(e => e.type === 'Goal');
+      const last = goals[goals.length - 1];
+      const who = last && last.player ? ` · ${last.player} ${last.minute || ''}'` : '';
+      notify(`⚽ ¡Gol de ${team.es}!`, `${metaFor(m.home).es} ${m.homeScore ?? 0}-${m.awayScore ?? 0} ${metaFor(m.away).es}${who}`, m);
+    }
+  }
+}
+
 const VALID_SCREENS = ['inicio', 'calendario', 'grupos', 'bracket', 'resultados'];
 function applyHash() {
   const h = location.hash.replace('#', '');
@@ -142,11 +196,14 @@ function header() {
         </div>
       </div>
       <nav id="main-nav" class="main-nav">${nav}</nav>
-      <button data-action="go" data-screen="grupos" class="mi-seleccion" style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 13px;border-radius:11px;border:1.5px solid #FFD2DF;background:#FFF1F5;cursor:pointer;">
-        ${badge(metaFor(MY), { w: 30, h: 21, fs: 10, r: 5 })}
-        <span style="font-size:13px;font-weight:700;color:#C8102E;">Mi selección</span>
-      </button>
-      <button data-action="toggleMenu" class="nav-toggle" aria-label="Abrir menú" style="font-size:19px;">☰</button>
+      <div class="header-right">
+        ${bellButton()}
+        <button data-action="go" data-screen="grupos" class="mi-seleccion" style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 13px;border-radius:11px;border:1.5px solid #FFD2DF;background:#FFF1F5;cursor:pointer;">
+          ${badge(metaFor(MY), { w: 30, h: 21, fs: 10, r: 5 })}
+          <span style="font-size:13px;font-weight:700;color:#C8102E;">Mi selección</span>
+        </button>
+        <button data-action="toggleMenu" class="nav-toggle" aria-label="Abrir menú" style="font-size:19px;">☰</button>
+      </div>
     </div>
   </header>`;
 }
@@ -179,7 +236,9 @@ async function refreshLive() {
   const l = await loadJSON('./data/live.json');
   if (!l) return;
   if (JSON.stringify(l.live) === JSON.stringify(LIVE.live)) return; // sin cambios
+  const prev = LIVE.live || [];
   LIVE = l; buildLiveMaps();
+  detectAndNotify(prev, LIVE.live || []); // avisos de gol / inicio de partido
   // Si hay un modal en vivo abierto, lo refrescamos con los datos nuevos.
   if (state.open && state.open.__live) {
     const fresh = LIVE_BY_FID.get(state.open.id);
@@ -689,6 +748,16 @@ document.addEventListener('click', e => {
   if (!t) return;
   const action = t.getAttribute('data-action');
   if (action === 'toggleMenu') { document.getElementById('main-nav')?.classList.toggle('open'); return; }
+  if (action === 'toggleAlerts') {
+    const turningOn = !alertsOn();
+    try { localStorage.setItem('wc26-alerts', turningOn ? 'on' : 'off'); } catch {}
+    if (turningOn && 'Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission().catch(() => {});
+    }
+    renderApp();
+    showToast(turningOn ? '🔔 Avisos activados' : '🔕 Avisos silenciados', turningOn ? 'Te avisaré de goles e inicios de partido.' : '');
+    return;
+  }
   if (action === 'go') return go(t.getAttribute('data-screen'));
   if (action === 'toggleEsp') { state.onlyEsp = !state.onlyEsp; return renderApp(); }
   if (action === 'clearResFilters') { state.resTeam = 'all'; state.resDate = 'all'; teamQuery = ''; return renderApp(); }

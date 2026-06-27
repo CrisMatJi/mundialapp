@@ -50,7 +50,8 @@ button { font-family: inherit; }
 .combo-opt:hover { background: #F3F5FA; }
 
 /* Cabecera responsiva: barra en escritorio, menú hamburguesa en móvil */
-.header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 18px; }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 14px; position: relative; justify-content: space-between; }
+.header-right { display: flex; align-items: center; gap: 10px; flex: none; }
 .main-nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; padding: 2px; }
 .main-nav::-webkit-scrollbar { display: none; }
 .nav-toggle { display: none; }
@@ -67,8 +68,8 @@ button { font-family: inherit; }
   .main-nav button { text-align: left; }
   .mi-seleccion { display: none !important; }
   .nav-toggle {
-    display: inline-flex; align-items: center; justify-content: center; margin-left: auto;
-    flex: none; width: 44px; height: 44px; border-radius: 12px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: none; width: 42px; height: 42px; border-radius: 12px;
     border: 1.5px solid #E6EBF0; background: #F3F5FA; cursor: pointer; color: #0B1B2B;
   }
   .nav-toggle:hover { background: #E9EDF3; }
