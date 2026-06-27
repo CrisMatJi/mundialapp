@@ -14,11 +14,13 @@ const BRACKET_ORDER = [
 ];
 
 // --- Estado y datos ----------------------------------------------------------
-const state = { screen: 'inicio', open: null, onlyEsp: false };
+const state = { screen: 'inicio', open: null, onlyEsp: false, resTeam: 'all', resDate: 'all' };
 let MATCHES = [];          // enriquecidos
 let BY_ID = new Map();
 let STANDINGS = { groups: [] };
 let LIVE = { live: [] };
+let LIVE_BY_FID = new Map();   // id de fixture (API) -> entrada en vivo
+let LIVE_BY_PAIR = new Map();  // "home|away" -> entrada en vivo (para solapar sobre fixtures)
 let FLAGS = new Map();     // nombre de selección -> URL de bandera (flagcdn)
 let UPCOMING = [];
 let NEXT_ESP = null;
@@ -39,6 +41,7 @@ function fmt(iso) {
   return { day, mon, time, label: `${day} ${mon} · ${time}`, full };
 }
 const roundEs = r => ROUND_ES[r] || (r && r.startsWith('Matchday') ? 'Fase de grupos' : (r || ''));
+const capFirst = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 
 // Bandera del país (o caja de color con código si es un "Por definir").
 function badge(meta, o = {}) {
@@ -72,6 +75,7 @@ async function init() {
   STANDINGS = standings || { groups: [] };
   LIVE = live || { live: [] };
   FLAGS = new Map((teamsDoc?.teams || []).map(t => [t.name, t.flag]).filter(([, f]) => f));
+  buildLiveMaps();
   MATCHES = (matchesDoc?.matches || []).map(enrich);
   BY_ID = new Map(MATCHES.map(m => [m.id, m]));
   UPCOMING = MATCHES.filter(m => m.status === 'scheduled' && m.kickoff).sort((x, y) => x.kickoff.localeCompare(y.kickoff));
@@ -81,11 +85,27 @@ async function init() {
 
   applyHash();
   window.addEventListener('hashchange', applyHash);
-  // Enlace directo a un partido: ?match=<id> abre su ficha al cargar.
-  const mq = new URLSearchParams(location.search).get('match');
-  if (mq && BY_ID.has(Number(mq))) { state.open = BY_ID.get(Number(mq)); renderApp(); }
+  // Enlaces directos: ?match=<id> abre una ficha; ?live=<fid> abre un partido en vivo.
+  const params = new URLSearchParams(location.search);
+  const mq = params.get('match'), lq = params.get('live');
+  if (lq && LIVE_BY_FID.has(Number(lq))) { state.open = openLive(LIVE_BY_FID.get(Number(lq))); renderApp(); }
+  else if (mq && BY_ID.has(Number(mq))) { state.open = BY_ID.get(Number(mq)); renderApp(); }
   startCountdown();
-  setInterval(refreshLive, 60000);
+  setInterval(refreshLive, 30000);
+}
+
+// --- En vivo: índices y solapado ---------------------------------------------
+function buildLiveMaps() {
+  LIVE_BY_FID = new Map((LIVE.live || []).map(x => [x.id, x]));
+  LIVE_BY_PAIR = new Map();
+  for (const x of (LIVE.live || [])) {
+    LIVE_BY_PAIR.set(`${x.home}|${x.away}`, x);
+    LIVE_BY_PAIR.set(`${x.away}|${x.home}`, x);
+  }
+}
+function liveFor(m) { return LIVE_BY_PAIR.get(`${m.home}|${m.away}`) || null; }
+function openLive(item) {
+  return { ...item, __live: true, a: metaFor(item.home), b: metaFor(item.away) };
 }
 
 const VALID_SCREENS = ['inicio', 'calendario', 'grupos', 'bracket', 'resultados'];
@@ -132,18 +152,22 @@ function liveBannerHTML() {
   const items = LIVE.live || [];
   if (!items.length) return `<div id="live-banner"></div>`;
   const pills = items.map(x =>
-    `<span style="display:inline-flex;align-items:center;gap:8px;"><span class="live-dot-css" style="width:9px;height:9px;border-radius:50%;background:#fff;"></span>${esc(x.home)} ${x.homeScore ?? 0}-${x.awayScore ?? 0} ${esc(x.away)} (${x.minute ?? ''}')</span>`
+    `<span data-action="open-live" data-fid="${x.id}" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;"><span class="live-dot-css" style="width:9px;height:9px;border-radius:50%;background:#fff;"></span>${esc(metaFor(x.home).es)} ${x.homeScore ?? 0}-${x.awayScore ?? 0} ${esc(metaFor(x.away).es)} (${x.minute ?? ''}')</span>`
   ).join('');
   return `<div id="live-banner" style="background:linear-gradient(90deg,#FF2D7E,#C9184A);color:#fff;font-weight:700;padding:10px 0;">
     <div style="max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;">${pills}</div></div>`;
 }
-function refreshLive() {
-  loadJSON('./data/live.json').then(l => {
-    if (!l) return;
-    LIVE = l;
-    const node = document.getElementById('live-banner');
-    if (node) node.outerHTML = liveBannerHTML();
-  });
+async function refreshLive() {
+  const l = await loadJSON('./data/live.json');
+  if (!l) return;
+  if (JSON.stringify(l.live) === JSON.stringify(LIVE.live)) return; // sin cambios
+  LIVE = l; buildLiveMaps();
+  // Si hay un modal en vivo abierto, lo refrescamos con los datos nuevos.
+  if (state.open && state.open.__live) {
+    const fresh = LIVE_BY_FID.get(state.open.id);
+    state.open = fresh ? openLive(fresh) : null;
+  }
+  renderApp();
 }
 
 // --- Pantalla: Inicio --------------------------------------------------------
@@ -193,10 +217,18 @@ function nextMatchCard() {
     </div></div>`;
 }
 function miniMatchRow(m) {
-  return `<div data-action="open" data-id="${m.id}" class="hov-slide" style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:14px;background:${m.isEsp ? '#FFF7FA' : '#F8FAFD'};cursor:pointer;border:1px solid ${m.isEsp ? '#FFE0EA' : '#EDF1F6'};">
-    <div style="font-size:11px;font-weight:800;color:#8A98A8;width:54px;line-height:1.3;flex:none;">${m.f.day} ${m.f.mon}<br><span style="color:#0B1B2B;">${m.f.time}</span></div>
+  const lv = liveFor(m);
+  const action = lv ? `data-action="open-live" data-fid="${lv.id}"` : `data-action="open" data-id="${m.id}"`;
+  const dateCol = lv
+    ? `<div style="font-size:11px;font-weight:800;color:#FF2D7E;width:54px;flex:none;display:flex;align-items:center;gap:5px;"><span class="live-dot-css" style="width:7px;height:7px;border-radius:50%;background:#FF2D7E;"></span>${lv.minute ?? ''}'</div>`
+    : `<div style="font-size:11px;font-weight:800;color:#8A98A8;width:54px;line-height:1.3;flex:none;">${m.f.day} ${m.f.mon}<br><span style="color:#0B1B2B;">${m.f.time}</span></div>`;
+  const mid = lv
+    ? `<span style="font-family:'Archivo';font-weight:900;font-size:14px;color:#FF2D7E;">${lv.homeScore ?? 0}-${lv.awayScore ?? 0}</span>`
+    : `<span style="font-size:11px;font-weight:800;color:#C9D4E0;">vs</span>`;
+  return `<div ${action} class="hov-slide" style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:14px;background:${lv ? '#FFF1F5' : (m.isEsp ? '#FFF7FA' : '#F8FAFD')};cursor:pointer;border:1px solid ${lv ? '#FFD2DF' : (m.isEsp ? '#FFE0EA' : '#EDF1F6')};">
+    ${dateCol}
     <div style="display:flex;align-items:center;gap:7px;flex:1;min-width:0;">${badge(m.a)}<span style="font-size:13px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.a.es)}</span></div>
-    <span style="font-size:11px;font-weight:800;color:#C9D4E0;">vs</span>
+    ${mid}
     <div style="display:flex;align-items:center;gap:7px;flex:1;min-width:0;justify-content:flex-end;"><span style="font-size:13px;font-weight:700;flex:1;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.b.es)}</span>${badge(m.b)}</div>
   </div>`;
 }
@@ -215,12 +247,40 @@ function groupMiniTable(g) {
     <div style="display:grid;grid-template-columns:24px 1fr 30px 30px 38px;gap:4px;font-size:10px;font-weight:800;color:#8A98A8;letter-spacing:.5px;padding:0 10px 6px;"><span>#</span><span>SELECCIÓN</span><span style="text-align:center;">PJ</span><span style="text-align:center;">DG</span><span style="text-align:center;">PTS</span></div>
     ${rows}</div>`;
 }
+// Cards de partidos EN VIVO (sustituyen a las estadísticas estáticas del torneo).
+function liveCard(item) {
+  const a = metaFor(item.home), b = metaFor(item.away);
+  const min = item.minute != null ? item.minute + "'" : (item.statusLong || item.status || 'En juego');
+  const side = (meta, score) => `<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+    <span style="display:flex;align-items:center;gap:9px;min-width:0;">${badge(meta, { w: 36, h: 25, fs: 10, r: 6 })}<span style="font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(meta.es)}</span></span>
+    <span style="font-family:'Archivo';font-weight:900;font-size:24px;">${score ?? 0}</span></div>`;
+  return `<div data-action="open-live" data-fid="${item.id}" class="hov-up" style="background:#fff;border:1.5px solid #FF2D7E;border-radius:18px;padding:18px;cursor:pointer;box-shadow:0 0 0 3px #FF2D7E14,0 14px 34px -22px rgba(255,45,126,.55);">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <span style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.5px;color:#FF2D7E;"><span class="live-dot-css" style="width:8px;height:8px;border-radius:50%;background:#FF2D7E;"></span>EN VIVO</span>
+      <span style="font-family:'Archivo';font-weight:800;font-size:13px;color:#FF2D7E;">${esc(min)}</span></div>
+    <div style="display:flex;flex-direction:column;gap:9px;">${side(a, item.homeScore)}${side(b, item.awayScore)}</div>
+    <div style="margin-top:12px;text-align:right;font-size:11px;font-weight:700;color:#7C4DFF;">Ver estadísticas →</div></div>`;
+}
+function liveSection() {
+  const items = LIVE.live || [];
+  if (!items.length) {
+    const nx = UPCOMING[0];
+    const hint = nx ? `Próximo: ${esc(metaFor(nx.home).es)} vs ${esc(metaFor(nx.away).es)} · ${esc(nx.f.label)}` : '';
+    return `<div data-anim style="margin-bottom:44px;background:#fff;border:1px dashed #D7DEE8;border-radius:18px;padding:22px;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:9px;font-weight:700;color:#5B6B7B;"><span style="width:9px;height:9px;border-radius:50%;background:#C9D4E0;"></span>Ahora mismo no hay partidos en directo</div>
+      ${hint ? `<div style="margin-top:7px;font-size:13px;color:#8A98A8;">${hint}</div>` : ''}</div>`;
+  }
+  return `<div data-anim style="margin-bottom:44px;">
+    <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px;">
+      <span class="live-dot-css" style="width:11px;height:11px;border-radius:50%;background:#FF2D7E;box-shadow:0 0 0 4px #FF2D7E22;"></span>
+      <h3 style="margin:0;font-family:'Archivo';font-weight:900;font-size:21px;letter-spacing:.3px;">Se está jugando</h3>
+      <span style="font-size:12px;font-weight:700;color:#FF2D7E;background:#FF2D7E14;padding:3px 10px;border-radius:999px;">${items.length} en directo</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;">${items.map(liveCard).join('')}</div></div>`;
+}
 function screenInicio() {
   const live = (LIVE.live || []).length > 0;
   const todays = UPCOMING.slice(0, 5);
-  const statN = [[48, 'Selecciones', '#FF2D7E'], [MATCHES.length || 104, 'Partidos', '#7C4DFF'], [16, 'Sedes', '#1D6FF2'], [3, 'Países anfitriones', '#16C784']];
-  const stats = statN.map(([n, l, c]) =>
-    `<div style="background:#fff;border:1px solid #EDF1F6;border-radius:20px;padding:22px;text-align:center;box-shadow:0 10px 30px -22px rgba(11,27,43,.4);"><div data-count="${n}" style="font-family:'Archivo';font-weight:900;font-size:clamp(34px,5vw,52px);line-height:1;color:${c};letter-spacing:-1.5px;">${n}</div><div style="font-size:13px;font-weight:600;color:#5B6B7B;margin-top:8px;">${l}</div></div>`).join('');
   const next = nextMatchCard();
   const myGroupCard = MY_GROUP ? `
     <div data-anim style="background:#fff;border:1px solid #EDF1F6;border-radius:22px;padding:24px;box-shadow:0 14px 40px -28px rgba(11,27,43,.5);">
@@ -236,7 +296,7 @@ function screenInicio() {
     <h1 data-anim style="text-align:center;font-family:'Archivo';font-weight:900;font-size:clamp(48px,11vw,138px);line-height:.86;letter-spacing:-3px;margin:14px 0 6px;background:linear-gradient(100deg,#FF2D7E,#7C4DFF,#1D6FF2,#16C784,#FF2D7E);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite;">MUNDIAL 26</h1>
     <p data-anim style="text-align:center;font-size:clamp(15px,2vw,19px);color:#5B6B7B;max-width:560px;margin:0 auto 36px;font-weight:500;">Toda la información del torneo en un vistazo. Sigue a ${esc(metaFor(MY).es)}, consulta grupos, eliminatorias y resultados en tiempo real.</p>
     ${next}
-    <div data-anim style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:44px;">${stats}</div>
+    ${liveSection()}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
       <div data-anim style="background:#fff;border:1px solid #EDF1F6;border-radius:22px;padding:24px;box-shadow:0 14px 40px -28px rgba(11,27,43,.5);">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
@@ -251,13 +311,18 @@ function screenInicio() {
 
 // --- Pantalla: Calendario ----------------------------------------------------
 function fixtureRow(m) {
-  return `<div data-anim data-action="open" data-id="${m.id}" class="hov-lift" style="display:flex;align-items:center;gap:clamp(10px,2vw,22px);padding:16px clamp(14px,2vw,22px);border-radius:18px;background:${m.isEsp ? '#FFF7FA' : '#fff'};border:1px solid ${m.isEsp ? '#FFD2DF' : '#EDF1F6'};cursor:pointer;box-shadow:0 8px 26px -22px rgba(11,27,43,.5);">
-    <div style="text-align:center;flex:none;width:62px;border-right:1px solid #E6EBF0;padding-right:clamp(8px,2vw,18px);">
-      <div style="font-family:'Archivo';font-weight:900;font-size:16px;">${m.f.day}</div>
-      <div style="font-size:10px;font-weight:700;color:#8A98A8;letter-spacing:1px;">${m.f.mon}</div>
-      <div style="font-size:12px;font-weight:700;color:#7C4DFF;margin-top:4px;">${m.f.time}</div></div>
+  const lv = liveFor(m);
+  const action = lv ? `data-action="open-live" data-fid="${lv.id}"` : `data-action="open" data-id="${m.id}"`;
+  const dateCol = lv
+    ? `<div style="text-align:center;flex:none;width:62px;border-right:1px solid #E6EBF0;padding-right:clamp(8px,2vw,18px);"><div style="font-size:10px;font-weight:800;color:#FF2D7E;display:flex;align-items:center;justify-content:center;gap:4px;"><span class="live-dot-css" style="width:7px;height:7px;border-radius:50%;background:#FF2D7E;"></span>VIVO</div><div style="font-family:'Archivo';font-weight:900;font-size:15px;color:#FF2D7E;margin-top:3px;">${lv.minute ?? ''}'</div></div>`
+    : `<div style="text-align:center;flex:none;width:62px;border-right:1px solid #E6EBF0;padding-right:clamp(8px,2vw,18px);"><div style="font-family:'Archivo';font-weight:900;font-size:16px;">${m.f.day}</div><div style="font-size:10px;font-weight:700;color:#8A98A8;letter-spacing:1px;">${m.f.mon}</div><div style="font-size:12px;font-weight:700;color:#7C4DFF;margin-top:4px;">${m.f.time}</div></div>`;
+  const mid = lv
+    ? `<span style="font-family:'Archivo';font-weight:900;font-size:clamp(16px,2vw,20px);color:#FF2D7E;flex:none;">${lv.homeScore ?? 0} - ${lv.awayScore ?? 0}</span>`
+    : `<span style="font-family:'Archivo';font-weight:900;font-size:13px;color:#C9D4E0;flex:none;">VS</span>`;
+  return `<div data-anim ${action} class="hov-lift" style="display:flex;align-items:center;gap:clamp(10px,2vw,22px);padding:16px clamp(14px,2vw,22px);border-radius:18px;background:${lv ? '#FFF1F5' : (m.isEsp ? '#FFF7FA' : '#fff')};border:1px solid ${lv ? '#FFD2DF' : (m.isEsp ? '#FFD2DF' : '#EDF1F6')};cursor:pointer;box-shadow:0 8px 26px -22px rgba(11,27,43,.5);">
+    ${dateCol}
     <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;"><span style="font-size:clamp(13px,1.7vw,16px);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.a.es)}</span>${badge(m.a, { w: 40, h: 28, fs: 11, r: 7 })}</div>
-    <span style="font-family:'Archivo';font-weight:900;font-size:13px;color:#C9D4E0;flex:none;">VS</span>
+    ${mid}
     <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">${badge(m.b, { w: 40, h: 28, fs: 11, r: 7 })}<span style="font-size:clamp(13px,1.7vw,16px);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.b.es)}</span></div>
   </div>`;
 }
@@ -337,18 +402,42 @@ function resultCard(m) {
   const side = (meta, score, win) => `<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
     <span style="display:flex;align-items:center;gap:9px;min-width:0;">${badge(meta, { w: 36, h: 25, fs: 10, r: 6 })}<span style="font-size:15px;font-weight:${win ? 800 : 600};">${esc(meta.es)}</span></span>
     <span style="font-family:'Archivo';font-weight:900;font-size:22px;color:${win ? '#0B1B2B' : '#A6B2C0'};">${score}</span></div>`;
+  const fecha = m.f.full !== 'Por definir' ? `${m.f.full} · ${m.f.time}` : '';
   return `<div data-anim data-action="open" data-id="${m.id}" class="hov-up" style="background:#fff;border:1px solid #EDF1F6;border-radius:18px;padding:18px;cursor:pointer;${espGlow}">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
       <span style="font-size:10px;font-weight:800;letter-spacing:1px;color:#8A98A8;">${esc(m.group ? 'GRUPO ' + m.group : roundEs(m.round))}</span>
       <span style="font-size:10px;font-weight:800;color:#16C784;padding:3px 8px;border-radius:6px;background:#16C7841a;">FINAL</span></div>
-    <div style="display:flex;flex-direction:column;gap:9px;">${side(m.a, sa, aw)}${side(m.b, sb, bw)}</div></div>`;
+    <div style="display:flex;flex-direction:column;gap:9px;">${side(m.a, sa, aw)}${side(m.b, sb, bw)}</div>
+    ${fecha ? `<div style="margin-top:12px;padding-top:10px;border-top:1px solid #F0F3F7;font-size:11px;color:#8A98A8;font-weight:600;">📅 ${esc(capFirst(fecha))}</div>` : ''}</div>`;
 }
 function screenResultados() {
-  const done = MATCHES.filter(m => m.status === 'finished').sort((a, b) => (b.kickoff || '').localeCompare(a.kickoff || ''));
+  const done = MATCHES.filter(m => m.status === 'finished');
+  // Opciones de filtro
+  const teamSet = new Set();
+  done.forEach(m => { teamSet.add(m.home); teamSet.add(m.away); });
+  const teamOpts = [...teamSet].map(n => ({ n, es: metaFor(n).es })).sort((a, b) => a.es.localeCompare(b.es, 'es'));
+  const dateOpts = [...new Set(done.map(m => m.date).filter(Boolean))].sort((a, b) => b.localeCompare(a));
+
+  // Aplicar filtros
+  let list = done.slice().sort((a, b) => (b.kickoff || '').localeCompare(a.kickoff || ''));
+  if (state.resTeam !== 'all') list = list.filter(m => m.home === state.resTeam || m.away === state.resTeam);
+  if (state.resDate !== 'all') list = list.filter(m => m.date === state.resDate);
+
+  const selStyle = 'padding:9px 13px;border-radius:11px;border:1.5px solid #E6EBF0;background:#fff;color:#0B1B2B;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer;max-width:100%;';
+  const teamSel = `<select data-filter="resTeam" style="${selStyle}"><option value="all">Todas las selecciones</option>${teamOpts.map(o => `<option value="${esc(o.n)}"${state.resTeam === o.n ? ' selected' : ''}>${esc(o.es)}</option>`).join('')}</select>`;
+  const dateSel = `<select data-filter="resDate" style="${selStyle}"><option value="all">Todas las fechas</option>${dateOpts.map(d => `<option value="${d}"${state.resDate === d ? ' selected' : ''}>${esc(fmt(d + 'T12:00:00Z').full)}</option>`).join('')}</select>`;
+  const filtered = state.resTeam !== 'all' || state.resDate !== 'all';
+  const clearBtn = filtered ? `<button data-action="clearResFilters" style="padding:9px 14px;border-radius:11px;border:1.5px solid #FFD2DF;background:#FFF1F5;color:#C8102E;font-weight:700;font-size:14px;cursor:pointer;">✕ Limpiar</button>` : '';
+
   return `<section data-screen style="padding-top:30px;">
-    <div data-anim style="margin-bottom:26px;"><h2 style="margin:0;font-family:'Archivo';font-weight:900;font-size:clamp(30px,5vw,46px);letter-spacing:-1.5px;">Resultados</h2>
-      <p style="margin:6px 0 0;color:#5B6B7B;font-weight:500;">${done.length} partidos jugados · marcadores finales</p></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;">${done.map(resultCard).join('')}</div></section>`;
+    <div data-anim style="margin-bottom:18px;"><h2 style="margin:0;font-family:'Archivo';font-weight:900;font-size:clamp(30px,5vw,46px);letter-spacing:-1.5px;">Resultados</h2>
+      <p style="margin:6px 0 0;color:#5B6B7B;font-weight:500;">${list.length} de ${done.length} partidos · marcadores finales</p></div>
+    <div data-anim style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px;">
+      ${teamSel}${dateSel}${clearBtn}
+    </div>
+    ${list.length
+      ? `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;">${list.map(resultCard).join('')}</div>`
+      : `<p style="color:#8A98A8;">No hay resultados con esos filtros.</p>`}</section>`;
 }
 
 // --- Modal de partido --------------------------------------------------------
@@ -356,9 +445,50 @@ function scorerLines(list, align) {
   if (!list.length) return '';
   return list.map(g => `<div style="font-size:12px;color:#5B6B7B;text-align:${align};">⚽ ${esc(g.name)} ${g.minute ? g.minute + "'" : ''}${g.penalty ? ' (p)' : ''}${g.owngoal ? ' (pp)' : ''}</div>`).join('');
 }
+// Escudo grande para el modal (compartido por la ficha normal y la de en vivo).
+function modalTeam(meta) {
+  return `<div style="text-align:center;flex:1;"><div style="width:74px;height:74px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 14px 26px -12px ${meta.color};">${flagFill(meta, 22)}</div><div style="font-weight:800;font-size:15px;margin-top:10px;">${esc(meta.es)}</div></div>`;
+}
+function modalShell(barGradient, body) {
+  return `<div data-action="close-backdrop" style="position:fixed;inset:0;z-index:60;background:rgba(11,27,43,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;">
+    <div style="position:relative;width:100%;max-width:460px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(11,27,43,.7);">
+      <div style="height:5px;background:${barGradient};"></div>
+      <button data-action="close" style="position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:none;background:#F3F5FA;cursor:pointer;font-size:17px;color:#5B6B7B;z-index:2;">✕</button>
+      <div style="padding:26px 26px 28px;">${body}</div></div></div>`;
+}
+// --- Modal EN VIVO (estadísticas en directo) ---------------------------------
+function eventIcon(ev) {
+  if (ev.type === 'Goal') return ev.detail && /own/i.test(ev.detail) ? '⚽(pp)' : '⚽';
+  if (ev.type === 'Card') return ev.detail && /red/i.test(ev.detail) ? '🟥' : '🟨';
+  if (ev.type === 'subst') return '🔁';
+  if (ev.type === 'Var') return '📺';
+  return '•';
+}
+function liveTimeline(events) {
+  if (!events || !events.length) return '<div style="text-align:center;color:#A6B2C0;font-size:13px;padding:6px 0;">El partido acaba de empezar · sin incidencias todavía</div>';
+  return events.slice().sort((a, b) => (a.minute || 0) - (b.minute || 0)).map(ev => {
+    const right = ev.side === 'away';
+    const who = ev.player ? esc(ev.player) : esc(ev.detail || '');
+    const min = ev.minute != null ? ` ${ev.minute}'` : '';
+    return `<div style="display:flex;justify-content:${right ? 'flex-end' : 'flex-start'};font-size:12px;color:#3A4A5C;padding:4px 0;border-bottom:1px solid #EDF1F6;">${right ? '' : eventIcon(ev) + ' '}${who}${min}${right ? ' ' + eventIcon(ev) : ''}</div>`;
+  }).join('');
+}
+function liveModalHTML(m) {
+  const center = `<div style="font-family:'Archivo';font-weight:900;font-size:32px;letter-spacing:1px;">${m.homeScore ?? 0} - ${m.awayScore ?? 0}</div>
+    <div style="margin-top:5px;font-size:12px;font-weight:800;color:#FF2D7E;display:inline-flex;align-items:center;gap:6px;justify-content:center;"><span class="live-dot-css" style="width:7px;height:7px;border-radius:50%;background:#FF2D7E;"></span>${m.minute != null ? m.minute + "'" : esc(m.statusLong || 'EN VIVO')}</div>`;
+  const body = `
+    <div style="text-align:center;font-size:12px;font-weight:800;letter-spacing:1.5px;color:#FF2D7E;">EN VIVO</div>
+    <div style="text-align:center;font-size:13px;color:#8A98A8;font-weight:600;margin-top:6px;">${esc(m.venue || '')}</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin:24px 0;">${modalTeam(m.a)}<div style="text-align:center;flex:none;">${center}</div>${modalTeam(m.b)}</div>
+    <div style="background:#F3F5FA;border-radius:16px;padding:16px 18px;">
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#8A98A8;margin-bottom:10px;text-align:center;">INCIDENCIAS EN VIVO</div>
+      ${liveTimeline(m.events)}</div>`;
+  return modalShell('linear-gradient(90deg,#FF2D7E,#C9184A)', body);
+}
 function modalHTML() {
   if (!state.open) return '';
   const m = state.open;
+  if (m.__live) return liveModalHTML(m);
   const finished = m.status === 'finished';
   const center = finished
     ? `<div style="font-family:'Archivo';font-weight:900;font-size:30px;letter-spacing:1px;">${m.score.ft[0]} - ${m.score.ft[1]}</div>`
@@ -374,17 +504,12 @@ function modalHTML() {
     panel = `<div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#8A98A8;margin-bottom:10px;text-align:center;">INFORMACIÓN</div>
       <div style="font-size:13px;color:#5B6B7B;text-align:center;line-height:1.7;">${esc(m.f.full)} · ${esc(m.f.time)}<br>${esc(m.venue || 'Sede por confirmar')}</div>`;
   }
-  const big = (meta) => `<div style="text-align:center;flex:1;"><div style="width:74px;height:74px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 14px 26px -12px ${meta.color};">${flagFill(meta, 22)}</div><div style="font-weight:800;font-size:15px;margin-top:10px;">${esc(meta.es)}</div></div>`;
-  return `<div data-action="close-backdrop" style="position:fixed;inset:0;z-index:60;background:rgba(11,27,43,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;">
-    <div style="position:relative;width:100%;max-width:460px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(11,27,43,.7);">
-      <div style="height:5px;background:linear-gradient(90deg,#FF2D7E,#7C4DFF,#1D6FF2,#16C784);"></div>
-      <button data-action="close" style="position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:none;background:#F3F5FA;cursor:pointer;font-size:17px;color:#5B6B7B;z-index:2;">✕</button>
-      <div style="padding:26px 26px 28px;">
-        <div style="text-align:center;font-size:12px;font-weight:800;letter-spacing:1.5px;color:#7C4DFF;">${esc(m.group ? 'Grupo ' + m.group : roundEs(m.round))}</div>
-        <div style="text-align:center;font-size:13px;color:#8A98A8;font-weight:600;margin-top:6px;">${esc(m.f.full)} · ${esc(m.venue || '')}</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin:24px 0;">${big(m.a)}<div style="text-align:center;flex:none;">${center}</div>${big(m.b)}</div>
-        <div style="background:#F3F5FA;border-radius:16px;padding:16px 18px;">${panel}</div>
-      </div></div></div>`;
+  const body = `
+    <div style="text-align:center;font-size:12px;font-weight:800;letter-spacing:1.5px;color:#7C4DFF;">${esc(m.group ? 'Grupo ' + m.group : roundEs(m.round))}</div>
+    <div style="text-align:center;font-size:13px;color:#8A98A8;font-weight:600;margin-top:6px;">${esc(capFirst(m.f.full))}${m.f.time ? ' · ' + esc(m.f.time) : ''}${m.venue ? ' · ' + esc(m.venue) : ''}</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin:24px 0;">${modalTeam(m.a)}<div style="text-align:center;flex:none;">${center}</div>${modalTeam(m.b)}</div>
+    <div style="background:#F3F5FA;border-radius:16px;padding:16px 18px;">${panel}</div>`;
+  return modalShell('linear-gradient(90deg,#FF2D7E,#7C4DFF,#1D6FF2,#16C784)', body);
 }
 
 // --- Render + eventos --------------------------------------------------------
@@ -439,9 +564,15 @@ document.addEventListener('click', e => {
   const action = t.getAttribute('data-action');
   if (action === 'go') return go(t.getAttribute('data-screen'));
   if (action === 'toggleEsp') { state.onlyEsp = !state.onlyEsp; return renderApp(); }
+  if (action === 'clearResFilters') { state.resTeam = 'all'; state.resDate = 'all'; return renderApp(); }
+  if (action === 'open-live') {
+    const it = LIVE_BY_FID.get(Number(t.getAttribute('data-fid')));
+    if (it) { state.open = openLive(it); renderApp(); }
+    return;
+  }
   if (action === 'open') {
     const m = BY_ID.get(Number(t.getAttribute('data-id')) || t.getAttribute('data-id'));
-    if (m) { state.open = m; renderApp(); }
+    if (m) { const lv = liveFor(m); state.open = lv ? openLive(lv) : m; renderApp(); }
     return;
   }
   if (action === 'close') { state.open = null; return renderApp(); }
@@ -450,6 +581,14 @@ document.addEventListener('click', e => {
     if (e.target === t) { state.open = null; renderApp(); }
     return;
   }
+});
+
+// Filtros de Resultados (selects nativos).
+document.addEventListener('change', e => {
+  const sel = e.target.closest('[data-filter]');
+  if (!sel) return;
+  state[sel.getAttribute('data-filter')] = sel.value;
+  renderApp();
 });
 
 init();
