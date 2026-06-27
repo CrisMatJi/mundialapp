@@ -1,18 +1,18 @@
 {
-  "updated": "2026-06-27T21:33:08.830Z",
+  "updated": "2026-06-27T22:39:40.505Z",
   "source": "api-football",
   "live": [
     {
       "id": 1489420,
-      "minute": 32,
-      "status": "1H",
-      "statusLong": "First Half",
+      "minute": 79,
+      "status": "2H",
+      "statusLong": "Second Half",
       "home": "Croatia",
       "away": "Ghana",
       "homeApi": "Croatia",
       "awayApi": "Ghana",
       "homeScore": 1,
-      "awayScore": 0,
+      "awayScore": 1,
       "venue": "Lincoln Financial Field",
       "round": "Group Stage - 3",
       "events": [
@@ -23,24 +23,187 @@
           "type": "Goal",
           "detail": "Normal Goal",
           "player": "P. Sucic",
+          "assist": "M. Kovacic"
+        },
+        {
+          "minute": 46,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "J. Adjetey",
+          "assist": "K. Peprah"
+        },
+        {
+          "minute": 46,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "E. Owusu",
+          "assist": "I. Fatawu"
+        },
+        {
+          "minute": 66,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "A. Budimir",
+          "assist": "I. Matanovic"
+        },
+        {
+          "minute": 68,
+          "extra": null,
+          "side": "home",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "I. Perisic",
           "assist": null
+        },
+        {
+          "minute": 71,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 3",
+          "player": "K. Sulemana",
+          "assist": "E. Nuamah"
+        },
+        {
+          "minute": 71,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 4",
+          "player": "J. Ayew",
+          "assist": "B. Thomas-Asante"
+        },
+        {
+          "minute": 73,
+          "extra": null,
+          "side": "away",
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "player": "D. Luckassen",
+          "assist": "E. Nuamah"
+        },
+        {
+          "minute": 78,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "M. Kovacic",
+          "assist": "M. Pasalic"
         }
       ]
     },
     {
       "id": 1489422,
-      "minute": 32,
-      "status": "1H",
-      "statusLong": "First Half",
+      "minute": 81,
+      "status": "2H",
+      "statusLong": "Second Half",
       "home": "Panama",
       "away": "England",
       "homeApi": "Panama",
       "awayApi": "England",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 2,
       "venue": "MetLife Stadium",
       "round": "Group Stage - 3",
-      "events": []
+      "events": [
+        {
+          "minute": 46,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "T. Rodriguez",
+          "assist": "J. Fajardo"
+        },
+        {
+          "minute": 53,
+          "extra": null,
+          "side": "home",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "J. Fajardo",
+          "assist": null
+        },
+        {
+          "minute": 60,
+          "extra": null,
+          "side": "away",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "J. Quansah",
+          "assist": null
+        },
+        {
+          "minute": 62,
+          "extra": null,
+          "side": "away",
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "player": "J. Bellingham",
+          "assist": "B. Saka"
+        },
+        {
+          "minute": 63,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "J. Quansah",
+          "assist": "D. Spence"
+        },
+        {
+          "minute": 63,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "B. Saka",
+          "assist": "N. Madueke"
+        },
+        {
+          "minute": 67,
+          "extra": null,
+          "side": "away",
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "player": "H. Kane",
+          "assist": "J. Bellingham"
+        },
+        {
+          "minute": 71,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 3",
+          "player": "J. Bellingham",
+          "assist": "E. Eze"
+        },
+        {
+          "minute": 71,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "J. Rodriguez",
+          "assist": "A. Londono"
+        },
+        {
+          "minute": 71,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 3",
+          "player": "Y. Barcenas",
+          "assist": "I. Diaz"
+        }
+      ]
     }
   ],
   "note": "ok"
