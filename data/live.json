@@ -1,6 +1,47 @@
 {
-  "updated": "2026-06-27T12:43:39.650Z",
+  "updated": "2026-06-27T21:33:08.830Z",
   "source": "api-football",
-  "live": [],
-  "note": "fuera de ventana de partidos"
+  "live": [
+    {
+      "id": 1489420,
+      "minute": 32,
+      "status": "1H",
+      "statusLong": "First Half",
+      "home": "Croatia",
+      "away": "Ghana",
+      "homeApi": "Croatia",
+      "awayApi": "Ghana",
+      "homeScore": 1,
+      "awayScore": 0,
+      "venue": "Lincoln Financial Field",
+      "round": "Group Stage - 3",
+      "events": [
+        {
+          "minute": 31,
+          "extra": null,
+          "side": "home",
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "player": "P. Sucic",
+          "assist": null
+        }
+      ]
+    },
+    {
+      "id": 1489422,
+      "minute": 32,
+      "status": "1H",
+      "statusLong": "First Half",
+      "home": "Panama",
+      "away": "England",
+      "homeApi": "Panama",
+      "awayApi": "England",
+      "homeScore": 0,
+      "awayScore": 0,
+      "venue": "MetLife Stadium",
+      "round": "Group Stage - 3",
+      "events": []
+    }
+  ],
+  "note": "ok"
 }
