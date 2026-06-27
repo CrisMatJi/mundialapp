@@ -19,6 +19,7 @@ let MATCHES = [];          // enriquecidos
 let BY_ID = new Map();
 let STANDINGS = { groups: [] };
 let LIVE = { live: [] };
+let FLAGS = new Map();     // nombre de selección -> URL de bandera (flagcdn)
 let UPCOMING = [];
 let NEXT_ESP = null;
 let HERO = null;           // partido destacado del hero (España si juega, si no el próximo del torneo)
@@ -39,9 +40,18 @@ function fmt(iso) {
 }
 const roundEs = r => ROUND_ES[r] || (r && r.startsWith('Matchday') ? 'Fase de grupos' : (r || ''));
 
+// Bandera del país (o caja de color con código si es un "Por definir").
 function badge(meta, o = {}) {
   const { w = 34, h = 23, fs = 10, r = 6 } = o;
+  const flag = FLAGS.get(meta.name);
+  if (flag) return `<img src="${flag}" alt="${esc(meta.es)}" width="${w}" height="${h}" loading="lazy" style="width:${w}px;height:${h}px;border-radius:${r}px;object-fit:cover;flex:none;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(11,27,43,.12);">`;
   return `<span style="display:inline-flex;align-items:center;justify-content:center;width:${w}px;height:${h}px;border-radius:${r}px;font-family:'Archivo';font-weight:800;font-size:${fs}px;color:#fff;background:${meta.color};flex:none;">${esc(meta.code)}</span>`;
+}
+// Variante que rellena su contenedor al 100% (para los escudos grandes del hero/modal).
+function flagFill(meta, fs) {
+  const flag = FLAGS.get(meta.name);
+  if (flag) return `<img src="${flag}" alt="${esc(meta.es)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">`;
+  return `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:${meta.color};"><span style="font-family:'Archivo';font-weight:900;font-size:${fs}px;color:#fff;">${esc(meta.code)}</span></div>`;
 }
 
 function enrich(m) {
@@ -55,11 +65,13 @@ async function loadJSON(p) {
 }
 
 async function init() {
-  const [standings, matchesDoc, live] = await Promise.all([
-    loadJSON('./data/standings.json'), loadJSON('./data/matches.json'), loadJSON('./data/live.json')
+  const [standings, matchesDoc, live, teamsDoc] = await Promise.all([
+    loadJSON('./data/standings.json'), loadJSON('./data/matches.json'),
+    loadJSON('./data/live.json'), loadJSON('./data/teams.json')
   ]);
   STANDINGS = standings || { groups: [] };
   LIVE = live || { live: [] };
+  FLAGS = new Map((teamsDoc?.teams || []).map(t => [t.name, t.flag]).filter(([, f]) => f));
   MATCHES = (matchesDoc?.matches || []).map(enrich);
   BY_ID = new Map(MATCHES.map(m => [m.id, m]));
   UPCOMING = MATCHES.filter(m => m.status === 'scheduled' && m.kickoff).sort((x, y) => x.kickoff.localeCompare(y.kickoff));
@@ -142,8 +154,8 @@ function cdCell(key, grad, label) {
 }
 function teamBig(meta) {
   return `<div style="text-align:center;flex:1;max-width:200px;">
-    <div style="width:clamp(64px,9vw,96px);height:clamp(64px,9vw,96px);margin:0 auto;border-radius:22px;background:${meta.color};display:flex;align-items:center;justify-content:center;box-shadow:0 16px 30px -14px ${meta.color};">
-      <span style="font-family:'Archivo';font-weight:900;font-size:clamp(20px,2.6vw,28px);color:#fff;letter-spacing:.5px;">${esc(meta.code)}</span></div>
+    <div style="width:clamp(64px,9vw,96px);height:clamp(64px,9vw,96px);margin:0 auto;border-radius:22px;overflow:hidden;box-shadow:0 16px 30px -14px ${meta.color};">
+      ${flagFill(meta, 26)}</div>
     <div style="font-weight:800;font-size:clamp(15px,1.8vw,18px);margin-top:12px;">${esc(meta.es)}</div></div>`;
 }
 function nextMatchCard() {
@@ -362,7 +374,7 @@ function modalHTML() {
     panel = `<div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#8A98A8;margin-bottom:10px;text-align:center;">INFORMACIÓN</div>
       <div style="font-size:13px;color:#5B6B7B;text-align:center;line-height:1.7;">${esc(m.f.full)} · ${esc(m.f.time)}<br>${esc(m.venue || 'Sede por confirmar')}</div>`;
   }
-  const big = (meta) => `<div style="text-align:center;flex:1;"><div style="width:74px;height:74px;margin:0 auto;border-radius:20px;background:${meta.color};display:flex;align-items:center;justify-content:center;box-shadow:0 14px 26px -12px ${meta.color};"><span style="font-family:'Archivo';font-weight:900;font-size:22px;color:#fff;">${esc(meta.code)}</span></div><div style="font-weight:800;font-size:15px;margin-top:10px;">${esc(meta.es)}</div></div>`;
+  const big = (meta) => `<div style="text-align:center;flex:1;"><div style="width:74px;height:74px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 14px 26px -12px ${meta.color};">${flagFill(meta, 22)}</div><div style="font-weight:800;font-size:15px;margin-top:10px;">${esc(meta.es)}</div></div>`;
   return `<div data-action="close-backdrop" style="position:fixed;inset:0;z-index:60;background:rgba(11,27,43,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;">
     <div style="position:relative;width:100%;max-width:460px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(11,27,43,.7);">
       <div style="height:5px;background:linear-gradient(90deg,#FF2D7E,#7C4DFF,#1D6FF2,#16C784);"></div>
