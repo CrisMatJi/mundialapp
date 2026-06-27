@@ -1,0 +1,4225 @@
+{
+  "tournament": "World Cup 2026",
+  "source": "openfootball",
+  "updated": "2026-06-27T17:53:17.929Z",
+  "count": 104,
+  "matches": [
+    {
+      "id": 1,
+      "stage": "group",
+      "round": "Matchday 1",
+      "group": "A",
+      "date": "2026-06-11",
+      "time": "13:00 UTC-6",
+      "kickoff": "2026-06-11T19:00:00.000Z",
+      "venue": "Mexico City",
+      "home": "Mexico",
+      "away": "South Africa",
+      "homeCode": "mx",
+      "awayCode": "za",
+      "homeFlag": "https://flagcdn.com/mx.svg",
+      "awayFlag": "https://flagcdn.com/za.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Julián Quiñones",
+            "minute": "9",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Raúl Jiménez",
+            "minute": "67",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 2,
+      "stage": "group",
+      "round": "Matchday 1",
+      "group": "A",
+      "date": "2026-06-11",
+      "time": "20:00 UTC-6",
+      "kickoff": "2026-06-12T02:00:00.000Z",
+      "venue": "Guadalajara (Zapopan)",
+      "home": "South Korea",
+      "away": "Czech Republic",
+      "homeCode": "kr",
+      "awayCode": "cz",
+      "homeFlag": "https://flagcdn.com/kr.svg",
+      "awayFlag": "https://flagcdn.com/cz.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Hwang In-Beom",
+            "minute": "67",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Oh Hyeon-Gyu",
+            "minute": "80",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ladislav Krejcí",
+            "minute": "59",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "stage": "group",
+      "round": "Matchday 8",
+      "group": "A",
+      "date": "2026-06-18",
+      "time": "12:00 UTC-4",
+      "kickoff": "2026-06-18T16:00:00.000Z",
+      "venue": "Atlanta",
+      "home": "Czech Republic",
+      "away": "South Africa",
+      "homeCode": "cz",
+      "awayCode": "za",
+      "homeFlag": "https://flagcdn.com/cz.svg",
+      "awayFlag": "https://flagcdn.com/za.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Michal Sadílek",
+            "minute": "6",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Teboho Mokoena",
+            "minute": "83",
+            "penalty": true,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "stage": "group",
+      "round": "Matchday 8",
+      "group": "A",
+      "date": "2026-06-18",
+      "time": "19:00 UTC-6",
+      "kickoff": "2026-06-19T01:00:00.000Z",
+      "venue": "Guadalajara (Zapopan)",
+      "home": "Mexico",
+      "away": "South Korea",
+      "homeCode": "mx",
+      "awayCode": "kr",
+      "homeFlag": "https://flagcdn.com/mx.svg",
+      "awayFlag": "https://flagcdn.com/kr.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Luis Romo",
+            "minute": "50",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 5,
+      "stage": "group",
+      "round": "Matchday 14",
+      "group": "A",
+      "date": "2026-06-24",
+      "time": "19:00 UTC-6",
+      "kickoff": "2026-06-25T01:00:00.000Z",
+      "venue": "Mexico City",
+      "home": "Czech Republic",
+      "away": "Mexico",
+      "homeCode": "cz",
+      "awayCode": "mx",
+      "homeFlag": "https://flagcdn.com/cz.svg",
+      "awayFlag": "https://flagcdn.com/mx.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          3
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Mateo Chávez",
+            "minute": "55",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Julián Quiñones",
+            "minute": "61",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Álvaro Fidalgo",
+            "minute": "90+4",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "stage": "group",
+      "round": "Matchday 14",
+      "group": "A",
+      "date": "2026-06-24",
+      "time": "19:00 UTC-6",
+      "kickoff": "2026-06-25T01:00:00.000Z",
+      "venue": "Monterrey (Guadalupe)",
+      "home": "South Africa",
+      "away": "South Korea",
+      "homeCode": "za",
+      "awayCode": "kr",
+      "homeFlag": "https://flagcdn.com/za.svg",
+      "awayFlag": "https://flagcdn.com/kr.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Thapelo Maseko",
+            "minute": "63",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 7,
+      "stage": "group",
+      "round": "Matchday 2",
+      "group": "B",
+      "date": "2026-06-12",
+      "time": "15:00 UTC-4",
+      "kickoff": "2026-06-12T19:00:00.000Z",
+      "venue": "Toronto",
+      "home": "Canada",
+      "away": "Bosnia & Herzegovina",
+      "homeCode": "ca",
+      "awayCode": "ba",
+      "homeFlag": "https://flagcdn.com/ca.svg",
+      "awayFlag": "https://flagcdn.com/ba.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Cyle Larin",
+            "minute": "78",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Jovo Lukić",
+            "minute": "21",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "stage": "group",
+      "round": "Matchday 3",
+      "group": "B",
+      "date": "2026-06-13",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-13T19:00:00.000Z",
+      "venue": "San Francisco Bay Area (Santa Clara)",
+      "home": "Qatar",
+      "away": "Switzerland",
+      "homeCode": "qa",
+      "awayCode": "ch",
+      "homeFlag": "https://flagcdn.com/qa.svg",
+      "awayFlag": "https://flagcdn.com/ch.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Miro Muheim",
+            "minute": "90+4",
+            "penalty": false,
+            "owngoal": true
+          }
+        ],
+        "away": [
+          {
+            "name": "Breel Embolo",
+            "minute": "17",
+            "penalty": true,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "stage": "group",
+      "round": "Matchday 8",
+      "group": "B",
+      "date": "2026-06-18",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-18T19:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "Switzerland",
+      "away": "Bosnia & Herzegovina",
+      "homeCode": "ch",
+      "awayCode": "ba",
+      "homeFlag": "https://flagcdn.com/ch.svg",
+      "awayFlag": "https://flagcdn.com/ba.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          4,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Johan Manzambi",
+            "minute": "74",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Johan Manzambi",
+            "minute": "90",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Rubén Vargas",
+            "minute": "84",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Granit Xhaka",
+            "minute": "90+7",
+            "penalty": true,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ermin Mahmic",
+            "minute": "90+3",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "stage": "group",
+      "round": "Matchday 8",
+      "group": "B",
+      "date": "2026-06-18",
+      "time": "15:00 UTC-7",
+      "kickoff": "2026-06-18T22:00:00.000Z",
+      "venue": "Vancouver",
+      "home": "Canada",
+      "away": "Qatar",
+      "homeCode": "ca",
+      "awayCode": "qa",
+      "homeFlag": "https://flagcdn.com/ca.svg",
+      "awayFlag": "https://flagcdn.com/qa.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          6,
+          0
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Cyle Larin",
+            "minute": "16",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Jonathan David",
+            "minute": "29",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Jonathan David",
+            "minute": "45+3",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Nathan Saliba",
+            "minute": "64",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mohamed Manai",
+            "minute": "75",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Jonathan David",
+            "minute": "90+2",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 11,
+      "stage": "group",
+      "round": "Matchday 14",
+      "group": "B",
+      "date": "2026-06-24",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-24T19:00:00.000Z",
+      "venue": "Vancouver",
+      "home": "Switzerland",
+      "away": "Canada",
+      "homeCode": "ch",
+      "awayCode": "ca",
+      "homeFlag": "https://flagcdn.com/ch.svg",
+      "awayFlag": "https://flagcdn.com/ca.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Rubén Vargas",
+            "minute": "46",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Johan Manzambi",
+            "minute": "57",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Promise David",
+            "minute": "76",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "stage": "group",
+      "round": "Matchday 14",
+      "group": "B",
+      "date": "2026-06-24",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-24T19:00:00.000Z",
+      "venue": "Seattle",
+      "home": "Bosnia & Herzegovina",
+      "away": "Qatar",
+      "homeCode": "ba",
+      "awayCode": "qa",
+      "homeFlag": "https://flagcdn.com/ba.svg",
+      "awayFlag": "https://flagcdn.com/qa.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Kerim Alajbegovic",
+            "minute": "29",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mahmoud Abunada",
+            "minute": "34",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Ermin Mahmic",
+            "minute": "80",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Hassan Al-Haydos",
+            "minute": "42",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "stage": "group",
+      "round": "Matchday 3",
+      "group": "C",
+      "date": "2026-06-13",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-06-13T22:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "Brazil",
+      "away": "Morocco",
+      "homeCode": "br",
+      "awayCode": "ma",
+      "homeFlag": "https://flagcdn.com/br.svg",
+      "awayFlag": "https://flagcdn.com/ma.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Vinícius Júnior",
+            "minute": "32",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ismael Saibari",
+            "minute": "21",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "stage": "group",
+      "round": "Matchday 3",
+      "group": "C",
+      "date": "2026-06-13",
+      "time": "21:00 UTC-4",
+      "kickoff": "2026-06-14T01:00:00.000Z",
+      "venue": "Boston (Foxborough)",
+      "home": "Haiti",
+      "away": "Scotland",
+      "homeCode": "ht",
+      "awayCode": "gb-sct",
+      "homeFlag": "https://flagcdn.com/ht.svg",
+      "awayFlag": "https://flagcdn.com/gb-sct.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "John McGinn",
+            "minute": "28",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "stage": "group",
+      "round": "Matchday 9",
+      "group": "C",
+      "date": "2026-06-19",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-06-19T22:00:00.000Z",
+      "venue": "Boston (Foxborough)",
+      "home": "Scotland",
+      "away": "Morocco",
+      "homeCode": "gb-sct",
+      "awayCode": "ma",
+      "homeFlag": "https://flagcdn.com/gb-sct.svg",
+      "awayFlag": "https://flagcdn.com/ma.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Ismael Saibari",
+            "minute": "2",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "stage": "group",
+      "round": "Matchday 9",
+      "group": "C",
+      "date": "2026-06-19",
+      "time": "20:30 UTC-4",
+      "kickoff": "2026-06-20T00:30:00.000Z",
+      "venue": "Philadelphia",
+      "home": "Brazil",
+      "away": "Haiti",
+      "homeCode": "br",
+      "awayCode": "ht",
+      "homeFlag": "https://flagcdn.com/br.svg",
+      "awayFlag": "https://flagcdn.com/ht.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Matheus Cunha",
+            "minute": "23",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Matheus Cunha",
+            "minute": "36",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Vinícius Júnior",
+            "minute": "45+3",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 17,
+      "stage": "group",
+      "round": "Matchday 14",
+      "group": "C",
+      "date": "2026-06-24",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-06-24T22:00:00.000Z",
+      "venue": "Miami (Miami Gardens)",
+      "home": "Scotland",
+      "away": "Brazil",
+      "homeCode": "gb-sct",
+      "awayCode": "br",
+      "homeFlag": "https://flagcdn.com/gb-sct.svg",
+      "awayFlag": "https://flagcdn.com/br.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          3
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Vinícius Júnior",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Vinícius Júnior",
+            "minute": "45+3",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Matheus Cunha",
+            "minute": "60",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "stage": "group",
+      "round": "Matchday 14",
+      "group": "C",
+      "date": "2026-06-24",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-06-24T22:00:00.000Z",
+      "venue": "Atlanta",
+      "home": "Morocco",
+      "away": "Haiti",
+      "homeCode": "ma",
+      "awayCode": "ht",
+      "homeFlag": "https://flagcdn.com/ma.svg",
+      "awayFlag": "https://flagcdn.com/ht.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          4,
+          2
+        ],
+        "ht": [
+          2,
+          2
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Achraf Hakimi",
+            "minute": "39",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ismael Saibari",
+            "minute": "45+1",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Soufiane Rahimi",
+            "minute": "78",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Gessime Yassine",
+            "minute": "89",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Yassine Bounou",
+            "minute": "10",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Wilson Isidor",
+            "minute": "43",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "stage": "group",
+      "round": "Matchday 2",
+      "group": "D",
+      "date": "2026-06-12",
+      "time": "18:00 UTC-7",
+      "kickoff": "2026-06-13T01:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "USA",
+      "away": "Paraguay",
+      "homeCode": "us",
+      "awayCode": "py",
+      "homeFlag": "https://flagcdn.com/us.svg",
+      "awayFlag": "https://flagcdn.com/py.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          4,
+          1
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Damian Bobadilla",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Folarin Balogun",
+            "minute": "31",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Folarin Balogun",
+            "minute": "45+5",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Giovanni Reyna",
+            "minute": "90+8",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Mauricio",
+            "minute": "73",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "stage": "group",
+      "round": "Matchday 3",
+      "group": "D",
+      "date": "2026-06-13",
+      "time": "21:00 UTC-7",
+      "kickoff": "2026-06-14T04:00:00.000Z",
+      "venue": "Vancouver",
+      "home": "Australia",
+      "away": "Turkey",
+      "homeCode": "au",
+      "awayCode": "tr",
+      "homeFlag": "https://flagcdn.com/au.svg",
+      "awayFlag": "https://flagcdn.com/tr.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Nestory Irankunda",
+            "minute": "27",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Connor Metcalfe",
+            "minute": "75",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 21,
+      "stage": "group",
+      "round": "Matchday 9",
+      "group": "D",
+      "date": "2026-06-19",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-19T19:00:00.000Z",
+      "venue": "Seattle",
+      "home": "USA",
+      "away": "Australia",
+      "homeCode": "us",
+      "awayCode": "au",
+      "homeFlag": "https://flagcdn.com/us.svg",
+      "awayFlag": "https://flagcdn.com/au.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Cameron Burgess",
+            "minute": "11",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Alex Freeman",
+            "minute": "43",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 22,
+      "stage": "group",
+      "round": "Matchday 9",
+      "group": "D",
+      "date": "2026-06-19",
+      "time": "20:00 UTC-7",
+      "kickoff": "2026-06-20T03:00:00.000Z",
+      "venue": "San Francisco Bay Area (Santa Clara)",
+      "home": "Turkey",
+      "away": "Paraguay",
+      "homeCode": "tr",
+      "awayCode": "py",
+      "homeFlag": "https://flagcdn.com/tr.svg",
+      "awayFlag": "https://flagcdn.com/py.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Matías Galarza",
+            "minute": "2",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "stage": "group",
+      "round": "Matchday 15",
+      "group": "D",
+      "date": "2026-06-25",
+      "time": "19:00 UTC-7",
+      "kickoff": "2026-06-26T02:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "Turkey",
+      "away": "USA",
+      "homeCode": "tr",
+      "awayCode": "us",
+      "homeFlag": "https://flagcdn.com/tr.svg",
+      "awayFlag": "https://flagcdn.com/us.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          2
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Arda Güler",
+            "minute": "10",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Baris Alper Yilmaz",
+            "minute": "31",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Kaan Ayhan",
+            "minute": "90+8",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Auston Trusty",
+            "minute": "3",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Sebastian Berhalter",
+            "minute": "49",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "stage": "group",
+      "round": "Matchday 15",
+      "group": "D",
+      "date": "2026-06-25",
+      "time": "19:00 UTC-7",
+      "kickoff": "2026-06-26T02:00:00.000Z",
+      "venue": "San Francisco Bay Area (Santa Clara)",
+      "home": "Paraguay",
+      "away": "Australia",
+      "homeCode": "py",
+      "awayCode": "au",
+      "homeFlag": "https://flagcdn.com/py.svg",
+      "awayFlag": "https://flagcdn.com/au.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 25,
+      "stage": "group",
+      "round": "Matchday 4",
+      "group": "E",
+      "date": "2026-06-14",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-06-14T17:00:00.000Z",
+      "venue": "Houston",
+      "home": "Germany",
+      "away": "Curaçao",
+      "homeCode": "de",
+      "awayCode": "cw",
+      "homeFlag": "https://flagcdn.com/de.svg",
+      "awayFlag": "https://flagcdn.com/cw.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          7,
+          1
+        ],
+        "ht": [
+          3,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Felix Nmecha",
+            "minute": "6",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Nico Schlotterbeck",
+            "minute": "38",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Kai Havertz",
+            "minute": "45+5",
+            "penalty": true,
+            "owngoal": false
+          },
+          {
+            "name": "Kai Havertz",
+            "minute": "88",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Jamal Musiala",
+            "minute": "47",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Nathaniel Brown",
+            "minute": "68",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Deniz Undav",
+            "minute": "78",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Livano Comenencia",
+            "minute": "21",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "stage": "group",
+      "round": "Matchday 4",
+      "group": "E",
+      "date": "2026-06-14",
+      "time": "19:00 UTC-4",
+      "kickoff": "2026-06-14T23:00:00.000Z",
+      "venue": "Philadelphia",
+      "home": "Ivory Coast",
+      "away": "Ecuador",
+      "homeCode": "ci",
+      "awayCode": "ec",
+      "homeFlag": "https://flagcdn.com/ci.svg",
+      "awayFlag": "https://flagcdn.com/ec.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Amad Diallo",
+            "minute": "90",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 27,
+      "stage": "group",
+      "round": "Matchday 10",
+      "group": "E",
+      "date": "2026-06-20",
+      "time": "16:00 UTC-4",
+      "kickoff": "2026-06-20T20:00:00.000Z",
+      "venue": "Toronto",
+      "home": "Germany",
+      "away": "Ivory Coast",
+      "homeCode": "de",
+      "awayCode": "ci",
+      "homeFlag": "https://flagcdn.com/de.svg",
+      "awayFlag": "https://flagcdn.com/ci.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Deniz Undav",
+            "minute": "68",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Deniz Undav",
+            "minute": "90+4",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Franck Kessié",
+            "minute": "30",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "stage": "group",
+      "round": "Matchday 10",
+      "group": "E",
+      "date": "2026-06-20",
+      "time": "19:00 UTC-5",
+      "kickoff": "2026-06-21T00:00:00.000Z",
+      "venue": "Kansas City",
+      "home": "Ecuador",
+      "away": "Curaçao",
+      "homeCode": "ec",
+      "awayCode": "cw",
+      "homeFlag": "https://flagcdn.com/ec.svg",
+      "awayFlag": "https://flagcdn.com/cw.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 29,
+      "stage": "group",
+      "round": "Matchday 15",
+      "group": "E",
+      "date": "2026-06-25",
+      "time": "16:00 UTC-4",
+      "kickoff": "2026-06-25T20:00:00.000Z",
+      "venue": "Philadelphia",
+      "home": "Curaçao",
+      "away": "Ivory Coast",
+      "homeCode": "cw",
+      "awayCode": "ci",
+      "homeFlag": "https://flagcdn.com/cw.svg",
+      "awayFlag": "https://flagcdn.com/ci.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          2
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Nicolas Pépé",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Nicolas Pépé",
+            "minute": "64",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "stage": "group",
+      "round": "Matchday 15",
+      "group": "E",
+      "date": "2026-06-25",
+      "time": "16:00 UTC-4",
+      "kickoff": "2026-06-25T20:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "Ecuador",
+      "away": "Germany",
+      "homeCode": "ec",
+      "awayCode": "de",
+      "homeFlag": "https://flagcdn.com/ec.svg",
+      "awayFlag": "https://flagcdn.com/de.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Nilson Angulo",
+            "minute": "9",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Gonzalo Plata",
+            "minute": "77",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Leroy Sané",
+            "minute": "2",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "stage": "group",
+      "round": "Matchday 4",
+      "group": "F",
+      "date": "2026-06-14",
+      "time": "15:00 UTC-5",
+      "kickoff": "2026-06-14T20:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "Netherlands",
+      "away": "Japan",
+      "homeCode": "nl",
+      "awayCode": "jp",
+      "homeFlag": "https://flagcdn.com/nl.svg",
+      "awayFlag": "https://flagcdn.com/jp.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Virgil van Dijk",
+            "minute": "51",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Crysencio Summerville",
+            "minute": "64",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Keito Nakamura",
+            "minute": "57",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Daichi Kamada",
+            "minute": "88",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "stage": "group",
+      "round": "Matchday 4",
+      "group": "F",
+      "date": "2026-06-14",
+      "time": "20:00 UTC-6",
+      "kickoff": "2026-06-15T02:00:00.000Z",
+      "venue": "Monterrey (Guadalupe)",
+      "home": "Sweden",
+      "away": "Tunisia",
+      "homeCode": "se",
+      "awayCode": "tn",
+      "homeFlag": "https://flagcdn.com/se.svg",
+      "awayFlag": "https://flagcdn.com/tn.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          5,
+          1
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Yasin Ayari",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Yasin Ayari",
+            "minute": "90+6",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Alexander Isak",
+            "minute": "30",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Viktor Gyökeres",
+            "minute": "59",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mattias Svanberg",
+            "minute": "84",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Omar Rekik",
+            "minute": "43",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "stage": "group",
+      "round": "Matchday 10",
+      "group": "F",
+      "date": "2026-06-20",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-06-20T17:00:00.000Z",
+      "venue": "Houston",
+      "home": "Netherlands",
+      "away": "Sweden",
+      "homeCode": "nl",
+      "awayCode": "se",
+      "homeFlag": "https://flagcdn.com/nl.svg",
+      "awayFlag": "https://flagcdn.com/se.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          5,
+          1
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Brian Brobbey",
+            "minute": "5",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Brian Brobbey",
+            "minute": "17",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Cody Gakpo",
+            "minute": "47",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Cody Gakpo",
+            "minute": "54",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Crysencio Summerville",
+            "minute": "89",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Anthony Elanga",
+            "minute": "59",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "stage": "group",
+      "round": "Matchday 10",
+      "group": "F",
+      "date": "2026-06-20",
+      "time": "22:00 UTC-6",
+      "kickoff": "2026-06-21T04:00:00.000Z",
+      "venue": "Monterrey (Guadalupe)",
+      "home": "Tunisia",
+      "away": "Japan",
+      "homeCode": "tn",
+      "awayCode": "jp",
+      "homeFlag": "https://flagcdn.com/tn.svg",
+      "awayFlag": "https://flagcdn.com/jp.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          4
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Daichi Kamada",
+            "minute": "4",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ayase Ueda",
+            "minute": "31",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ayase Ueda",
+            "minute": "83",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Junya Ito",
+            "minute": "69",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "stage": "group",
+      "round": "Matchday 15",
+      "group": "F",
+      "date": "2026-06-25",
+      "time": "18:00 UTC-5",
+      "kickoff": "2026-06-25T23:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "Japan",
+      "away": "Sweden",
+      "homeCode": "jp",
+      "awayCode": "se",
+      "homeFlag": "https://flagcdn.com/jp.svg",
+      "awayFlag": "https://flagcdn.com/se.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Daizen Maeda",
+            "minute": "56",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Anthony Elanga",
+            "minute": "62",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "stage": "group",
+      "round": "Matchday 15",
+      "group": "F",
+      "date": "2026-06-25",
+      "time": "18:00 UTC-5",
+      "kickoff": "2026-06-25T23:00:00.000Z",
+      "venue": "Kansas City",
+      "home": "Tunisia",
+      "away": "Netherlands",
+      "homeCode": "tn",
+      "awayCode": "nl",
+      "homeFlag": "https://flagcdn.com/tn.svg",
+      "awayFlag": "https://flagcdn.com/nl.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Hazem Mastouri",
+            "minute": "54",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ellyes Skhiri",
+            "minute": "3",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Brian Brobbey",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Jan Paul van Hecke",
+            "minute": "62",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "stage": "group",
+      "round": "Matchday 5",
+      "group": "G",
+      "date": "2026-06-15",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-15T19:00:00.000Z",
+      "venue": "Seattle",
+      "home": "Belgium",
+      "away": "Egypt",
+      "homeCode": "be",
+      "awayCode": "eg",
+      "homeFlag": "https://flagcdn.com/be.svg",
+      "awayFlag": "https://flagcdn.com/eg.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Mohamed Hany",
+            "minute": "66",
+            "penalty": false,
+            "owngoal": true
+          }
+        ],
+        "away": [
+          {
+            "name": "Emam Ashour",
+            "minute": "19",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "stage": "group",
+      "round": "Matchday 5",
+      "group": "G",
+      "date": "2026-06-15",
+      "time": "18:00 UTC-7",
+      "kickoff": "2026-06-16T01:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "Iran",
+      "away": "New Zealand",
+      "homeCode": "ir",
+      "awayCode": "nz",
+      "homeFlag": "https://flagcdn.com/ir.svg",
+      "awayFlag": "https://flagcdn.com/nz.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Ramin Rezaeian",
+            "minute": "32",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mohammad Mohebbi",
+            "minute": "64",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Elijah Just",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Elijah Just",
+            "minute": "54",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "stage": "group",
+      "round": "Matchday 11",
+      "group": "G",
+      "date": "2026-06-21",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-21T19:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "Belgium",
+      "away": "Iran",
+      "homeCode": "be",
+      "awayCode": "ir",
+      "homeFlag": "https://flagcdn.com/be.svg",
+      "awayFlag": "https://flagcdn.com/ir.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 40,
+      "stage": "group",
+      "round": "Matchday 11",
+      "group": "G",
+      "date": "2026-06-21",
+      "time": "18:00 UTC-7",
+      "kickoff": "2026-06-22T01:00:00.000Z",
+      "venue": "Vancouver",
+      "home": "New Zealand",
+      "away": "Egypt",
+      "homeCode": "nz",
+      "awayCode": "eg",
+      "homeFlag": "https://flagcdn.com/nz.svg",
+      "awayFlag": "https://flagcdn.com/eg.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Finn Surman",
+            "minute": "15",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Mostafa Zico",
+            "minute": "58",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mohamed Salah",
+            "minute": "67",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Trézéguet",
+            "minute": "82",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "stage": "group",
+      "round": "Matchday 16",
+      "group": "G",
+      "date": "2026-06-26",
+      "time": "20:00 UTC-7",
+      "kickoff": "2026-06-27T03:00:00.000Z",
+      "venue": "Seattle",
+      "home": "Egypt",
+      "away": "Iran",
+      "homeCode": "eg",
+      "awayCode": "ir",
+      "homeFlag": "https://flagcdn.com/eg.svg",
+      "awayFlag": "https://flagcdn.com/ir.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Mahmoud Saber",
+            "minute": "5",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ramin Rezaeian",
+            "minute": "14",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "stage": "group",
+      "round": "Matchday 16",
+      "group": "G",
+      "date": "2026-06-26",
+      "time": "20:00 UTC-7",
+      "kickoff": "2026-06-27T03:00:00.000Z",
+      "venue": "Vancouver",
+      "home": "New Zealand",
+      "away": "Belgium",
+      "homeCode": "nz",
+      "awayCode": "be",
+      "homeFlag": "https://flagcdn.com/nz.svg",
+      "awayFlag": "https://flagcdn.com/be.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          5
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Elijah Just",
+            "minute": "84",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Leandro Trossard",
+            "minute": "28",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Leandro Trossard",
+            "minute": "50",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Kevin De Bruyne",
+            "minute": "66",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Romelu Lukaku",
+            "minute": "86",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Alexis Saelemaekers",
+            "minute": "90+4",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "stage": "group",
+      "round": "Matchday 5",
+      "group": "H",
+      "date": "2026-06-15",
+      "time": "12:00 UTC-4",
+      "kickoff": "2026-06-15T16:00:00.000Z",
+      "venue": "Atlanta",
+      "home": "Spain",
+      "away": "Cape Verde",
+      "homeCode": "es",
+      "awayCode": "cv",
+      "homeFlag": "https://flagcdn.com/es.svg",
+      "awayFlag": "https://flagcdn.com/cv.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 44,
+      "stage": "group",
+      "round": "Matchday 5",
+      "group": "H",
+      "date": "2026-06-15",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-06-15T22:00:00.000Z",
+      "venue": "Miami (Miami Gardens)",
+      "home": "Saudi Arabia",
+      "away": "Uruguay",
+      "homeCode": "sa",
+      "awayCode": "uy",
+      "homeFlag": "https://flagcdn.com/sa.svg",
+      "awayFlag": "https://flagcdn.com/uy.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Abdulelah Al-Amri",
+            "minute": "41",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Maxi Araújo",
+            "minute": "80",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "stage": "group",
+      "round": "Matchday 11",
+      "group": "H",
+      "date": "2026-06-21",
+      "time": "12:00 UTC-4",
+      "kickoff": "2026-06-21T16:00:00.000Z",
+      "venue": "Atlanta",
+      "home": "Spain",
+      "away": "Saudi Arabia",
+      "homeCode": "es",
+      "awayCode": "sa",
+      "homeFlag": "https://flagcdn.com/es.svg",
+      "awayFlag": "https://flagcdn.com/sa.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          4,
+          0
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Lamine Yamal",
+            "minute": "10",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mikel Oyarzabal",
+            "minute": "21",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mikel Oyarzabal",
+            "minute": "24",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Hassan Al-Tambakti",
+            "minute": "49",
+            "penalty": false,
+            "owngoal": true
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 46,
+      "stage": "group",
+      "round": "Matchday 11",
+      "group": "H",
+      "date": "2026-06-21",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-06-21T22:00:00.000Z",
+      "venue": "Miami (Miami Gardens)",
+      "home": "Uruguay",
+      "away": "Cape Verde",
+      "homeCode": "uy",
+      "awayCode": "cv",
+      "homeFlag": "https://flagcdn.com/uy.svg",
+      "awayFlag": "https://flagcdn.com/cv.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Maxi Araújo",
+            "minute": "44",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Agustín Cano",
+            "minute": "45+6",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Kevin Pina",
+            "minute": "21",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Hélio Varela",
+            "minute": "61",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "stage": "group",
+      "round": "Matchday 16",
+      "group": "H",
+      "date": "2026-06-26",
+      "time": "19:00 UTC-5",
+      "kickoff": "2026-06-27T00:00:00.000Z",
+      "venue": "Houston",
+      "home": "Cape Verde",
+      "away": "Saudi Arabia",
+      "homeCode": "cv",
+      "awayCode": "sa",
+      "homeFlag": "https://flagcdn.com/cv.svg",
+      "awayFlag": "https://flagcdn.com/sa.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 48,
+      "stage": "group",
+      "round": "Matchday 16",
+      "group": "H",
+      "date": "2026-06-26",
+      "time": "18:00 UTC-6",
+      "kickoff": "2026-06-27T00:00:00.000Z",
+      "venue": "Guadalajara (Zapopan)",
+      "home": "Uruguay",
+      "away": "Spain",
+      "homeCode": "uy",
+      "awayCode": "es",
+      "homeFlag": "https://flagcdn.com/uy.svg",
+      "awayFlag": "https://flagcdn.com/es.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Álex Baena",
+            "minute": "42",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "stage": "group",
+      "round": "Matchday 6",
+      "group": "I",
+      "date": "2026-06-16",
+      "time": "15:00 UTC-4",
+      "kickoff": "2026-06-16T19:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "France",
+      "away": "Senegal",
+      "homeCode": "fr",
+      "awayCode": "sn",
+      "homeFlag": "https://flagcdn.com/fr.svg",
+      "awayFlag": "https://flagcdn.com/sn.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "minute": "66",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Kylian Mbappé",
+            "minute": "90+6",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Bradley Barcola",
+            "minute": "82",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ibrahim Mbaye",
+            "minute": "90+5",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "stage": "group",
+      "round": "Matchday 6",
+      "group": "I",
+      "date": "2026-06-16",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-06-16T22:00:00.000Z",
+      "venue": "Boston (Foxborough)",
+      "home": "Iraq",
+      "away": "Norway",
+      "homeCode": "iq",
+      "awayCode": "no",
+      "homeFlag": "https://flagcdn.com/iq.svg",
+      "awayFlag": "https://flagcdn.com/no.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          4
+        ],
+        "ht": [
+          1,
+          2
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Aymen Hussein",
+            "minute": "39",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Erling Haaland",
+            "minute": "29",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "43",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Leo Østigard",
+            "minute": "76",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Aymen Hussein",
+            "minute": "90+6",
+            "penalty": false,
+            "owngoal": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 51,
+      "stage": "group",
+      "round": "Matchday 12",
+      "group": "I",
+      "date": "2026-06-22",
+      "time": "17:00 UTC-4",
+      "kickoff": "2026-06-22T21:00:00.000Z",
+      "venue": "Philadelphia",
+      "home": "France",
+      "away": "Iraq",
+      "homeCode": "fr",
+      "awayCode": "iq",
+      "homeFlag": "https://flagcdn.com/fr.svg",
+      "awayFlag": "https://flagcdn.com/iq.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "minute": "14",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Kylian Mbappé",
+            "minute": "54",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "66",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 52,
+      "stage": "group",
+      "round": "Matchday 12",
+      "group": "I",
+      "date": "2026-06-22",
+      "time": "20:00 UTC-4",
+      "kickoff": "2026-06-23T00:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "Norway",
+      "away": "Senegal",
+      "homeCode": "no",
+      "awayCode": "sn",
+      "homeFlag": "https://flagcdn.com/no.svg",
+      "awayFlag": "https://flagcdn.com/sn.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          2
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Marcus Holmgren Pedersen",
+            "minute": "43",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "48",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "58",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ismaïla Sarr",
+            "minute": "53",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ismaïla Sarr",
+            "minute": "90+3",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 53,
+      "stage": "group",
+      "round": "Matchday 16",
+      "group": "I",
+      "date": "2026-06-26",
+      "time": "15:00 UTC-4",
+      "kickoff": "2026-06-26T19:00:00.000Z",
+      "venue": "Boston (Foxborough)",
+      "home": "Norway",
+      "away": "France",
+      "homeCode": "no",
+      "awayCode": "fr",
+      "homeFlag": "https://flagcdn.com/no.svg",
+      "awayFlag": "https://flagcdn.com/fr.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          4
+        ],
+        "ht": [
+          1,
+          3
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Thelo Aasgaard",
+            "minute": "21",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "20",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "32",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Désiré Doué",
+            "minute": "90+4",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 54,
+      "stage": "group",
+      "round": "Matchday 16",
+      "group": "I",
+      "date": "2026-06-26",
+      "time": "15:00 UTC-4",
+      "kickoff": "2026-06-26T19:00:00.000Z",
+      "venue": "Toronto",
+      "home": "Senegal",
+      "away": "Iraq",
+      "homeCode": "sn",
+      "awayCode": "iq",
+      "homeFlag": "https://flagcdn.com/sn.svg",
+      "awayFlag": "https://flagcdn.com/iq.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          5,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Habib Diarra",
+            "minute": "4",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ismaïla Sarr",
+            "minute": "56",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Pape Gueye",
+            "minute": "59",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Pape Gueye",
+            "minute": "71",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Iliman Ndiaye",
+            "minute": "82",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 55,
+      "stage": "group",
+      "round": "Matchday 6",
+      "group": "J",
+      "date": "2026-06-16",
+      "time": "20:00 UTC-5",
+      "kickoff": "2026-06-17T01:00:00.000Z",
+      "venue": "Kansas City",
+      "home": "Argentina",
+      "away": "Algeria",
+      "homeCode": "ar",
+      "awayCode": "dz",
+      "homeFlag": "https://flagcdn.com/ar.svg",
+      "awayFlag": "https://flagcdn.com/dz.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Lionel Messi",
+            "minute": "17",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Lionel Messi",
+            "minute": "60",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Lionel Messi",
+            "minute": "76",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 56,
+      "stage": "group",
+      "round": "Matchday 6",
+      "group": "J",
+      "date": "2026-06-16",
+      "time": "21:00 UTC-7",
+      "kickoff": "2026-06-17T04:00:00.000Z",
+      "venue": "San Francisco Bay Area (Santa Clara)",
+      "home": "Austria",
+      "away": "Jordan",
+      "homeCode": "at",
+      "awayCode": "jo",
+      "homeFlag": "https://flagcdn.com/at.svg",
+      "awayFlag": "https://flagcdn.com/jo.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Romano Schmid",
+            "minute": "21",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Yazan Al-Arab",
+            "minute": "76",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Marko Arnautovic",
+            "minute": "90+12",
+            "penalty": true,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ali Olwan",
+            "minute": "50",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 57,
+      "stage": "group",
+      "round": "Matchday 12",
+      "group": "J",
+      "date": "2026-06-22",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-06-22T17:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "Argentina",
+      "away": "Austria",
+      "homeCode": "ar",
+      "awayCode": "at",
+      "homeFlag": "https://flagcdn.com/ar.svg",
+      "awayFlag": "https://flagcdn.com/at.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Lionel Messi",
+            "minute": "38",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Lionel Messi",
+            "minute": "90+5",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 58,
+      "stage": "group",
+      "round": "Matchday 12",
+      "group": "J",
+      "date": "2026-06-22",
+      "time": "20:00 UTC-7",
+      "kickoff": "2026-06-23T03:00:00.000Z",
+      "venue": "San Francisco Bay Area (Santa Clara)",
+      "home": "Jordan",
+      "away": "Algeria",
+      "homeCode": "jo",
+      "awayCode": "dz",
+      "homeFlag": "https://flagcdn.com/jo.svg",
+      "awayFlag": "https://flagcdn.com/dz.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Nizar Al-Rashdan",
+            "minute": "36",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Nadhir Benbouali",
+            "minute": "69",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Amine Gouiri",
+            "minute": "82",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 59,
+      "stage": "group",
+      "round": "Matchday 17",
+      "group": "J",
+      "date": "2026-06-27",
+      "time": "21:00 UTC-5",
+      "kickoff": "2026-06-28T02:00:00.000Z",
+      "venue": "Kansas City",
+      "home": "Algeria",
+      "away": "Austria",
+      "homeCode": "dz",
+      "awayCode": "at",
+      "homeFlag": "https://flagcdn.com/dz.svg",
+      "awayFlag": "https://flagcdn.com/at.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 60,
+      "stage": "group",
+      "round": "Matchday 17",
+      "group": "J",
+      "date": "2026-06-27",
+      "time": "21:00 UTC-5",
+      "kickoff": "2026-06-28T02:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "Jordan",
+      "away": "Argentina",
+      "homeCode": "jo",
+      "awayCode": "ar",
+      "homeFlag": "https://flagcdn.com/jo.svg",
+      "awayFlag": "https://flagcdn.com/ar.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 61,
+      "stage": "group",
+      "round": "Matchday 7",
+      "group": "K",
+      "date": "2026-06-17",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-06-17T17:00:00.000Z",
+      "venue": "Houston",
+      "home": "Portugal",
+      "away": "DR Congo",
+      "homeCode": "pt",
+      "awayCode": "cd",
+      "homeFlag": "https://flagcdn.com/pt.svg",
+      "awayFlag": "https://flagcdn.com/cd.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "João Neves",
+            "minute": "6",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Yoane Wissa",
+            "minute": "45+5",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 62,
+      "stage": "group",
+      "round": "Matchday 7",
+      "group": "K",
+      "date": "2026-06-17",
+      "time": "20:00 UTC-6",
+      "kickoff": "2026-06-18T02:00:00.000Z",
+      "venue": "Mexico City",
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "homeCode": "uz",
+      "awayCode": "co",
+      "homeFlag": "https://flagcdn.com/uz.svg",
+      "awayFlag": "https://flagcdn.com/co.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Abbosbek Fayzullaev",
+            "minute": "60",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Daniel Muñoz",
+            "minute": "40",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Luis Díaz",
+            "minute": "65",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Jáminton Campaz",
+            "minute": "90+9",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 63,
+      "stage": "group",
+      "round": "Matchday 13",
+      "group": "K",
+      "date": "2026-06-23",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-06-23T17:00:00.000Z",
+      "venue": "Houston",
+      "home": "Portugal",
+      "away": "Uzbekistan",
+      "homeCode": "pt",
+      "awayCode": "uz",
+      "homeFlag": "https://flagcdn.com/pt.svg",
+      "awayFlag": "https://flagcdn.com/uz.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          5,
+          0
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Cristiano Ronaldo",
+            "minute": "6",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Cristiano Ronaldo",
+            "minute": "39",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Nuno Mendes",
+            "minute": "17",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Abduvohid Nematov",
+            "minute": "60",
+            "penalty": false,
+            "owngoal": true
+          },
+          {
+            "name": "Rafael Leão",
+            "minute": "87",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 64,
+      "stage": "group",
+      "round": "Matchday 13",
+      "group": "K",
+      "date": "2026-06-23",
+      "time": "20:00 UTC-6",
+      "kickoff": "2026-06-24T02:00:00.000Z",
+      "venue": "Guadalajara (Zapopan)",
+      "home": "Colombia",
+      "away": "DR Congo",
+      "homeCode": "co",
+      "awayCode": "cd",
+      "homeFlag": "https://flagcdn.com/co.svg",
+      "awayFlag": "https://flagcdn.com/cd.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Daniel Muñoz",
+            "minute": "76",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 65,
+      "stage": "group",
+      "round": "Matchday 17",
+      "group": "K",
+      "date": "2026-06-27",
+      "time": "19:30 UTC-4",
+      "kickoff": "2026-06-27T23:30:00.000Z",
+      "venue": "Miami (Miami Gardens)",
+      "home": "Colombia",
+      "away": "Portugal",
+      "homeCode": "co",
+      "awayCode": "pt",
+      "homeFlag": "https://flagcdn.com/co.svg",
+      "awayFlag": "https://flagcdn.com/pt.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 66,
+      "stage": "group",
+      "round": "Matchday 17",
+      "group": "K",
+      "date": "2026-06-27",
+      "time": "19:30 UTC-4",
+      "kickoff": "2026-06-27T23:30:00.000Z",
+      "venue": "Atlanta",
+      "home": "DR Congo",
+      "away": "Uzbekistan",
+      "homeCode": "cd",
+      "awayCode": "uz",
+      "homeFlag": "https://flagcdn.com/cd.svg",
+      "awayFlag": "https://flagcdn.com/uz.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 67,
+      "stage": "group",
+      "round": "Matchday 7",
+      "group": "L",
+      "date": "2026-06-17",
+      "time": "15:00 UTC-5",
+      "kickoff": "2026-06-17T20:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "England",
+      "away": "Croatia",
+      "homeCode": "gb-eng",
+      "awayCode": "hr",
+      "homeFlag": "https://flagcdn.com/gb-eng.svg",
+      "awayFlag": "https://flagcdn.com/hr.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          4,
+          2
+        ],
+        "ht": [
+          2,
+          2
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Harry Kane",
+            "minute": "12",
+            "penalty": true,
+            "owngoal": false
+          },
+          {
+            "name": "Harry Kane",
+            "minute": "42",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Jude Bellingham",
+            "minute": "47",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Marcus Rashford",
+            "minute": "85",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Martin Baturina",
+            "minute": "36",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Petar Musa",
+            "minute": "45+5",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 68,
+      "stage": "group",
+      "round": "Matchday 7",
+      "group": "L",
+      "date": "2026-06-17",
+      "time": "19:00 UTC-4",
+      "kickoff": "2026-06-17T23:00:00.000Z",
+      "venue": "Toronto",
+      "home": "Ghana",
+      "away": "Panama",
+      "homeCode": "gh",
+      "awayCode": "pa",
+      "homeFlag": "https://flagcdn.com/gh.svg",
+      "awayFlag": "https://flagcdn.com/pa.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Caleb Yirenkyi",
+            "minute": "90+5",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": []
+      }
+    },
+    {
+      "id": 69,
+      "stage": "group",
+      "round": "Matchday 13",
+      "group": "L",
+      "date": "2026-06-23",
+      "time": "16:00 UTC-4",
+      "kickoff": "2026-06-23T20:00:00.000Z",
+      "venue": "Boston (Foxborough)",
+      "home": "England",
+      "away": "Ghana",
+      "homeCode": "gb-eng",
+      "awayCode": "gh",
+      "homeFlag": "https://flagcdn.com/gb-eng.svg",
+      "awayFlag": "https://flagcdn.com/gh.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 70,
+      "stage": "group",
+      "round": "Matchday 13",
+      "group": "L",
+      "date": "2026-06-23",
+      "time": "19:00 UTC-4",
+      "kickoff": "2026-06-23T23:00:00.000Z",
+      "venue": "Toronto",
+      "home": "Panama",
+      "away": "Croatia",
+      "homeCode": "pa",
+      "awayCode": "hr",
+      "homeFlag": "https://flagcdn.com/pa.svg",
+      "awayFlag": "https://flagcdn.com/hr.svg",
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
+      "scorers": {
+        "home": [],
+        "away": [
+          {
+            "name": "Ante Budimir",
+            "minute": "54",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 71,
+      "stage": "group",
+      "round": "Matchday 17",
+      "group": "L",
+      "date": "2026-06-27",
+      "time": "17:00 UTC-4",
+      "kickoff": "2026-06-27T21:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "Panama",
+      "away": "England",
+      "homeCode": "pa",
+      "awayCode": "gb-eng",
+      "homeFlag": "https://flagcdn.com/pa.svg",
+      "awayFlag": "https://flagcdn.com/gb-eng.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 72,
+      "stage": "group",
+      "round": "Matchday 17",
+      "group": "L",
+      "date": "2026-06-27",
+      "time": "17:00 UTC-4",
+      "kickoff": "2026-06-27T21:00:00.000Z",
+      "venue": "Philadelphia",
+      "home": "Croatia",
+      "away": "Ghana",
+      "homeCode": "hr",
+      "awayCode": "gh",
+      "homeFlag": "https://flagcdn.com/hr.svg",
+      "awayFlag": "https://flagcdn.com/gh.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      }
+    },
+    {
+      "id": 73,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-06-28",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-06-28T19:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "South Africa",
+      "away": "Canada",
+      "homeCode": "za",
+      "awayCode": "ca",
+      "homeFlag": "https://flagcdn.com/za.svg",
+      "awayFlag": "https://flagcdn.com/ca.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "South Africa",
+      "awayRaw": "Canada"
+    },
+    {
+      "id": 74,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-06-29",
+      "time": "16:30 UTC-4",
+      "kickoff": "2026-06-29T20:30:00.000Z",
+      "venue": "Boston (Foxborough)",
+      "home": "Germany",
+      "away": "3A/B/C/D/F",
+      "homeCode": "de",
+      "awayCode": null,
+      "homeFlag": "https://flagcdn.com/de.svg",
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "Germany",
+      "awayRaw": "3A/B/C/D/F"
+    },
+    {
+      "id": 75,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-06-29",
+      "time": "19:00 UTC-6",
+      "kickoff": "2026-06-30T01:00:00.000Z",
+      "venue": "Monterrey (Guadalupe)",
+      "home": "Netherlands",
+      "away": "Morocco",
+      "homeCode": "nl",
+      "awayCode": "ma",
+      "homeFlag": "https://flagcdn.com/nl.svg",
+      "awayFlag": "https://flagcdn.com/ma.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "Netherlands",
+      "awayRaw": "Morocco"
+    },
+    {
+      "id": 76,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-06-29",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-06-29T17:00:00.000Z",
+      "venue": "Houston",
+      "home": "Brazil",
+      "away": "Japan",
+      "homeCode": "br",
+      "awayCode": "jp",
+      "homeFlag": "https://flagcdn.com/br.svg",
+      "awayFlag": "https://flagcdn.com/jp.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "Brazil",
+      "awayRaw": "Japan"
+    },
+    {
+      "id": 77,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-06-30",
+      "time": "17:00 UTC-4",
+      "kickoff": "2026-06-30T21:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "France",
+      "away": "3C/D/F/G/H",
+      "homeCode": "fr",
+      "awayCode": null,
+      "homeFlag": "https://flagcdn.com/fr.svg",
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "1I",
+      "awayRaw": "3C/D/F/G/H"
+    },
+    {
+      "id": 78,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-06-30",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-06-30T17:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "homeCode": "ci",
+      "awayCode": "no",
+      "homeFlag": "https://flagcdn.com/ci.svg",
+      "awayFlag": "https://flagcdn.com/no.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "Ivory Coast",
+      "awayRaw": "2I"
+    },
+    {
+      "id": 79,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-06-30",
+      "time": "19:00 UTC-6",
+      "kickoff": "2026-07-01T01:00:00.000Z",
+      "venue": "Mexico City",
+      "home": "Mexico",
+      "away": "3C/E/F/H/I",
+      "homeCode": "mx",
+      "awayCode": null,
+      "homeFlag": "https://flagcdn.com/mx.svg",
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "Mexico",
+      "awayRaw": "3C/E/F/H/I"
+    },
+    {
+      "id": 80,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-01",
+      "time": "12:00 UTC-4",
+      "kickoff": "2026-07-01T16:00:00.000Z",
+      "venue": "Atlanta",
+      "home": "1L",
+      "away": "3E/H/I/J/K",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "1L",
+      "awayRaw": "3E/H/I/J/K"
+    },
+    {
+      "id": 81,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-01",
+      "time": "17:00 UTC-7",
+      "kickoff": "2026-07-02T00:00:00.000Z",
+      "venue": "San Francisco Bay Area (Santa Clara)",
+      "home": "USA",
+      "away": "3B/E/F/I/J",
+      "homeCode": "us",
+      "awayCode": null,
+      "homeFlag": "https://flagcdn.com/us.svg",
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "USA",
+      "awayRaw": "3B/E/F/I/J"
+    },
+    {
+      "id": 82,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-01",
+      "time": "13:00 UTC-7",
+      "kickoff": "2026-07-01T20:00:00.000Z",
+      "venue": "Seattle",
+      "home": "Belgium",
+      "away": "3A/E/H/I/J",
+      "homeCode": "be",
+      "awayCode": null,
+      "homeFlag": "https://flagcdn.com/be.svg",
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "1G",
+      "awayRaw": "3A/E/H/I/J"
+    },
+    {
+      "id": 83,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-02",
+      "time": "19:00 UTC-4",
+      "kickoff": "2026-07-02T23:00:00.000Z",
+      "venue": "Toronto",
+      "home": "2K",
+      "away": "2L",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "2K",
+      "awayRaw": "2L"
+    },
+    {
+      "id": 84,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-02",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-07-02T19:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "Spain",
+      "away": "2J",
+      "homeCode": "es",
+      "awayCode": null,
+      "homeFlag": "https://flagcdn.com/es.svg",
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "1H",
+      "awayRaw": "2J"
+    },
+    {
+      "id": 85,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-02",
+      "time": "20:00 UTC-7",
+      "kickoff": "2026-07-03T03:00:00.000Z",
+      "venue": "Vancouver",
+      "home": "Switzerland",
+      "away": "3E/F/G/I/J",
+      "homeCode": "ch",
+      "awayCode": null,
+      "homeFlag": "https://flagcdn.com/ch.svg",
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "Switzerland",
+      "awayRaw": "3E/F/G/I/J"
+    },
+    {
+      "id": 86,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-03",
+      "time": "18:00 UTC-4",
+      "kickoff": "2026-07-03T22:00:00.000Z",
+      "venue": "Miami (Miami Gardens)",
+      "home": "1J",
+      "away": "Cape Verde",
+      "homeCode": null,
+      "awayCode": "cv",
+      "homeFlag": null,
+      "awayFlag": "https://flagcdn.com/cv.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "1J",
+      "awayRaw": "2H"
+    },
+    {
+      "id": 87,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-03",
+      "time": "20:30 UTC-5",
+      "kickoff": "2026-07-04T01:30:00.000Z",
+      "venue": "Kansas City",
+      "home": "1K",
+      "away": "3D/E/I/J/L",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "1K",
+      "awayRaw": "3D/E/I/J/L"
+    },
+    {
+      "id": 88,
+      "stage": "knockout",
+      "round": "Round of 32",
+      "group": null,
+      "date": "2026-07-03",
+      "time": "13:00 UTC-5",
+      "kickoff": "2026-07-03T18:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "Australia",
+      "away": "Egypt",
+      "homeCode": "au",
+      "awayCode": "eg",
+      "homeFlag": "https://flagcdn.com/au.svg",
+      "awayFlag": "https://flagcdn.com/eg.svg",
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "Australia",
+      "awayRaw": "2G"
+    },
+    {
+      "id": 89,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-04",
+      "time": "17:00 UTC-4",
+      "kickoff": "2026-07-04T21:00:00.000Z",
+      "venue": "Philadelphia",
+      "home": "W74",
+      "away": "W77",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W74",
+      "awayRaw": "W77"
+    },
+    {
+      "id": 90,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-04",
+      "time": "12:00 UTC-5",
+      "kickoff": "2026-07-04T17:00:00.000Z",
+      "venue": "Houston",
+      "home": "W73",
+      "away": "W75",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W73",
+      "awayRaw": "W75"
+    },
+    {
+      "id": 91,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-05",
+      "time": "16:00 UTC-4",
+      "kickoff": "2026-07-05T20:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "W76",
+      "away": "W78",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W76",
+      "awayRaw": "W78"
+    },
+    {
+      "id": 92,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-05",
+      "time": "18:00 UTC-6",
+      "kickoff": "2026-07-06T00:00:00.000Z",
+      "venue": "Mexico City",
+      "home": "W79",
+      "away": "W80",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W79",
+      "awayRaw": "W80"
+    },
+    {
+      "id": 93,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-06",
+      "time": "14:00 UTC-5",
+      "kickoff": "2026-07-06T19:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "W83",
+      "away": "W84",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W83",
+      "awayRaw": "W84"
+    },
+    {
+      "id": 94,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-06",
+      "time": "17:00 UTC-7",
+      "kickoff": "2026-07-07T00:00:00.000Z",
+      "venue": "Seattle",
+      "home": "W81",
+      "away": "W82",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W81",
+      "awayRaw": "W82"
+    },
+    {
+      "id": 95,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-07",
+      "time": "12:00 UTC-4",
+      "kickoff": "2026-07-07T16:00:00.000Z",
+      "venue": "Atlanta",
+      "home": "W86",
+      "away": "W88",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W86",
+      "awayRaw": "W88"
+    },
+    {
+      "id": 96,
+      "stage": "knockout",
+      "round": "Round of 16",
+      "group": null,
+      "date": "2026-07-07",
+      "time": "13:00 UTC-7",
+      "kickoff": "2026-07-07T20:00:00.000Z",
+      "venue": "Vancouver",
+      "home": "W85",
+      "away": "W87",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W85",
+      "awayRaw": "W87"
+    },
+    {
+      "id": 97,
+      "stage": "knockout",
+      "round": "Quarter-final",
+      "group": null,
+      "date": "2026-07-09",
+      "time": "16:00 UTC-4",
+      "kickoff": "2026-07-09T20:00:00.000Z",
+      "venue": "Boston (Foxborough)",
+      "home": "W89",
+      "away": "W90",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W89",
+      "awayRaw": "W90"
+    },
+    {
+      "id": 98,
+      "stage": "knockout",
+      "round": "Quarter-final",
+      "group": null,
+      "date": "2026-07-10",
+      "time": "12:00 UTC-7",
+      "kickoff": "2026-07-10T19:00:00.000Z",
+      "venue": "Los Angeles (Inglewood)",
+      "home": "W93",
+      "away": "W94",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W93",
+      "awayRaw": "W94"
+    },
+    {
+      "id": 99,
+      "stage": "knockout",
+      "round": "Quarter-final",
+      "group": null,
+      "date": "2026-07-11",
+      "time": "17:00 UTC-4",
+      "kickoff": "2026-07-11T21:00:00.000Z",
+      "venue": "Miami (Miami Gardens)",
+      "home": "W91",
+      "away": "W92",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W91",
+      "awayRaw": "W92"
+    },
+    {
+      "id": 100,
+      "stage": "knockout",
+      "round": "Quarter-final",
+      "group": null,
+      "date": "2026-07-11",
+      "time": "20:00 UTC-5",
+      "kickoff": "2026-07-12T01:00:00.000Z",
+      "venue": "Kansas City",
+      "home": "W95",
+      "away": "W96",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W95",
+      "awayRaw": "W96"
+    },
+    {
+      "id": 101,
+      "stage": "knockout",
+      "round": "Semi-final",
+      "group": null,
+      "date": "2026-07-14",
+      "time": "14:00 UTC-5",
+      "kickoff": "2026-07-14T19:00:00.000Z",
+      "venue": "Dallas (Arlington)",
+      "home": "W97",
+      "away": "W98",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W97",
+      "awayRaw": "W98"
+    },
+    {
+      "id": 102,
+      "stage": "knockout",
+      "round": "Semi-final",
+      "group": null,
+      "date": "2026-07-15",
+      "time": "15:00 UTC-4",
+      "kickoff": "2026-07-15T19:00:00.000Z",
+      "venue": "Atlanta",
+      "home": "W99",
+      "away": "W100",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W99",
+      "awayRaw": "W100"
+    },
+    {
+      "id": 103,
+      "stage": "knockout",
+      "round": "Match for third place",
+      "group": null,
+      "date": "2026-07-18",
+      "time": "17:00 UTC-4",
+      "kickoff": "2026-07-18T21:00:00.000Z",
+      "venue": "Miami (Miami Gardens)",
+      "home": "L101",
+      "away": "L102",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "L101",
+      "awayRaw": "L102"
+    },
+    {
+      "id": 104,
+      "stage": "knockout",
+      "round": "Final",
+      "group": null,
+      "date": "2026-07-19",
+      "time": "15:00 UTC-4",
+      "kickoff": "2026-07-19T19:00:00.000Z",
+      "venue": "New York/New Jersey (East Rutherford)",
+      "home": "W101",
+      "away": "W102",
+      "homeCode": null,
+      "awayCode": null,
+      "homeFlag": null,
+      "awayFlag": null,
+      "status": "scheduled",
+      "score": null,
+      "scorers": {
+        "home": [],
+        "away": []
+      },
+      "homeRaw": "W101",
+      "awayRaw": "W102"
+    }
+  ]
+}

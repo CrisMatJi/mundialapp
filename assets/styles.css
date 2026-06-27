@@ -1,0 +1,46 @@
+/* Estilos globales portados del diseño "Mundial 26.dc.html". Los estilos dinámicos
+   (colores por equipo, etc.) van inline desde app.js, fieles al diseño original. */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  color: #0B1B2B;
+  background: #F3F5FA;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes blobA { 0%{transform:translate(0,0) scale(1)} 50%{transform:translate(7vw,6vh) scale(1.18)} 100%{transform:translate(0,0) scale(1)} }
+@keyframes blobB { 0%{transform:translate(0,0) scale(1)} 50%{transform:translate(-7vw,5vh) scale(1.12)} 100%{transform:translate(0,0) scale(1)} }
+@keyframes blobC { 0%{transform:translate(0,0) scale(1)} 50%{transform:translate(5vw,-7vh) scale(1.22)} 100%{transform:translate(0,0) scale(1)} }
+@keyframes shimmer { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+@keyframes glowring { 0%,100%{box-shadow:0 0 0 0 rgba(255,45,126,.35),0 24px 60px -28px rgba(124,77,255,.55)} 50%{box-shadow:0 0 0 6px rgba(255,45,126,0),0 30px 70px -26px rgba(29,111,242,.6)} }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+::-webkit-scrollbar { height: 9px; width: 9px; }
+::-webkit-scrollbar-thumb { background: #cdd7e3; border-radius: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Fondo de blobs (fijo) */
+.bg-blobs { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.bg-blobs span { position: absolute; filter: blur(8px); display: block; }
+.blob1 { top:-14vh; left:-6vw; width:48vw; height:48vw; background:radial-gradient(circle,#FF2D7E55,transparent 62%); animation:blobA 19s ease-in-out infinite; }
+.blob2 { bottom:-18vh; right:-10vw; width:52vw; height:52vw; background:radial-gradient(circle,#1D6FF24a,transparent 62%); animation:blobB 23s ease-in-out infinite; }
+.blob3 { top:26vh; right:24vw; width:36vw; height:36vw; background:radial-gradient(circle,#16C78440,transparent 62%); animation:blobC 21s ease-in-out infinite; }
+.blob4 { top:60vh; left:30vw; width:28vw; height:28vw; background:radial-gradient(circle,#FFC23D3a,transparent 62%); animation:blobA 26s ease-in-out infinite; }
+
+.app-layer { position: relative; z-index: 1; }
+
+/* Utilidades de hover (en el diseño original eran style-hover de DC) */
+.hov-lift, .hov-slide, .hov-scale, .hov-up { transition: transform .2s ease, box-shadow .2s ease; }
+.hov-lift:hover { transform: translateY(-2px); }
+.hov-up:hover { transform: translateY(-3px); }
+.hov-slide:hover { transform: translateX(3px); }
+.hov-scale:hover { transform: scale(1.02); }
+.btn-press:hover { transform: translateY(-2px); }
+
+button { font-family: inherit; }
+.live-dot-css { animation: pulse 1.2s infinite; }

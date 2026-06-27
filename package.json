@@ -1,0 +1,16 @@
+{
+  "name": "mundialapp",
+  "version": "0.1.0",
+  "description": "Web del Mundial 2026 — datos gratis (openfootball + API-Football live) desplegada en GitHub Pages",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "data:base": "node scripts/fetch-base.mjs",
+    "data:live": "node scripts/fetch-live.mjs",
+    "data:all": "node scripts/fetch-base.mjs && node scripts/fetch-live.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,41 @@
+name: Actualizar datos base (openfootball)
+
+# Calendario, resultados, equipos y clasificación. Fuente gratuita sin key ni cuota.
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # cada 30 min
+  workflow_dispatch:          # ejecución manual
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/update-base.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-base
+  cancel-in-progress: false
+
+jobs:
+  base:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generar data base
+        run: node scripts/fetch-base.mjs
+      - name: Commit si hay cambios
+        run: |
+          git config user.name "mundialapp-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/matches.json data/teams.json data/standings.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios en data base."
+          else
+            git commit -m "data(base): actualización $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git push
+          fi

@@ -1,0 +1,15 @@
+# Secretos — NUNCA subir
+.env
+.env.local
+*.key
+
+# Dependencias
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs / temporales
+*.log
+.cache/
