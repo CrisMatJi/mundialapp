@@ -1,0 +1,21 @@
+# Ficheros que NO deben subirse como assets a Cloudflare Workers.
+# (sintaxis tipo .gitignore; el directorio de assets es la raíz del repo)
+
+# Lo que rompía el deploy: dependencias instaladas en el build
+node_modules
+.wrangler
+
+# Cosas del repo que no forman parte de la web pública
+.git
+.github
+scripts
+.env
+.env.example
+.gitignore
+.assetsignore
+package.json
+package-lock.json
+bun.lockb
+wrangler.jsonc
+README.md
+*.log
