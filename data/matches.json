@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-28T00:07:22.977Z",
+  "updated": "2026-06-28T05:04:25.837Z",
   "count": 104,
   "matches": [
     {
@@ -2958,11 +2958,58 @@
       "awayCode": "at",
       "homeFlag": "https://flagcdn.com/dz.svg",
       "awayFlag": "https://flagcdn.com/at.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          3
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Rafik Belghali",
+            "minute": "45",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Riyad Mahrez",
+            "minute": "60",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Riyad Mahrez",
+            "minute": "90+3",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Marko Arnautovic",
+            "minute": "28",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Marcel Sabitzer",
+            "minute": "55",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Sasa Kalajdzic",
+            "minute": "90+6",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       }
     },
     {
@@ -2980,11 +3027,46 @@
       "awayCode": "ar",
       "homeFlag": "https://flagcdn.com/jo.svg",
       "awayFlag": "https://flagcdn.com/ar.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Mousa Al-Tamari",
+            "minute": "55",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Giovani Lo Celso",
+            "minute": "19",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Lautaro Martínez",
+            "minute": "31",
+            "penalty": true,
+            "owngoal": false
+          },
+          {
+            "name": "Lionel Messi",
+            "minute": "80",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       }
     },
     {
@@ -3204,8 +3286,17 @@
       "awayCode": "pt",
       "homeFlag": "https://flagcdn.com/co.svg",
       "awayFlag": "https://flagcdn.com/pt.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
         "home": [],
         "away": []
@@ -3226,11 +3317,46 @@
       "awayCode": "uz",
       "homeFlag": "https://flagcdn.com/cd.svg",
       "awayFlag": "https://flagcdn.com/uz.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Yoane Wissa",
+            "minute": "68",
+            "penalty": true,
+            "owngoal": false
+          },
+          {
+            "name": "Fiston Mayele",
+            "minute": "78",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Yoane Wissa",
+            "minute": "90+1",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Eldor Shomurodov",
+            "minute": "10",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       }
     },
     {
@@ -3753,11 +3879,11 @@
       "time": "19:00 UTC-4",
       "kickoff": "2026-07-02T23:00:00.000Z",
       "venue": "Toronto",
-      "home": "2K",
+      "home": "Portugal",
       "away": "Croatia",
-      "homeCode": null,
+      "homeCode": "pt",
       "awayCode": "hr",
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/pt.svg",
       "awayFlag": "https://flagcdn.com/hr.svg",
       "status": "scheduled",
       "score": null,
@@ -3778,11 +3904,11 @@
       "kickoff": "2026-07-02T19:00:00.000Z",
       "venue": "Los Angeles (Inglewood)",
       "home": "Spain",
-      "away": "2J",
+      "away": "Austria",
       "homeCode": "es",
-      "awayCode": null,
+      "awayCode": "at",
       "homeFlag": "https://flagcdn.com/es.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/at.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -3825,11 +3951,11 @@
       "time": "18:00 UTC-4",
       "kickoff": "2026-07-03T22:00:00.000Z",
       "venue": "Miami (Miami Gardens)",
-      "home": "1J",
+      "home": "Argentina",
       "away": "Cape Verde",
-      "homeCode": null,
+      "homeCode": "ar",
       "awayCode": "cv",
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/ar.svg",
       "awayFlag": "https://flagcdn.com/cv.svg",
       "status": "scheduled",
       "score": null,
@@ -3849,11 +3975,11 @@
       "time": "20:30 UTC-5",
       "kickoff": "2026-07-04T01:30:00.000Z",
       "venue": "Kansas City",
-      "home": "1K",
+      "home": "Colombia",
       "away": "3D/E/I/J/L",
-      "homeCode": null,
+      "homeCode": "co",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/co.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
