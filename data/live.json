@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-28T20:20:34.779Z",
+  "updated": "2026-06-28T20:25:27.882Z",
   "source": "api-football",
   "live": [
     {
       "id": 1561329,
-      "minute": 60,
+      "minute": 65,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "South Africa",
