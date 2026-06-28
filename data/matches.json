@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-28T05:04:25.837Z",
+  "updated": "2026-06-28T08:32:54.434Z",
   "count": 104,
   "matches": [
     {
@@ -3664,11 +3664,11 @@
       "kickoff": "2026-06-29T20:30:00.000Z",
       "venue": "Boston (Foxborough)",
       "home": "Germany",
-      "away": "3A/B/C/D/F",
+      "away": "Paraguay",
       "homeCode": "de",
-      "awayCode": null,
+      "awayCode": "py",
       "homeFlag": "https://flagcdn.com/de.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/py.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -3676,7 +3676,7 @@
         "away": []
       },
       "homeRaw": "Germany",
-      "awayRaw": "3A/B/C/D/F"
+      "awayRaw": "Paraguay"
     },
     {
       "id": 75,
@@ -3736,19 +3736,19 @@
       "kickoff": "2026-06-30T21:00:00.000Z",
       "venue": "New York/New Jersey (East Rutherford)",
       "home": "France",
-      "away": "3C/D/F/G/H",
+      "away": "Sweden",
       "homeCode": "fr",
-      "awayCode": null,
+      "awayCode": "se",
       "homeFlag": "https://flagcdn.com/fr.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/se.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
         "home": [],
         "away": []
       },
-      "homeRaw": "1I",
-      "awayRaw": "3C/D/F/G/H"
+      "homeRaw": "France",
+      "awayRaw": "Sweden"
     },
     {
       "id": 78,
@@ -3772,7 +3772,7 @@
         "away": []
       },
       "homeRaw": "Ivory Coast",
-      "awayRaw": "2I"
+      "awayRaw": "Norway"
     },
     {
       "id": 79,
@@ -3784,11 +3784,11 @@
       "kickoff": "2026-07-01T01:00:00.000Z",
       "venue": "Mexico City",
       "home": "Mexico",
-      "away": "3C/E/F/H/I",
+      "away": "Ecuador",
       "homeCode": "mx",
-      "awayCode": null,
+      "awayCode": "ec",
       "homeFlag": "https://flagcdn.com/mx.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/ec.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -3796,7 +3796,7 @@
         "away": []
       },
       "homeRaw": "Mexico",
-      "awayRaw": "3C/E/F/H/I"
+      "awayRaw": "Ecuador"
     },
     {
       "id": 80,
@@ -3808,19 +3808,19 @@
       "kickoff": "2026-07-01T16:00:00.000Z",
       "venue": "Atlanta",
       "home": "England",
-      "away": "3E/H/I/J/K",
+      "away": "DR Congo",
       "homeCode": "gb-eng",
-      "awayCode": null,
+      "awayCode": "cd",
       "homeFlag": "https://flagcdn.com/gb-eng.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/cd.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
         "home": [],
         "away": []
       },
-      "homeRaw": "1L",
-      "awayRaw": "3E/H/I/J/K"
+      "homeRaw": "England",
+      "awayRaw": "DR Congo"
     },
     {
       "id": 81,
@@ -3832,11 +3832,11 @@
       "kickoff": "2026-07-02T00:00:00.000Z",
       "venue": "San Francisco Bay Area (Santa Clara)",
       "home": "USA",
-      "away": "3B/E/F/I/J",
+      "away": "Bosnia & Herzegovina",
       "homeCode": "us",
-      "awayCode": null,
+      "awayCode": "ba",
       "homeFlag": "https://flagcdn.com/us.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/ba.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -3844,7 +3844,7 @@
         "away": []
       },
       "homeRaw": "USA",
-      "awayRaw": "3B/E/F/I/J"
+      "awayRaw": "Bosnia & Herzegovina"
     },
     {
       "id": 82,
@@ -3856,19 +3856,19 @@
       "kickoff": "2026-07-01T20:00:00.000Z",
       "venue": "Seattle",
       "home": "Belgium",
-      "away": "3A/E/H/I/J",
+      "away": "Senegal",
       "homeCode": "be",
-      "awayCode": null,
+      "awayCode": "sn",
       "homeFlag": "https://flagcdn.com/be.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/sn.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
         "home": [],
         "away": []
       },
-      "homeRaw": "1G",
-      "awayRaw": "3A/E/H/I/J"
+      "homeRaw": "Belgium",
+      "awayRaw": "Senegal"
     },
     {
       "id": 83,
@@ -3891,8 +3891,8 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "2K",
-      "awayRaw": "2L"
+      "homeRaw": "Portugal",
+      "awayRaw": "Croatia"
     },
     {
       "id": 84,
@@ -3915,8 +3915,8 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "1H",
-      "awayRaw": "2J"
+      "homeRaw": "Spain",
+      "awayRaw": "Austria"
     },
     {
       "id": 85,
@@ -3928,11 +3928,11 @@
       "kickoff": "2026-07-03T03:00:00.000Z",
       "venue": "Vancouver",
       "home": "Switzerland",
-      "away": "3E/F/G/I/J",
+      "away": "Algeria",
       "homeCode": "ch",
-      "awayCode": null,
+      "awayCode": "dz",
       "homeFlag": "https://flagcdn.com/ch.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/dz.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -3940,7 +3940,7 @@
         "away": []
       },
       "homeRaw": "Switzerland",
-      "awayRaw": "3E/F/G/I/J"
+      "awayRaw": "Algeria"
     },
     {
       "id": 86,
@@ -3963,8 +3963,8 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "1J",
-      "awayRaw": "2H"
+      "homeRaw": "Argentina",
+      "awayRaw": "Cape Verde"
     },
     {
       "id": 87,
@@ -3976,19 +3976,19 @@
       "kickoff": "2026-07-04T01:30:00.000Z",
       "venue": "Kansas City",
       "home": "Colombia",
-      "away": "3D/E/I/J/L",
+      "away": "Ghana",
       "homeCode": "co",
-      "awayCode": null,
+      "awayCode": "gh",
       "homeFlag": "https://flagcdn.com/co.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/gh.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
         "home": [],
         "away": []
       },
-      "homeRaw": "1K",
-      "awayRaw": "3D/E/I/J/L"
+      "homeRaw": "Colombia",
+      "awayRaw": "Ghana"
     },
     {
       "id": 88,
@@ -4012,7 +4012,7 @@
         "away": []
       },
       "homeRaw": "Australia",
-      "awayRaw": "2G"
+      "awayRaw": "Egypt"
     },
     {
       "id": 89,
