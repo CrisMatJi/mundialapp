@@ -1,6 +1,22 @@
 {
-  "updated": "2026-06-28T18:57:50.500Z",
+  "updated": "2026-06-28T19:26:27.332Z",
   "source": "api-football",
-  "live": [],
-  "note": "Mundial no presente en live=all (revisar free tier / KickoffAPI)"
+  "live": [
+    {
+      "id": 1561329,
+      "minute": 26,
+      "status": "1H",
+      "statusLong": "First Half",
+      "home": "South Africa",
+      "away": "Canada",
+      "homeApi": "South Africa",
+      "awayApi": "Canada",
+      "homeScore": 0,
+      "awayScore": 0,
+      "venue": "SoFi Stadium",
+      "round": "Round of 32",
+      "events": []
+    }
+  ],
+  "note": "ok"
 }
