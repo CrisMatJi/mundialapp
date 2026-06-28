@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-28T20:15:34.924Z",
+  "updated": "2026-06-28T20:20:34.779Z",
   "source": "api-football",
   "live": [
     {
       "id": 1561329,
-      "minute": 55,
+      "minute": 60,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "South Africa",
@@ -33,6 +33,24 @@
           "detail": "Yellow Card",
           "player": "N. Saliba",
           "assist": null
+        },
+        {
+          "minute": 59,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "N. Saliba",
+          "assist": "N. Sigur"
+        },
+        {
+          "minute": 59,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "M. Bombito",
+          "assist": "L. De Fougerolles"
         }
       ]
     }
