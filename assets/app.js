@@ -44,6 +44,8 @@ function fmt(iso) {
   return { day, mon, time, label: `${day} ${mon} · ${time}`, full };
 }
 const roundEs = r => ROUND_ES[r] || (r && r.startsWith('Matchday') ? 'Fase de grupos' : (r || ''));
+// Etiqueta de a qué corresponde un partido: "Grupo X" en fase de grupos, la ronda en eliminatorias.
+const matchLabel = m => m.group ? `Grupo ${m.group}` : roundEs(m.round);
 const capFirst = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 
 // Bandera del país (o caja de color con código si es un "Por definir").
@@ -302,11 +304,14 @@ function miniMatchRow(m) {
   const mid = lv
     ? `<span style="font-family:'Archivo';font-weight:900;font-size:14px;color:#FF2D7E;">${lv.homeScore ?? 0}-${lv.awayScore ?? 0}</span>`
     : `<span style="font-size:11px;font-weight:800;color:#C9D4E0;">vs</span>`;
-  return `<div ${action} class="hov-slide" style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:14px;background:${lv ? '#FFF1F5' : (m.isEsp ? '#FFF7FA' : '#F8FAFD')};cursor:pointer;border:1px solid ${lv ? '#FFD2DF' : (m.isEsp ? '#FFE0EA' : '#EDF1F6')};">
-    ${dateCol}
-    <div style="display:flex;align-items:center;gap:7px;flex:1;min-width:0;">${badge(m.a)}<span style="font-size:13px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.a.es)}</span></div>
-    ${mid}
-    <div style="display:flex;align-items:center;gap:7px;flex:1;min-width:0;justify-content:flex-end;"><span style="font-size:13px;font-weight:700;flex:1;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.b.es)}</span>${badge(m.b)}</div>
+  return `<div ${action} class="hov-slide" style="display:flex;flex-direction:column;gap:7px;padding:10px 12px;border-radius:14px;background:${lv ? '#FFF1F5' : (m.isEsp ? '#FFF7FA' : '#F8FAFD')};cursor:pointer;border:1px solid ${lv ? '#FFD2DF' : (m.isEsp ? '#FFE0EA' : '#EDF1F6')};">
+    <span style="font-size:9px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:${m.group ? '#7C4DFF' : '#FF2D7E'};">${esc(matchLabel(m))}</span>
+    <div style="display:flex;align-items:center;gap:12px;">
+      ${dateCol}
+      <div style="display:flex;align-items:center;gap:7px;flex:1;min-width:0;">${badge(m.a)}<span style="font-size:13px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.a.es)}</span></div>
+      ${mid}
+      <div style="display:flex;align-items:center;gap:7px;flex:1;min-width:0;justify-content:flex-end;"><span style="font-size:13px;font-weight:700;flex:1;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.b.es)}</span>${badge(m.b)}</div>
+    </div>
   </div>`;
 }
 function groupMiniTable(g) {
@@ -396,11 +401,15 @@ function fixtureRow(m) {
   const mid = lv
     ? `<span style="font-family:'Archivo';font-weight:900;font-size:clamp(16px,2vw,20px);color:#FF2D7E;flex:none;">${lv.homeScore ?? 0} - ${lv.awayScore ?? 0}</span>`
     : `<span style="font-family:'Archivo';font-weight:900;font-size:13px;color:#C9D4E0;flex:none;">VS</span>`;
-  return `<div data-anim ${action} class="hov-lift" style="display:flex;align-items:center;gap:clamp(10px,2vw,22px);padding:16px clamp(14px,2vw,22px);border-radius:18px;background:${lv ? '#FFF1F5' : (m.isEsp ? '#FFF7FA' : '#fff')};border:1px solid ${lv ? '#FFD2DF' : (m.isEsp ? '#FFD2DF' : '#EDF1F6')};cursor:pointer;box-shadow:0 8px 26px -22px rgba(11,27,43,.5);">
-    ${dateCol}
-    <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;"><span style="font-size:clamp(13px,1.7vw,16px);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.a.es)}</span>${badge(m.a, { w: 40, h: 28, fs: 11, r: 7 })}</div>
-    ${mid}
-    <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">${badge(m.b, { w: 40, h: 28, fs: 11, r: 7 })}<span style="font-size:clamp(13px,1.7vw,16px);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.b.es)}</span></div>
+  const labelColor = m.group ? '#7C4DFF' : '#FF2D7E';
+  return `<div data-anim ${action} class="hov-lift" style="display:flex;flex-direction:column;gap:11px;padding:13px clamp(14px,2vw,22px) 16px;border-radius:18px;background:${lv ? '#FFF1F5' : (m.isEsp ? '#FFF7FA' : '#fff')};border:1px solid ${lv ? '#FFD2DF' : (m.isEsp ? '#FFD2DF' : '#EDF1F6')};cursor:pointer;box-shadow:0 8px 26px -22px rgba(11,27,43,.5);">
+    <span style="align-self:flex-start;font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:${labelColor};background:${labelColor}14;padding:3px 10px;border-radius:999px;">${esc(matchLabel(m))}</span>
+    <div style="display:flex;align-items:center;gap:clamp(10px,2vw,22px);">
+      ${dateCol}
+      <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;"><span style="font-size:clamp(13px,1.7vw,16px);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.a.es)}</span>${badge(m.a, { w: 40, h: 28, fs: 11, r: 7 })}</div>
+      ${mid}
+      <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">${badge(m.b, { w: 40, h: 28, fs: 11, r: 7 })}<span style="font-size:clamp(13px,1.7vw,16px);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.b.es)}</span></div>
+    </div>
   </div>`;
 }
 function screenCalendario() {
