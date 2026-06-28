@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-28T20:45:33.862Z",
+  "updated": "2026-06-28T20:50:37.144Z",
   "source": "api-football",
   "live": [
     {
       "id": 1561329,
-      "minute": 85,
+      "minute": 90,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "South Africa",
@@ -87,6 +87,24 @@
           "detail": "Substitution 5",
           "player": "T. Buchanan",
           "assist": "A. Davies"
+        },
+        {
+          "minute": 86,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "E. Makgopa",
+          "assist": "I. Rayners"
+        },
+        {
+          "minute": 86,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 3",
+          "player": "T. Maseko",
+          "assist": "T. Moremi"
         }
       ]
     }
