@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-28T19:37:39.647Z",
+  "updated": "2026-06-28T21:08:23.903Z",
   "count": 104,
   "matches": [
     {
@@ -3645,11 +3645,27 @@
       "awayCode": "ca",
       "homeFlag": "https://flagcdn.com/za.svg",
       "awayFlag": "https://flagcdn.com/ca.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
         "home": [],
-        "away": []
+        "away": [
+          {
+            "name": "Stephan Eustáquio",
+            "minute": "90+2",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "South Africa",
       "awayRaw": "Canada"
@@ -4047,11 +4063,11 @@
       "time": "12:00 UTC-5",
       "kickoff": "2026-07-04T17:00:00.000Z",
       "venue": "Houston",
-      "home": "W73",
+      "home": "Canada",
       "away": "W75",
-      "homeCode": null,
+      "homeCode": "ca",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/ca.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
