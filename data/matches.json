@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-27T22:38:05.157Z",
+  "updated": "2026-06-28T00:07:22.977Z",
   "count": 104,
   "matches": [
     {
@@ -3424,11 +3424,33 @@
       "awayCode": "gb-eng",
       "homeFlag": "https://flagcdn.com/pa.svg",
       "awayFlag": "https://flagcdn.com/gb-eng.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
         "home": [],
-        "away": []
+        "away": [
+          {
+            "name": "Jude Bellingham",
+            "minute": "62",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Harry Kane",
+            "minute": "67",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       }
     },
     {
@@ -3446,11 +3468,40 @@
       "awayCode": "gh",
       "homeFlag": "https://flagcdn.com/hr.svg",
       "awayFlag": "https://flagcdn.com/gh.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Petar Sucic",
+            "minute": "31",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Nikola Vlasic",
+            "minute": "83",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Derrick Luckassen",
+            "minute": "73",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       }
     },
     {
@@ -3630,11 +3681,11 @@
       "time": "12:00 UTC-4",
       "kickoff": "2026-07-01T16:00:00.000Z",
       "venue": "Atlanta",
-      "home": "1L",
+      "home": "England",
       "away": "3E/H/I/J/K",
-      "homeCode": null,
+      "homeCode": "gb-eng",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/gb-eng.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
@@ -3703,11 +3754,11 @@
       "kickoff": "2026-07-02T23:00:00.000Z",
       "venue": "Toronto",
       "home": "2K",
-      "away": "2L",
+      "away": "Croatia",
       "homeCode": null,
-      "awayCode": null,
+      "awayCode": "hr",
       "homeFlag": null,
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/hr.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T22:38:05.157Z",
+  "updated": "2026-06-28T00:07:22.977Z",
   "source": "computed from openfootball results",
   "groups": [
     {
@@ -681,55 +681,55 @@
           "team": "England",
           "code": "gb-eng",
           "flag": "https://flagcdn.com/gb-eng.svg",
-          "mp": 2,
-          "w": 1,
+          "mp": 3,
+          "w": 2,
           "d": 1,
           "l": 0,
-          "gf": 4,
+          "gf": 6,
           "ga": 2,
-          "gd": 2,
-          "pts": 4
+          "gd": 4,
+          "pts": 7
         },
         {
           "pos": 2,
-          "team": "Ghana",
-          "code": "gh",
-          "flag": "https://flagcdn.com/gh.svg",
-          "mp": 2,
-          "w": 1,
-          "d": 1,
-          "l": 0,
-          "gf": 1,
-          "ga": 0,
-          "gd": 1,
-          "pts": 4
-        },
-        {
-          "pos": 3,
           "team": "Croatia",
           "code": "hr",
           "flag": "https://flagcdn.com/hr.svg",
-          "mp": 2,
-          "w": 1,
+          "mp": 3,
+          "w": 2,
           "d": 0,
           "l": 1,
-          "gf": 3,
-          "ga": 4,
-          "gd": -1,
-          "pts": 3
+          "gf": 5,
+          "ga": 5,
+          "gd": 0,
+          "pts": 6
+        },
+        {
+          "pos": 3,
+          "team": "Ghana",
+          "code": "gh",
+          "flag": "https://flagcdn.com/gh.svg",
+          "mp": 3,
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 2,
+          "gd": 0,
+          "pts": 4
         },
         {
           "pos": 4,
           "team": "Panama",
           "code": "pa",
           "flag": "https://flagcdn.com/pa.svg",
-          "mp": 2,
+          "mp": 3,
           "w": 0,
           "d": 0,
-          "l": 2,
+          "l": 3,
           "gf": 0,
-          "ga": 2,
-          "gd": -2,
+          "ga": 4,
+          "gd": -4,
           "pts": 0
         }
       ]
