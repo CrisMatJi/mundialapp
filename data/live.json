@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-28T19:26:27.332Z",
+  "updated": "2026-06-28T20:11:00.956Z",
   "source": "api-football",
   "live": [
     {
       "id": 1561329,
-      "minute": 26,
-      "status": "1H",
-      "statusLong": "First Half",
+      "minute": 51,
+      "status": "2H",
+      "statusLong": "Second Half",
       "home": "South Africa",
       "away": "Canada",
       "homeApi": "South Africa",
@@ -15,7 +15,17 @@
       "awayScore": 0,
       "venue": "SoFi Stadium",
       "round": "Round of 32",
-      "events": []
+      "events": [
+        {
+          "minute": 46,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "R. Mofokeng",
+          "assist": "T. Mbatha"
+        }
+      ]
     }
   ],
   "note": "ok"
