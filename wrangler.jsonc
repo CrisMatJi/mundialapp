@@ -1,9 +1,0 @@
-{
-  // Despliegue en Cloudflare Workers como sitio estático (assets).
-  // No hay script de servidor: Cloudflare sirve los ficheros directamente.
-  "name": "mundialapp",
-  "compatibility_date": "2026-06-28",
-  "assets": {
-    "directory": "."
-  }
-}
