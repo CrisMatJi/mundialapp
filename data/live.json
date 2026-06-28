@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-28T20:11:58.814Z",
+  "updated": "2026-06-28T20:15:34.924Z",
   "source": "api-football",
   "live": [
     {
       "id": 1561329,
-      "minute": 52,
+      "minute": 55,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "South Africa",
@@ -24,6 +24,15 @@
           "detail": "Substitution 1",
           "player": "R. Mofokeng",
           "assist": "T. Mbatha"
+        },
+        {
+          "minute": 54,
+          "extra": null,
+          "side": "away",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "N. Saliba",
+          "assist": null
         }
       ]
     }
