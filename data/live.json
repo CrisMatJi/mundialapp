@@ -1,37 +1,6 @@
 {
-  "updated": "2026-06-27T23:39:30.965Z",
+  "updated": "2026-06-28T01:50:09.326Z",
   "source": "api-football",
-  "live": [
-    {
-      "id": 1489419,
-      "minute": 9,
-      "status": "1H",
-      "statusLong": "First Half",
-      "home": "Colombia",
-      "away": "Portugal",
-      "homeApi": "Colombia",
-      "awayApi": "Portugal",
-      "homeScore": 0,
-      "awayScore": 0,
-      "venue": "Hard Rock Stadium",
-      "round": "Group Stage - 3",
-      "events": []
-    },
-    {
-      "id": 1539013,
-      "minute": 8,
-      "status": "1H",
-      "statusLong": "First Half",
-      "home": "DR Congo",
-      "away": "Uzbekistan",
-      "homeApi": "Congo DR",
-      "awayApi": "Uzbekistan",
-      "homeScore": 0,
-      "awayScore": 0,
-      "venue": "Mercedes-Benz Stadium",
-      "round": "Group Stage - 3",
-      "events": []
-    }
-  ],
-  "note": "ok"
+  "live": [],
+  "note": "Mundial no presente en live=all (revisar free tier / KickoffAPI)"
 }
