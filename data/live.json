@@ -1,17 +1,17 @@
 {
-  "updated": "2026-06-29T18:15:30.780Z",
+  "updated": "2026-06-29T18:20:35.155Z",
   "source": "api-football",
   "live": [
     {
       "id": 1562344,
-      "minute": 54,
+      "minute": 59,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "Brazil",
       "away": "Japan",
       "homeApi": "Brazil",
       "awayApi": "Japan",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 1,
       "venue": "NRG Stadium",
       "round": "Round of 32",
@@ -69,6 +69,15 @@
           "detail": "Yellow Card",
           "player": "Danilo",
           "assist": null
+        },
+        {
+          "minute": 56,
+          "extra": null,
+          "side": "home",
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "player": "Casemiro",
+          "assist": "Gabriel"
         }
       ]
     }
