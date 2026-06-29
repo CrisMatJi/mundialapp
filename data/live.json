@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-29T18:05:23.543Z",
+  "updated": "2026-06-29T18:10:32.762Z",
   "source": "api-football",
   "live": [
     {
       "id": 1562344,
-      "minute": 45,
-      "status": "HT",
-      "statusLong": "Halftime",
+      "minute": 49,
+      "status": "2H",
+      "statusLong": "Second Half",
       "home": "Brazil",
       "away": "Japan",
       "homeApi": "Brazil",
@@ -50,6 +50,24 @@
           "type": "Card",
           "detail": "Yellow Card",
           "player": "D. Kamada",
+          "assist": null
+        },
+        {
+          "minute": 46,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "Lucas Paqueta",
+          "assist": "Endrick"
+        },
+        {
+          "minute": 48,
+          "extra": null,
+          "side": "home",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "Danilo",
           "assist": null
         }
       ]
