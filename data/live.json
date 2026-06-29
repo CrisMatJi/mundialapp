@@ -1,6 +1,22 @@
 {
-  "updated": "2026-06-29T16:55:23.876Z",
+  "updated": "2026-06-29T17:00:51.260Z",
   "source": "api-football",
-  "live": [],
-  "note": "Mundial no presente en live=all (revisar free tier / KickoffAPI)"
+  "live": [
+    {
+      "id": 1562344,
+      "minute": 1,
+      "status": "1H",
+      "statusLong": "First Half",
+      "home": "Brazil",
+      "away": "Japan",
+      "homeApi": "Brazil",
+      "awayApi": "Japan",
+      "homeScore": 0,
+      "awayScore": 0,
+      "venue": "NRG Stadium",
+      "round": "Round of 32",
+      "events": []
+    }
+  ],
+  "note": "ok"
 }
