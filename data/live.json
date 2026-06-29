@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-29T20:35:24.017Z",
+  "updated": "2026-06-29T20:40:32.126Z",
   "source": "api-football",
   "live": [
     {
       "id": 1565176,
-      "minute": 5,
+      "minute": 11,
       "status": "1H",
       "statusLong": "First Half",
       "home": "Germany",
