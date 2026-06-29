@@ -1,6 +1,22 @@
 {
-  "updated": "2026-06-29T20:30:37.603Z",
+  "updated": "2026-06-29T20:35:24.017Z",
   "source": "api-football",
-  "live": [],
-  "note": "Mundial no presente en live=all (revisar free tier / KickoffAPI)"
+  "live": [
+    {
+      "id": 1565176,
+      "minute": 5,
+      "status": "1H",
+      "statusLong": "First Half",
+      "home": "Germany",
+      "away": "Paraguay",
+      "homeApi": "Germany",
+      "awayApi": "Paraguay",
+      "homeScore": 0,
+      "awayScore": 0,
+      "venue": "Gillette Stadium",
+      "round": "Round of 32",
+      "events": []
+    }
+  ],
+  "note": "ok"
 }
