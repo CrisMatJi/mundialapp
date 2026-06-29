@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T18:55:27.941Z",
+  "updated": "2026-06-29T19:00:46.608Z",
   "source": "api-football",
   "live": [
     {
@@ -11,7 +11,7 @@
       "away": "Japan",
       "homeApi": "Brazil",
       "awayApi": "Japan",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 1,
       "venue": "NRG Stadium",
       "round": "Round of 32",
@@ -82,20 +82,20 @@
         {
           "minute": 66,
           "extra": null,
-          "side": "home",
-          "type": "subst",
-          "detail": "Substitution 2",
-          "player": "M. Cunha",
-          "assist": "G. Martinelli"
-        },
-        {
-          "minute": 66,
-          "extra": null,
           "side": "away",
           "type": "subst",
           "detail": "Substitution 1",
           "player": "R. Doan",
           "assist": "Y. Sugawara"
+        },
+        {
+          "minute": 66,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "M. Cunha",
+          "assist": "G. Martinelli"
         },
         {
           "minute": 66,
@@ -141,6 +141,33 @@
           "detail": "Substitution 3",
           "player": "Casemiro",
           "assist": "Fabinho"
+        },
+        {
+          "minute": 90,
+          "extra": 5,
+          "side": "home",
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "player": "G. Martinelli",
+          "assist": "Bruno Guimaraes"
+        },
+        {
+          "minute": 90,
+          "extra": 7,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 5",
+          "player": "D. Maeda",
+          "assist": "K. Ogawa"
+        },
+        {
+          "minute": 90,
+          "extra": 8,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 4",
+          "player": "Bruno Guimaraes",
+          "assist": "Danilo Santos"
         }
       ]
     }
