@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-29T17:40:31.218Z",
+  "updated": "2026-06-29T17:45:28.759Z",
   "source": "api-football",
   "live": [
     {
       "id": 1562344,
-      "minute": 40,
+      "minute": 45,
       "status": "1H",
       "statusLong": "First Half",
       "home": "Brazil",
@@ -41,6 +41,15 @@
           "type": "Goal",
           "detail": "Normal Goal",
           "player": "K. Sano",
+          "assist": null
+        },
+        {
+          "minute": 45,
+          "extra": null,
+          "side": "away",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "D. Kamada",
           "assist": null
         }
       ]
