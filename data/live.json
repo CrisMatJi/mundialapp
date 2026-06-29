@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-29T21:50:34.665Z",
+  "updated": "2026-06-29T21:55:25.354Z",
   "source": "api-football",
   "live": [
     {
       "id": 1565176,
-      "minute": 58,
+      "minute": 62,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "Germany",
@@ -51,6 +51,15 @@
           "detail": "Substitution 1",
           "player": "G. Avalos",
           "assist": "G. Caballero"
+        },
+        {
+          "minute": 57,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 2",
+          "player": "J. Enciso",
+          "assist": "Mauricio"
         }
       ]
     }
