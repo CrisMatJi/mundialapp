@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-29T17:43:01.983Z",
+  "updated": "2026-06-29T20:06:21.089Z",
   "count": 104,
   "matches": [
     {
@@ -3733,11 +3733,40 @@
       "awayCode": "jp",
       "homeFlag": "https://flagcdn.com/br.svg",
       "awayFlag": "https://flagcdn.com/jp.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Casemiro",
+            "minute": "56",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Gabriel Martinelli",
+            "minute": "90+5",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Kaishu Sano",
+            "minute": "29",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Brazil",
       "awayRaw": "Japan"
@@ -4087,11 +4116,11 @@
       "time": "16:00 UTC-4",
       "kickoff": "2026-07-05T20:00:00.000Z",
       "venue": "New York/New Jersey (East Rutherford)",
-      "home": "W76",
+      "home": "Brazil",
       "away": "W78",
-      "homeCode": null,
+      "homeCode": "br",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/br.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
