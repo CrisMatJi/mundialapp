@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-29T21:35:24.658Z",
+  "updated": "2026-06-29T21:40:30.921Z",
   "source": "api-football",
   "live": [
     {
       "id": 1565176,
-      "minute": 45,
-      "status": "HT",
-      "statusLong": "Halftime",
+      "minute": 48,
+      "status": "2H",
+      "statusLong": "Second Half",
       "home": "Germany",
       "away": "Paraguay",
       "homeApi": "Germany",
@@ -24,6 +24,15 @@
           "detail": "Normal Goal",
           "player": "J. Enciso",
           "assist": "M. Galarza"
+        },
+        {
+          "minute": 46,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 1",
+          "player": "F. Nmecha",
+          "assist": "L. Goretzka"
         }
       ]
     }
