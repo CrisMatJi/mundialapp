@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-29T22:10:32.101Z",
+  "updated": "2026-06-29T22:14:58.953Z",
   "source": "api-football",
   "live": [
     {
       "id": 1565176,
-      "minute": 78,
+      "minute": 81,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "Germany",
@@ -78,6 +78,15 @@
           "detail": "Yellow Card",
           "player": "A. Cubas",
           "assist": null
+        },
+        {
+          "minute": 79,
+          "extra": null,
+          "side": "home",
+          "type": "subst",
+          "detail": "Substitution 3",
+          "player": "A. Pavlovic",
+          "assist": "W. Anton"
         }
       ]
     }
