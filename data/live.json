@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-29T21:20:33.220Z",
+  "updated": "2026-06-29T21:25:26.807Z",
   "source": "api-football",
   "live": [
     {
       "id": 1565176,
       "minute": 45,
-      "status": "1H",
-      "statusLong": "First Half",
+      "status": "HT",
+      "statusLong": "Halftime",
       "home": "Germany",
       "away": "Paraguay",
       "homeApi": "Germany",
