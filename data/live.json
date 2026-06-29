@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-29T17:45:28.759Z",
+  "updated": "2026-06-29T17:50:32.045Z",
   "source": "api-football",
   "live": [
     {
       "id": 1562344,
       "minute": 45,
-      "status": "1H",
-      "statusLong": "First Half",
+      "status": "HT",
+      "statusLong": "Halftime",
       "home": "Brazil",
       "away": "Japan",
       "homeApi": "Brazil",
