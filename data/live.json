@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-29T17:10:33.341Z",
+  "updated": "2026-06-29T17:15:30.014Z",
   "source": "api-football",
   "live": [
     {
       "id": 1562344,
-      "minute": 10,
+      "minute": 15,
       "status": "1H",
       "statusLong": "First Half",
       "home": "Brazil",
@@ -15,7 +15,26 @@
       "awayScore": 0,
       "venue": "NRG Stadium",
       "round": "Round of 32",
-      "events": []
+      "events": [
+        {
+          "minute": 12,
+          "extra": null,
+          "side": "away",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "K. Sano",
+          "assist": null
+        },
+        {
+          "minute": 15,
+          "extra": null,
+          "side": "home",
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": "Casemiro",
+          "assist": null
+        }
+      ]
     }
   ],
   "note": "ok"
