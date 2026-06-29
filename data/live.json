@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-29T18:35:24.211Z",
+  "updated": "2026-06-29T18:40:34.999Z",
   "source": "api-football",
   "live": [
     {
       "id": 1562344,
-      "minute": 74,
+      "minute": 79,
       "status": "2H",
       "statusLong": "Second Half",
       "home": "Brazil",
@@ -85,6 +85,15 @@
           "side": "away",
           "type": "subst",
           "detail": "Substitution 1",
+          "player": "K. Nakamura",
+          "assist": "J. Suzuki"
+        },
+        {
+          "minute": 66,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 2",
           "player": "R. Doan",
           "assist": "Y. Sugawara"
         },
@@ -98,13 +107,22 @@
           "assist": "G. Martinelli"
         },
         {
-          "minute": 66,
+          "minute": 78,
           "extra": null,
           "side": "away",
           "type": "subst",
-          "detail": "Substitution 2",
-          "player": "K. Nakamura",
-          "assist": "J. Suzuki"
+          "detail": "Substitution 3",
+          "player": "D. Kamada",
+          "assist": "A. Tanaka"
+        },
+        {
+          "minute": 78,
+          "extra": null,
+          "side": "away",
+          "type": "subst",
+          "detail": "Substitution 4",
+          "player": "J. Ito",
+          "assist": "S. Machino"
         }
       ]
     }
