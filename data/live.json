@@ -1,10 +1,10 @@
 {
-  "updated": "2026-06-29T17:30:38.945Z",
+  "updated": "2026-06-29T17:35:23.901Z",
   "source": "api-football",
   "live": [
     {
       "id": 1562344,
-      "minute": 31,
+      "minute": 35,
       "status": "1H",
       "statusLong": "First Half",
       "home": "Brazil",
