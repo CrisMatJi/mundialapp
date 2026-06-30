@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-30T01:31:45.556Z",
+  "updated": "2026-06-30T06:17:56.141Z",
   "count": 104,
   "matches": [
     {
@@ -3732,11 +3732,34 @@
       "awayCode": "ma",
       "homeFlag": "https://flagcdn.com/nl.svg",
       "awayFlag": "https://flagcdn.com/ma.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Cody Gakpo",
+            "minute": "72",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Issa Diop",
+            "minute": "90+1",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Netherlands",
       "awayRaw": "Morocco"
