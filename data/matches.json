@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-30T17:25:01.467Z",
+  "updated": "2026-06-30T21:15:51.191Z",
   "count": 104,
   "matches": [
     {
@@ -3856,11 +3856,40 @@
       "awayCode": "no",
       "homeFlag": "https://flagcdn.com/ci.svg",
       "awayFlag": "https://flagcdn.com/no.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Amad Diallo",
+            "minute": "74",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Antonio Nusa",
+            "minute": "39",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "86",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Ivory Coast",
       "awayRaw": "Norway"
@@ -4163,11 +4192,11 @@
       "kickoff": "2026-07-05T20:00:00.000Z",
       "venue": "New York/New Jersey (East Rutherford)",
       "home": "Brazil",
-      "away": "W78",
+      "away": "Norway",
       "homeCode": "br",
-      "awayCode": null,
+      "awayCode": "no",
       "homeFlag": "https://flagcdn.com/br.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/no.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
