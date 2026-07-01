@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-01T05:07:23.617Z",
+  "updated": "2026-07-01T09:00:07.891Z",
   "count": 104,
   "matches": [
     {
@@ -3937,10 +3937,32 @@
       "awayCode": "ec",
       "homeFlag": "https://flagcdn.com/mx.svg",
       "awayFlag": "https://flagcdn.com/ec.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Julián Quiñones",
+            "minute": "31",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Raúl Jiménez",
+            "minute": "45+1",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "Mexico",
@@ -4171,11 +4193,11 @@
       "time": "17:00 UTC-4",
       "kickoff": "2026-07-04T21:00:00.000Z",
       "venue": "Philadelphia",
-      "home": "W74",
+      "home": "Paraguay",
       "away": "France",
-      "homeCode": null,
+      "homeCode": "py",
       "awayCode": "fr",
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/py.svg",
       "awayFlag": "https://flagcdn.com/fr.svg",
       "status": "scheduled",
       "score": null,
@@ -4183,8 +4205,8 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "W74",
-      "awayRaw": "W77"
+      "homeRaw": "Paraguay",
+      "awayRaw": "France"
     },
     {
       "id": 90,
@@ -4196,11 +4218,11 @@
       "kickoff": "2026-07-04T17:00:00.000Z",
       "venue": "Houston",
       "home": "Canada",
-      "away": "W75",
+      "away": "Morocco",
       "homeCode": "ca",
-      "awayCode": null,
+      "awayCode": "ma",
       "homeFlag": "https://flagcdn.com/ca.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/ma.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -4208,7 +4230,7 @@
         "away": []
       },
       "homeRaw": "Canada",
-      "awayRaw": "W75"
+      "awayRaw": "Morocco"
     },
     {
       "id": 91,
@@ -4231,8 +4253,8 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "W76",
-      "awayRaw": "W78"
+      "homeRaw": "Brazil",
+      "awayRaw": "Norway"
     },
     {
       "id": 92,
@@ -4243,11 +4265,11 @@
       "time": "18:00 UTC-6",
       "kickoff": "2026-07-06T00:00:00.000Z",
       "venue": "Mexico City",
-      "home": "W79",
+      "home": "Mexico",
       "away": "W80",
-      "homeCode": null,
+      "homeCode": "mx",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/mx.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
