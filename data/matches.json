@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-06-30T22:51:30.131Z",
+  "updated": "2026-07-01T00:12:50.838Z",
   "count": 104,
   "matches": [
     {
@@ -3832,10 +3832,38 @@
       "awayCode": "se",
       "homeFlag": "https://flagcdn.com/fr.svg",
       "awayFlag": "https://flagcdn.com/se.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "minute": "45",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Bradley Barcola",
+            "minute": "53",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Kylian Mbappé",
+            "minute": "74",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "France",
@@ -4144,11 +4172,11 @@
       "kickoff": "2026-07-04T21:00:00.000Z",
       "venue": "Philadelphia",
       "home": "W74",
-      "away": "W77",
+      "away": "France",
       "homeCode": null,
-      "awayCode": null,
+      "awayCode": "fr",
       "homeFlag": null,
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/fr.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
