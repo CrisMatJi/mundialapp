@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-01T17:30:00.840Z",
+  "updated": "2026-07-01T19:22:02.900Z",
   "count": 104,
   "matches": [
     {
@@ -3983,11 +3983,40 @@
       "awayCode": "cd",
       "homeFlag": "https://flagcdn.com/gb-eng.svg",
       "awayFlag": "https://flagcdn.com/cd.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Harry Kane",
+            "minute": "75",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Harry Kane",
+            "minute": "86",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Brian Cipenga",
+            "minute": "7",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "England",
       "awayRaw": "DR Congo"
@@ -4266,11 +4295,11 @@
       "kickoff": "2026-07-06T00:00:00.000Z",
       "venue": "Mexico City",
       "home": "Mexico",
-      "away": "W80",
+      "away": "England",
       "homeCode": "mx",
-      "awayCode": null,
+      "awayCode": "gb-eng",
       "homeFlag": "https://flagcdn.com/mx.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/gb-eng.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
