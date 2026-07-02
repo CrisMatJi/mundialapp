@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-02T00:14:03.311Z",
+  "updated": "2026-07-02T04:42:07.978Z",
   "count": 104,
   "matches": [
     {
@@ -4036,10 +4036,32 @@
       "awayCode": "ba",
       "homeFlag": "https://flagcdn.com/us.svg",
       "awayFlag": "https://flagcdn.com/ba.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Folarin Balogun",
+            "minute": "45",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Malik Tillman",
+            "minute": "82",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "USA",
@@ -4383,11 +4405,11 @@
       "time": "17:00 UTC-7",
       "kickoff": "2026-07-07T00:00:00.000Z",
       "venue": "Seattle",
-      "home": "W81",
+      "home": "USA",
       "away": "W82",
-      "homeCode": null,
+      "homeCode": "us",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/us.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
