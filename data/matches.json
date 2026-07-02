@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-02T19:39:27.933Z",
+  "updated": "2026-07-02T21:14:33.591Z",
   "count": 104,
   "matches": [
     {
@@ -4171,10 +4171,38 @@
       "awayCode": "at",
       "homeFlag": "https://flagcdn.com/es.svg",
       "awayFlag": "https://flagcdn.com/at.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Mikel Oyarzabal",
+            "minute": "36",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Pedro Porro",
+            "minute": "66",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Mikel Oyarzabal",
+            "minute": "89",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "Spain",
@@ -4382,11 +4410,11 @@
       "kickoff": "2026-07-06T19:00:00.000Z",
       "venue": "Dallas (Arlington)",
       "home": "W83",
-      "away": "W84",
+      "away": "Spain",
       "homeCode": null,
-      "awayCode": null,
+      "awayCode": "es",
       "homeFlag": null,
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/es.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
