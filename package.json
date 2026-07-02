@@ -8,9 +8,14 @@
     "data:base": "node scripts/fetch-base.mjs",
     "data:live": "node scripts/fetch-live.mjs",
     "data:all": "node scripts/fetch-base.mjs && node scripts/fetch-live.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "wrangler": "^4.106.0"
   }
 }
