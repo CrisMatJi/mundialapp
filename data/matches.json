@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-02T04:42:07.978Z",
+  "updated": "2026-07-02T08:14:18.221Z",
   "count": 104,
   "matches": [
     {
@@ -4370,7 +4370,7 @@
         "away": []
       },
       "homeRaw": "Mexico",
-      "awayRaw": "W80"
+      "awayRaw": "England"
     },
     {
       "id": 93,
@@ -4406,19 +4406,19 @@
       "kickoff": "2026-07-07T00:00:00.000Z",
       "venue": "Seattle",
       "home": "USA",
-      "away": "W82",
+      "away": "Belgium",
       "homeCode": "us",
-      "awayCode": null,
+      "awayCode": "be",
       "homeFlag": "https://flagcdn.com/us.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/be.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
         "home": [],
         "away": []
       },
-      "homeRaw": "W81",
-      "awayRaw": "W82"
+      "homeRaw": "USA",
+      "awayRaw": "Belgium"
     },
     {
       "id": 95,
