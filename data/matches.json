@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-01T22:48:44.651Z",
+  "updated": "2026-07-02T00:14:03.311Z",
   "count": 104,
   "matches": [
     {
@@ -4060,11 +4060,52 @@
       "awayCode": "sn",
       "homeFlag": "https://flagcdn.com/be.svg",
       "awayFlag": "https://flagcdn.com/sn.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Romelu Lukaku",
+            "minute": "86",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Youri Tielemans",
+            "minute": "89",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Youri Tielemans",
+            "minute": "120+5",
+            "penalty": true,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Habib Diarra",
+            "minute": "25",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ismaïla Sarr",
+            "minute": "51",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Belgium",
       "awayRaw": "Senegal"
