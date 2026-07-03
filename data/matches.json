@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-03T00:11:15.922Z",
+  "updated": "2026-07-03T04:26:57.492Z",
   "count": 104,
   "matches": [
     {
@@ -4147,11 +4147,40 @@
       "awayCode": "hr",
       "homeFlag": "https://flagcdn.com/pt.svg",
       "awayFlag": "https://flagcdn.com/hr.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Cristiano Ronaldo",
+            "minute": "68",
+            "penalty": true,
+            "owngoal": false
+          },
+          {
+            "name": "Gonçalo Ramos",
+            "minute": "90+4",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Ivan Perisic",
+            "minute": "53",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Portugal",
       "awayRaw": "Croatia"
@@ -4409,11 +4438,11 @@
       "time": "14:00 UTC-5",
       "kickoff": "2026-07-06T19:00:00.000Z",
       "venue": "Dallas (Arlington)",
-      "home": "W83",
+      "home": "Portugal",
       "away": "Spain",
-      "homeCode": null,
+      "homeCode": "pt",
       "awayCode": "es",
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/pt.svg",
       "awayFlag": "https://flagcdn.com/es.svg",
       "status": "scheduled",
       "score": null,
