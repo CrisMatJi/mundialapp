@@ -74,3 +74,40 @@ button { font-family: inherit; }
   }
   .nav-toggle:hover { background: #E9EDF3; }
 }
+
+/* --- Bracket de eliminatorias (columnas por ronda + conectores en codo) --- */
+.bkt-scroll { overflow-x: auto; padding: 4px 2px 16px; }
+.bkt { display: flex; align-items: stretch; min-width: max-content; height: 1440px; --bln: #C6D0DC; }
+.bcol { display: flex; flex-direction: column; }
+.bcol:not(.bconn) { width: clamp(158px, 16vw, 196px); }
+.bconn { width: clamp(22px, 3vw, 40px); }
+.bcol-head { height: 30px; display: flex; align-items: center; justify-content: center; font-family: 'Archivo'; font-weight: 800; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #8A98A8; }
+.bcol-body { flex: 1; display: flex; flex-direction: column; }
+.bcell { flex: 1 1 0; display: flex; align-items: center; min-height: 0; padding: 0 2px; }
+
+/* Conector en codo: vertical uniendo el par (25%–75%) + horizontal al partido siguiente */
+.belbow { flex: 1 1 0; position: relative; }
+.belbow::before { content: ''; position: absolute; left: 0; top: 25%; height: 50%; width: 2px; background: var(--bln); }
+.belbow::after { content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 2px; background: var(--bln); }
+
+.bcard { width: 100%; background: #fff; border: 1px solid #E6EBF0; border-radius: 11px; padding: 6px 9px; box-shadow: 0 6px 18px -14px rgba(11,27,43,.5); }
+.bcard.clic { cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.bcard.clic:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -14px rgba(11,27,43,.55); }
+.bcard.esp { border-color: #C8102E; background: #FFF1F5; box-shadow: 0 0 0 1px #C8102E inset, 0 8px 20px -14px rgba(200,16,46,.55); }
+.bcard-tbd { display: flex; align-items: center; justify-content: center; min-height: 42px; }
+.bcard-top { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.bcard-code { font-family: 'Archivo'; font-weight: 800; font-size: 9px; letter-spacing: .3px; color: #7C4DFF; background: #7C4DFF14; padding: 1px 5px; border-radius: 5px; flex: none; }
+.bcard-when { font-size: 9px; font-weight: 700; color: #8A98A8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bcard-chip { margin-left: auto; display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 800; padding: 1px 6px; border-radius: 5px; white-space: nowrap; flex: none; }
+.bcard-chip.fin { color: #16A34A; background: #16A34A14; }
+.bcard-chip.live { color: #FF2D7E; background: #FF2D7E14; }
+.bcard-team { display: flex; align-items: center; gap: 7px; padding: 3px 0; }
+.bcard-team + .bcard-team { border-top: 1px solid #F0F3F7; }
+.bcard-name { flex: 1; font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bcard-team.win .bcard-name { font-weight: 800; }
+.bcard-team.tbd .bcard-name { color: #A6B2C0; font-style: italic; }
+.bcard-sc { font-family: 'Archivo'; font-weight: 900; font-size: 14px; color: #0B1B2B; min-width: 12px; text-align: right; }
+.bcard-team:not(.win) .bcard-sc { color: #AEB9C6; }
+
+.bkt-third { margin: 10px auto 0; width: clamp(180px, 40vw, 220px); }
+.bkt-third-head { text-align: center; font-family: 'Archivo'; font-weight: 800; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #8A98A8; margin-bottom: 8px; }

@@ -9,9 +9,24 @@ const ROUND_ES = {
   'Quarter-final': 'Cuartos de final', 'Semi-final': 'Semifinal',
   'Match for third place': 'Tercer puesto', 'Final': 'Final'
 };
-const BRACKET_ORDER = [
-  ['Round of 32', 'Dieciseisavos'], ['Round of 16', 'Octavos'],
-  ['Quarter-final', 'Cuartos'], ['Semi-final', 'Semifinales'], ['Final', 'Final']
+// Árbol de eliminatorias del Mundial 26 (el id de cada partido = código "P" de la FIFA).
+// Cada partido apunta a los dos que lo alimentan (feeders). Estructura fija del torneo.
+const BRACKET_TREE = {
+  89: [74, 77], 90: [73, 75], 91: [76, 78], 92: [79, 80],
+  93: [83, 84], 94: [81, 82], 95: [86, 88], 96: [85, 87],
+  97: [89, 90], 98: [93, 94], 99: [91, 92], 100: [95, 96],
+  101: [97, 98], 102: [99, 100], 104: [101, 102]
+};
+// Columnas del bracket. El orden vertical de cada ronda se deriva del árbol (DFS desde
+// la final) para que los dos feeders de cada partido queden verticalmente adyacentes.
+const bracketLeaves = id => { const f = BRACKET_TREE[id]; return f ? [...bracketLeaves(f[0]), ...bracketLeaves(f[1])] : [id]; };
+const bracketLevel = (id, d) => { if (d === 0) return [id]; const f = BRACKET_TREE[id]; return f ? [...bracketLevel(f[0], d - 1), ...bracketLevel(f[1], d - 1)] : []; };
+const BRACKET_COLS = [
+  { round: 'Round of 32', name: 'Dieciseisavos', ids: bracketLevel(104, 4) },
+  { round: 'Round of 16', name: 'Octavos', ids: bracketLevel(104, 3) },
+  { round: 'Quarter-final', name: 'Cuartos', ids: bracketLevel(104, 2) },
+  { round: 'Semi-final', name: 'Semifinales', ids: bracketLevel(104, 1) },
+  { round: 'Final', name: 'Final', ids: [104] }
 ];
 
 // --- Estado y datos ----------------------------------------------------------
@@ -464,29 +479,51 @@ function screenGrupos() {
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px;">${cards}</div></section>`;
 }
 
-// --- Pantalla: Eliminatorias -------------------------------------------------
-function bracketMatch(m) {
-  const clickable = !m.a.tbd && !m.b.tbd && m.status !== 'finished' ? `data-action="open" data-id="${m.id}"` : (m.status === 'finished' ? `data-action="open" data-id="${m.id}"` : '');
-  const esp = m.isEsp;
-  const glow = esp ? 'box-shadow:0 0 0 1.5px #C8102E inset,0 10px 26px -16px rgba(200,16,46,.6);' : 'box-shadow:0 8px 22px -20px rgba(11,27,43,.6);';
-  const line = (meta) => `<div style="display:flex;align-items:center;gap:9px;padding:5px 0;">${badge(meta, { w: 32, h: 22, fs: 9, r: 5 })}<span style="font-size:13px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:${meta.tbd ? '#A6B2C0' : '#0B1B2B'};">${esc(meta.es)}</span></div>`;
-  return `<div ${clickable} class="hov-scale" style="background:${esp ? '#FFF1F5' : '#fff'};border:1.5px solid ${esp ? '#C8102E' : '#EDF1F6'};border-radius:14px;padding:11px 13px;cursor:${clickable ? 'pointer' : 'default'};${glow}">
-    ${line(m.a)}<div style="height:1px;background:#EDF1F6;margin:2px 0;"></div>${line(m.b)}</div>`;
+// --- Pantalla: Eliminatorias (bracket con fechas, códigos P y conectores) -----
+const slotLabel = raw => { const m = /^([WL])(\d+)$/.exec(raw || ''); return m ? `${m[1] === 'W' ? 'Ganador' : 'Perdedor'} P${m[2]}` : null; };
+
+function bracketCard(m) {
+  if (!m) return `<div class="bcard bcard-tbd"><span class="bcard-name" style="color:#A6B2C0;">Por definir</span></div>`;
+  const lv = liveFor(m);
+  let hs = null, as = null, st = '';
+  if (lv) { hs = lv.homeScore; as = lv.awayScore; st = 'live'; }
+  else if (m.status === 'finished' && m.score && m.score.ft) { hs = m.score.ft[0]; as = m.score.ft[1]; st = 'fin'; }
+  const winH = st === 'fin' && hs > as, winA = st === 'fin' && as > hs;
+  const clickable = (!m.a.tbd && !m.b.tbd) || m.status === 'finished';
+  const row = (meta, raw, goals, win) => `<div class="bcard-team${win ? ' win' : ''}${meta.tbd ? ' tbd' : ''}">
+      ${badge(meta, { w: 26, h: 18, fs: 8, r: 4 })}
+      <span class="bcard-name">${esc(meta.tbd ? (slotLabel(raw) || 'Por definir') : meta.es)}</span>
+      ${goals != null ? `<span class="bcard-sc">${goals}</span>` : ''}</div>`;
+  const chip = st === 'live'
+    ? `<span class="bcard-chip live"><span class="live-dot-css" style="width:6px;height:6px;border-radius:50%;background:#FF2D7E;"></span>${lv.minute ?? ''}'</span>`
+    : st === 'fin' ? `<span class="bcard-chip fin">Final</span>` : '';
+  const when = m.f && m.f.full !== 'Por definir' ? `${m.f.day} ${m.f.mon} · ${m.f.time}` : '';
+  return `<div class="bcard${m.isEsp ? ' esp' : ''}${clickable ? ' clic' : ''}" ${clickable ? `data-action="open" data-id="${m.id}"` : ''}>
+    <div class="bcard-top"><span class="bcard-code">P${m.id}</span>${when ? `<span class="bcard-when">${when}</span>` : ''}${chip}</div>
+    ${row(m.a, m.home, hs, winH)}
+    ${row(m.b, m.away, as, winA)}</div>`;
 }
+
 function screenBracket() {
-  const cols = BRACKET_ORDER.map(([round, name]) => {
-    const ms = MATCHES.filter(m => m.round === round).sort((a, b) => a.id - b.id);
-    const cards = ms.map(bracketMatch).join('') || `<div style="color:#A6B2C0;font-size:12px;text-align:center;padding:10px;">Por definir</div>`;
-    return `<div data-anim style="display:flex;flex-direction:column;justify-content:space-around;gap:14px;width:clamp(190px,20vw,230px);flex:none;">
-      <div style="text-align:center;font-family:'Archivo';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#8A98A8;text-transform:uppercase;padding-bottom:4px;">${name}</div>${cards}</div>`;
-  }).join('');
+  let cols = '';
+  BRACKET_COLS.forEach((col, i) => {
+    const cells = col.ids.map(id => `<div class="bcell">${bracketCard(BY_ID.get(id))}</div>`).join('');
+    cols += `<div class="bcol"><div class="bcol-head">${col.name}</div><div class="bcol-body">${cells}</div></div>`;
+    if (i < BRACKET_COLS.length - 1) {
+      const elbows = BRACKET_COLS[i + 1].ids.map(() => '<div class="belbow"></div>').join('');
+      cols += `<div class="bcol bconn"><div class="bcol-head"></div><div class="bcol-body">${elbows}</div></div>`;
+    }
+  });
+  const third = BY_ID.get(103);
   return `<section data-screen style="padding-top:30px;">
-    <div data-anim style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px;">
+    <div data-anim style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px;">
       <div><h2 style="margin:0;font-family:'Archivo';font-weight:900;font-size:clamp(30px,5vw,46px);letter-spacing:-1.5px;">Eliminatorias</h2>
         <p style="margin:6px 0 0;color:#5B6B7B;font-weight:500;">El camino hacia la final · desliza para explorar →</p></div>
       <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:11px;background:#FFF1F5;border:1px solid #FFD2DF;">
         <span style="width:12px;height:12px;border-radius:4px;background:#C8102E;"></span><span style="font-size:12px;font-weight:700;color:#C8102E;">Camino de ${esc(metaFor(MY).es)}</span></div></div>
-    <div style="overflow-x:auto;padding:6px 2px 18px;"><div style="display:flex;gap:clamp(16px,3vw,40px);min-width:max-content;align-items:stretch;">${cols}</div></div></section>`;
+    <div class="bkt-scroll" data-anim><div class="bkt">${cols}</div></div>
+    ${third ? `<div data-anim class="bkt-third"><div class="bkt-third-head">🥉 Tercer puesto</div>${bracketCard(third)}</div>` : ''}
+  </section>`;
 }
 
 // --- Selectores personalizados de filtro (banderas + buscador) ---------------
