@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-03T12:59:44.253Z",
+  "updated": "2026-07-03T15:20:27.543Z",
   "count": 104,
   "matches": [
     {
@@ -3852,14 +3852,14 @@
             "owngoal": false
           },
           {
-            "name": "Bradley Barcola",
-            "minute": "53",
+            "name": "Kylian Mbappé",
+            "minute": "74",
             "penalty": false,
             "owngoal": false
           },
           {
-            "name": "Kylian Mbappé",
-            "minute": "74",
+            "name": "Bradley Barcola",
+            "minute": "53",
             "penalty": false,
             "owngoal": false
           }
@@ -4220,14 +4220,14 @@
             "owngoal": false
           },
           {
-            "name": "Pedro Porro",
-            "minute": "66",
+            "name": "Mikel Oyarzabal",
+            "minute": "89",
             "penalty": false,
             "owngoal": false
           },
           {
-            "name": "Mikel Oyarzabal",
-            "minute": "89",
+            "name": "Pedro Porro",
+            "minute": "66",
             "penalty": false,
             "owngoal": false
           }
@@ -4472,8 +4472,8 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "W83",
-      "awayRaw": "W84"
+      "homeRaw": "Portugal",
+      "awayRaw": "Spain"
     },
     {
       "id": 94,
@@ -4544,7 +4544,7 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "W85",
+      "homeRaw": "Switzerland",
       "awayRaw": "W87"
     },
     {
