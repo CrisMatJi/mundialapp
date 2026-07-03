@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-03T04:26:57.492Z",
+  "updated": "2026-07-03T07:47:32.266Z",
   "count": 104,
   "matches": [
     {
@@ -4252,10 +4252,32 @@
       "awayCode": "dz",
       "homeFlag": "https://flagcdn.com/ch.svg",
       "awayFlag": "https://flagcdn.com/dz.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Breel Embolo",
+            "minute": "10",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Dan Ndoye",
+            "minute": "46",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "Switzerland",
@@ -4510,11 +4532,11 @@
       "time": "13:00 UTC-7",
       "kickoff": "2026-07-07T20:00:00.000Z",
       "venue": "Vancouver",
-      "home": "W85",
+      "home": "Switzerland",
       "away": "W87",
-      "homeCode": null,
+      "homeCode": "ch",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/ch.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
