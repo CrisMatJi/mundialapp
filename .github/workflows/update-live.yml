@@ -26,14 +26,27 @@ jobs:
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: node scripts/fetch-live.mjs
-      - name: Commit si hay cambios
+      # El marcador se publica en la rama `live-data` (NO en main), para que los
+      # cambios cada 5 min no disparen un redespliegue de GitHub Pages (que se
+      # topaba con el límite de despliegues). Es un orphan con force-push: la rama
+      # queda siempre en 1 commit, sin crecer el historial. El frontend lee ese
+      # fichero directo desde raw.githubusercontent.
+      - name: Publicar live.json en la rama live-data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          if git diff --quiet -- data/live.json; then
+            echo "Sin cambios en live."
+            exit 0
+          fi
+          tmp="$(mktemp -d)"
+          cp data/live.json "$tmp/live.json"
+          cd "$tmp"
+          git init -q
           git config user.name "mundialapp-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/live.json
-          if git diff --staged --quiet; then
-            echo "Sin cambios en live."
-          else
-            git commit -m "data(live): $(date -u +'%Y-%m-%dT%H:%MZ')"
-            git push
-          fi
+          git checkout -q -b live-data
+          git add live.json
+          git commit -q -m "live: $(date -u +'%Y-%m-%dT%H:%MZ')"
+          git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live-data
+          echo "Publicado en live-data."

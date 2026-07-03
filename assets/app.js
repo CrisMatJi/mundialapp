@@ -72,10 +72,18 @@ async function loadJSON(p) {
   catch { return null; }
 }
 
+// El marcador en vivo vive en la rama `live-data` (así los cambios de marcador NO
+// redespliegan la web). Se lee directo de raw.githubusercontent con cache-buster;
+// si fallara, cae al seed incluido en el repo.
+const LIVE_URL = 'https://raw.githubusercontent.com/CrisMatJi/mundialapp/live-data/live.json';
+async function loadLive() {
+  return (await loadJSON(`${LIVE_URL}?t=${Date.now()}`)) || (await loadJSON('./data/live.json'));
+}
+
 async function init() {
   const [standings, matchesDoc, live, teamsDoc] = await Promise.all([
     loadJSON('./data/standings.json'), loadJSON('./data/matches.json'),
-    loadJSON('./data/live.json'), loadJSON('./data/teams.json')
+    loadLive(), loadJSON('./data/teams.json')
   ]);
   STANDINGS = standings || { groups: [] };
   LIVE = live || { live: [] };
@@ -235,7 +243,7 @@ function liveBannerHTML() {
 }
 async function refreshLive() {
   if (openComboKind) return; // no interrumpir mientras se usa un selector de filtro
-  const l = await loadJSON('./data/live.json');
+  const l = await loadLive();
   if (!l) return;
   if (JSON.stringify(l.live) === JSON.stringify(LIVE.live)) return; // sin cambios
   const prev = LIVE.live || [];
