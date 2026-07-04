@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-04T18:05:29.602Z",
+  "updated": "2026-07-04T19:46:02.436Z",
   "count": 104,
   "matches": [
     {
@@ -4474,11 +4474,39 @@
       "awayCode": "ma",
       "homeFlag": "https://flagcdn.com/ca.svg",
       "awayFlag": "https://flagcdn.com/ma.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          3
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
         "home": [],
-        "away": []
+        "away": [
+          {
+            "name": "Azzedine Ounahi",
+            "minute": "50",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Azzedine Ounahi",
+            "minute": "82",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Soufiane Rahimi",
+            "minute": "90+8",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Canada",
       "awayRaw": "Morocco"
@@ -4637,11 +4665,11 @@
       "kickoff": "2026-07-09T20:00:00.000Z",
       "venue": "Boston (Foxborough)",
       "home": "W89",
-      "away": "W90",
+      "away": "Morocco",
       "homeCode": null,
-      "awayCode": null,
+      "awayCode": "ma",
       "homeFlag": null,
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/ma.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
