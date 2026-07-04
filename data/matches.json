@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-04T00:09:58.901Z",
+  "updated": "2026-07-04T04:20:58.497Z",
   "count": 104,
   "matches": [
     {
@@ -4298,11 +4298,52 @@
       "awayCode": "cv",
       "homeFlag": "https://flagcdn.com/ar.svg",
       "awayFlag": "https://flagcdn.com/cv.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Lionel Messi",
+            "minute": "29",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Lisandro Martínez",
+            "minute": "92",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Diney Borges",
+            "minute": "111",
+            "penalty": false,
+            "owngoal": true
+          }
+        ],
+        "away": [
+          {
+            "name": "Deroy Duarte",
+            "minute": "59",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Sidny Lopes Cabral",
+            "minute": "103",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Argentina",
       "awayRaw": "Cape Verde"
@@ -4322,10 +4363,26 @@
       "awayCode": "gh",
       "homeFlag": "https://flagcdn.com/co.svg",
       "awayFlag": "https://flagcdn.com/gh.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Jhon Arias",
+            "minute": "14",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "Colombia",
@@ -4556,11 +4613,11 @@
       "kickoff": "2026-07-07T20:00:00.000Z",
       "venue": "Vancouver",
       "home": "Switzerland",
-      "away": "W87",
+      "away": "Colombia",
       "homeCode": "ch",
-      "awayCode": null,
+      "awayCode": "co",
       "homeFlag": "https://flagcdn.com/ch.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/co.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
