@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-05T21:07:37.639Z",
+  "updated": "2026-07-05T22:32:02.953Z",
   "count": 104,
   "matches": [
     {
@@ -4542,11 +4542,40 @@
       "awayCode": "no",
       "homeFlag": "https://flagcdn.com/br.svg",
       "awayFlag": "https://flagcdn.com/no.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Neymar",
+            "minute": "90+10",
+            "penalty": true,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Erling Haaland",
+            "minute": "79",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "90",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Brazil",
       "awayRaw": "Norway"
@@ -4728,11 +4757,11 @@
       "time": "17:00 UTC-4",
       "kickoff": "2026-07-11T21:00:00.000Z",
       "venue": "Miami (Miami Gardens)",
-      "home": "W91",
+      "home": "Norway",
       "away": "W92",
-      "homeCode": null,
+      "homeCode": "no",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/no.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
