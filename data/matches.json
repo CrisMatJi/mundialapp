@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-06T00:12:11.145Z",
+  "updated": "2026-07-06T04:53:49.143Z",
   "count": 104,
   "matches": [
     {
@@ -4595,11 +4595,52 @@
       "awayCode": "gb-eng",
       "homeFlag": "https://flagcdn.com/mx.svg",
       "awayFlag": "https://flagcdn.com/gb-eng.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          3
+        ],
+        "ht": [
+          1,
+          2
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Julián Quiñones",
+            "minute": "42",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Raúl Jiménez",
+            "minute": "69",
+            "penalty": true,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Jude Bellingham",
+            "minute": "36",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Jude Bellingham",
+            "minute": "38",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Harry Kane",
+            "minute": "60",
+            "penalty": true,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Mexico",
       "awayRaw": "England"
@@ -4758,11 +4799,11 @@
       "kickoff": "2026-07-11T21:00:00.000Z",
       "venue": "Miami (Miami Gardens)",
       "home": "Norway",
-      "away": "W92",
+      "away": "England",
       "homeCode": "no",
-      "awayCode": null,
+      "awayCode": "gb-eng",
       "homeFlag": "https://flagcdn.com/no.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/gb-eng.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
