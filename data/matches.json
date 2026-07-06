@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-06T09:03:33.698Z",
+  "updated": "2026-07-06T13:05:08.706Z",
   "count": 104,
   "matches": [
     {
@@ -4810,8 +4810,8 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "W91",
-      "awayRaw": "W92"
+      "homeRaw": "Norway",
+      "awayRaw": "England"
     },
     {
       "id": 100,
