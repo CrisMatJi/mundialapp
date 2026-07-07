@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-06T23:39:24.770Z",
+  "updated": "2026-07-07T03:53:52.861Z",
   "count": 104,
   "matches": [
     {
@@ -4700,11 +4700,52 @@
       "awayCode": "be",
       "homeFlag": "https://flagcdn.com/us.svg",
       "awayFlag": "https://flagcdn.com/be.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          4
+        ],
+        "ht": [
+          1,
+          2
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Malik Tillman",
+            "minute": "31",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Charles De Ketelaere",
+            "minute": "9",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Charles De Ketelaere",
+            "minute": "33",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Hans Vanaken",
+            "minute": "57",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Romelu Lukaku",
+            "minute": "90+3",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "USA",
       "awayRaw": "Belgium"
@@ -4791,11 +4832,11 @@
       "kickoff": "2026-07-10T19:00:00.000Z",
       "venue": "Los Angeles (Inglewood)",
       "home": "Spain",
-      "away": "W94",
+      "away": "Belgium",
       "homeCode": "es",
-      "awayCode": null,
+      "awayCode": "be",
       "homeFlag": "https://flagcdn.com/es.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/be.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
