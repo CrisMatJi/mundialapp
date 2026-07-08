@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-08T09:28:42.596Z",
+  "updated": "2026-07-08T11:25:15.586Z",
   "count": 104,
   "matches": [
     {
@@ -4930,19 +4930,19 @@
       "kickoff": "2026-07-12T01:00:00.000Z",
       "venue": "Kansas City",
       "home": "Argentina",
-      "away": "W96",
+      "away": "Switzerland",
       "homeCode": "ar",
-      "awayCode": null,
+      "awayCode": "ch",
       "homeFlag": "https://flagcdn.com/ar.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/ch.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
         "home": [],
         "away": []
       },
-      "homeRaw": "W95",
-      "awayRaw": "W96"
+      "homeRaw": "Argentina",
+      "awayRaw": "Switzerland"
     },
     {
       "id": 101,
