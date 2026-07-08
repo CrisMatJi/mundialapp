@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-07T22:38:47.667Z",
+  "updated": "2026-07-08T00:01:46.481Z",
   "count": 104,
   "matches": [
     {
@@ -4830,8 +4830,17 @@
       "awayCode": "co",
       "homeFlag": "https://flagcdn.com/ch.svg",
       "awayFlag": "https://flagcdn.com/co.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
         "home": [],
         "away": []
