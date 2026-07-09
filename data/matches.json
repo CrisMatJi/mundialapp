@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-09T22:01:02.691Z",
+  "updated": "2026-07-09T23:46:38.189Z",
   "count": 104,
   "matches": [
     {
@@ -4863,10 +4863,32 @@
       "awayCode": "ma",
       "homeFlag": "https://flagcdn.com/fr.svg",
       "awayFlag": "https://flagcdn.com/ma.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "minute": "60",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "66",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "France",
@@ -4953,11 +4975,11 @@
       "time": "14:00 UTC-5",
       "kickoff": "2026-07-14T19:00:00.000Z",
       "venue": "Dallas (Arlington)",
-      "home": "W97",
+      "home": "France",
       "away": "W98",
-      "homeCode": null,
+      "homeCode": "fr",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/fr.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
