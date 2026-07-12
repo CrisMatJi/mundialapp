@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-12T01:08:33.607Z",
+  "updated": "2026-07-12T04:55:32.613Z",
   "count": 104,
   "matches": [
     {
@@ -5015,11 +5015,46 @@
       "awayCode": "ch",
       "homeFlag": "https://flagcdn.com/ar.svg",
       "awayFlag": "https://flagcdn.com/ch.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Alexis Mac Allister",
+            "minute": "10",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Julián Álvarez",
+            "minute": "112",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Lautaro Martínez",
+            "minute": "120+1",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Dan Ndoye",
+            "minute": "67",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "Argentina",
       "awayRaw": "Switzerland"
