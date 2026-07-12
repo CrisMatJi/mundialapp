@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-12T14:08:21.152Z",
+  "updated": "2026-07-12T15:34:52.338Z",
   "count": 104,
   "matches": [
     {
@@ -5092,20 +5092,20 @@
       "time": "15:00 UTC-4",
       "kickoff": "2026-07-15T19:00:00.000Z",
       "venue": "Atlanta",
-      "home": "W99",
-      "away": "W100",
-      "homeCode": null,
-      "awayCode": null,
-      "homeFlag": null,
-      "awayFlag": null,
+      "home": "England",
+      "away": "Argentina",
+      "homeCode": "gb-eng",
+      "awayCode": "ar",
+      "homeFlag": "https://flagcdn.com/gb-eng.svg",
+      "awayFlag": "https://flagcdn.com/ar.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
         "home": [],
         "away": []
       },
-      "homeRaw": "W99",
-      "awayRaw": "W100"
+      "homeRaw": "England",
+      "awayRaw": "Argentina"
     },
     {
       "id": 103,
