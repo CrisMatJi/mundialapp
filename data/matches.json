@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-14T20:39:54.592Z",
+  "updated": "2026-07-14T22:02:31.609Z",
   "count": 104,
   "matches": [
     {
@@ -5074,11 +5074,33 @@
       "awayCode": "es",
       "homeFlag": "https://flagcdn.com/fr.svg",
       "awayFlag": "https://flagcdn.com/es.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          2
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      },
       "scorers": {
         "home": [],
-        "away": []
+        "away": [
+          {
+            "name": "Mikel Oyarzabal",
+            "minute": "22",
+            "penalty": true,
+            "owngoal": false
+          },
+          {
+            "name": "Pedro Porro",
+            "minute": "58",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "France",
       "awayRaw": "Spain"
@@ -5140,11 +5162,11 @@
       "time": "15:00 UTC-4",
       "kickoff": "2026-07-19T19:00:00.000Z",
       "venue": "New York/New Jersey (East Rutherford)",
-      "home": "W101",
+      "home": "Spain",
       "away": "W102",
-      "homeCode": null,
+      "homeCode": "es",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/es.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
