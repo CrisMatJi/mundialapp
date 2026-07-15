@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-15T06:36:58.390Z",
+  "updated": "2026-07-15T09:12:05.606Z",
   "count": 104,
   "matches": [
     {
@@ -5138,11 +5138,11 @@
       "time": "17:00 UTC-4",
       "kickoff": "2026-07-18T21:00:00.000Z",
       "venue": "Miami (Miami Gardens)",
-      "home": "L101",
+      "home": "France",
       "away": "L102",
-      "homeCode": null,
+      "homeCode": "fr",
       "awayCode": null,
-      "homeFlag": null,
+      "homeFlag": "https://flagcdn.com/fr.svg",
       "awayFlag": null,
       "status": "scheduled",
       "score": null,
@@ -5150,7 +5150,7 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "L101",
+      "homeRaw": "France",
       "awayRaw": "L102"
     },
     {
@@ -5174,7 +5174,7 @@
         "home": [],
         "away": []
       },
-      "homeRaw": "W101",
+      "homeRaw": "Spain",
       "awayRaw": "W102"
     }
   ]
