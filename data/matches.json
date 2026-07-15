@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-15T21:04:33.495Z",
+  "updated": "2026-07-15T22:31:16.468Z",
   "count": 104,
   "matches": [
     {
@@ -5120,11 +5120,40 @@
       "awayCode": "ar",
       "homeFlag": "https://flagcdn.com/gb-eng.svg",
       "awayFlag": "https://flagcdn.com/ar.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Anthony Gordon",
+            "minute": "55",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Enzo Fernández",
+            "minute": "86",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Lautaro Martínez",
+            "minute": "92",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "England",
       "awayRaw": "Argentina"
@@ -5139,11 +5168,11 @@
       "kickoff": "2026-07-18T21:00:00.000Z",
       "venue": "Miami (Miami Gardens)",
       "home": "France",
-      "away": "L102",
+      "away": "England",
       "homeCode": "fr",
-      "awayCode": null,
+      "awayCode": "gb-eng",
       "homeFlag": "https://flagcdn.com/fr.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/gb-eng.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -5151,7 +5180,7 @@
         "away": []
       },
       "homeRaw": "France",
-      "awayRaw": "L102"
+      "awayRaw": "England"
     },
     {
       "id": 104,
@@ -5163,11 +5192,11 @@
       "kickoff": "2026-07-19T19:00:00.000Z",
       "venue": "New York/New Jersey (East Rutherford)",
       "home": "Spain",
-      "away": "W102",
+      "away": "Argentina",
       "homeCode": "es",
-      "awayCode": null,
+      "awayCode": "ar",
       "homeFlag": "https://flagcdn.com/es.svg",
-      "awayFlag": null,
+      "awayFlag": "https://flagcdn.com/ar.svg",
       "status": "scheduled",
       "score": null,
       "scorers": {
@@ -5175,7 +5204,7 @@
         "away": []
       },
       "homeRaw": "Spain",
-      "awayRaw": "W102"
+      "awayRaw": "Argentina"
     }
   ]
 }
