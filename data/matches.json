@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-18T22:25:25.288Z",
+  "updated": "2026-07-18T23:28:45.458Z",
   "count": 104,
   "matches": [
     {
@@ -5173,11 +5173,82 @@
       "awayCode": "gb-eng",
       "homeFlag": "https://flagcdn.com/fr.svg",
       "awayFlag": "https://flagcdn.com/gb-eng.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          4,
+          6
+        ],
+        "ht": [
+          0,
+          4
+        ]
+      },
       "scorers": {
-        "home": [],
-        "away": []
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "minute": "48",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Bradley Barcola",
+            "minute": "54",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Kylian Mbappé",
+            "minute": "66",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "90+6",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
+        "away": [
+          {
+            "name": "Declan Rice",
+            "minute": "3",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Ezri Konsa",
+            "minute": "18",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Bukayo Saka",
+            "minute": "37",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Bukayo Saka",
+            "minute": "45+1",
+            "penalty": false,
+            "owngoal": false
+          },
+          {
+            "name": "Bukayo Saka",
+            "minute": "87",
+            "penalty": true,
+            "owngoal": false
+          },
+          {
+            "name": "Jude Bellingham",
+            "minute": "90+8",
+            "penalty": false,
+            "owngoal": false
+          }
+        ]
       },
       "homeRaw": "France",
       "awayRaw": "England"
