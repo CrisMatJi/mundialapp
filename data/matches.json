@@ -1,7 +1,7 @@
 {
   "tournament": "World Cup 2026",
   "source": "openfootball",
-  "updated": "2026-07-20T08:25:31.936Z",
+  "updated": "2026-07-20T11:23:34.445Z",
   "count": 104,
   "matches": [
     {
@@ -5268,10 +5268,26 @@
       "awayCode": "ar",
       "homeFlag": "https://flagcdn.com/es.svg",
       "awayFlag": "https://flagcdn.com/ar.svg",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      },
       "scorers": {
-        "home": [],
+        "home": [
+          {
+            "name": "Ferran Torres",
+            "minute": "106",
+            "penalty": false,
+            "owngoal": false
+          }
+        ],
         "away": []
       },
       "homeRaw": "Spain",
